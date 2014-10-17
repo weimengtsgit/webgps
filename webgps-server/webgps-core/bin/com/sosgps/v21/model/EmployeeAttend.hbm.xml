@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.sosgps.v21.model.EmployeeAttend" table="T_EMPLOYEE_ATTEND"
+		schema="MAPSEARCH">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" precision="22" scale="0" />
+			<generator class="sequence">
+				<param name="sequence">SEQ_T_EMPLOYEE_ATTEND</param>
+			</generator>
+		</id>
+		<property name="deviceId" type="java.lang.String">
+			<column name="DEVICE_ID" length="50" />
+		</property>
+		<property name="entCode" type="java.lang.String">
+			<column name="ENT_CODE" length="50" />
+		</property>
+		<property name="entId" type="java.lang.Long">
+			<column name="ent_id" precision="22" scale="0" />
+		</property>
+		<property name="termName" type="java.lang.String">
+			<column name="term_name" length="100" />
+		</property>
+		<property name="simcard" type="java.lang.String">
+			<column name="simcard"/>
+		</property>
+		<property name="groupName" type="java.lang.String">
+			<column name="group_name" length="100" />
+		</property>
+		<property name="groupId" type="java.lang.Long">
+			<column name="group_id" precision="22" scale="0" />
+		</property>
+	   <property name="attendStates" type="java.lang.Integer">
+			<column name="ATTEND_STATES" precision="1" scale="0" />
+		</property>
+		<property name="vacateCause" type="java.lang.Integer">
+			<column name="VACATE_CAUSE" precision="1" scale="0" />
+		</property>
+		<property name="vacateDay" type="java.lang.Double">
+			<column name="VACATE_DAY"/>
+		</property>
+		<property name="vacateFlag" type="java.lang.Integer">
+			<column name="vacate_Flag"/>
+		</property>
+		<property name="attendanceDate" type="java.lang.Integer">
+			<column name="attendance_date" />
+		</property>
+		
+		<property name="signInTime" type="java.util.Date">
+			<column name="signin_time" />
+		</property>
+		<property name="signInLongitude" type="java.lang.Float">
+			<column name="signin_longitude" />
+		</property>
+		<property name="signInLatitude" type="java.lang.Float">
+			<column name="signin_latitude" />
+		</property>
+		<property name="signInDesc" type="java.lang.String">
+			<column name="signin_desc"/>
+		</property>
+		<property name="signOffTime" type="java.util.Date">
+			<column name="signoff_time" />
+		</property>
+		<property name="signOffLongitude" type="java.lang.Float">
+			<column name="signoff_longitude" />
+		</property>
+		<property name="signOffLatitude" type="java.lang.Float">
+			<column name="signoff_latitude" />
+		</property>
+		<property name="signOffDesc" type="java.lang.String">
+			<column name="signoff_desc"/>
+		</property>
+		
+		<property name="signInRenderTime" type="java.util.Date">
+			<column name="signin_render_time" />
+		</property>
+		<property name="signOffRenderTime" type="java.util.Date">
+			<column name="signoff_render_time" />
+		</property>
+		<property name="vacateRenderTime" type="java.util.Date">
+			<column name="vacate_render_time" />
+		</property>
+		<property name="signInLocationType" type="java.lang.Integer">
+			<column name="signIn_Location_Type"/>
+		</property>
+		<property name="signOffLocationType" type="java.lang.Integer">
+			<column name="signOff_Location_Type"/>
+		</property>
+		<property name="travelCostId" type="java.lang.Long">
+			<column name="travel_Cost_Id"/>
+		</property>
+		<!-- 公共部分 -->
+		<property name="createOn" type="java.util.Date">
+			<column name="CREATE_On" length="7" />
+		</property>
+		<property name="lastUpdateOn" type="java.util.Date">
+			<column name="LAST_UPDATE_On" length="7" />
+		</property>
+		<property name="lastUpdateBy" type="java.lang.String">
+			<column name="LAST_UPDATE_BY" />
+		</property>
+		<property name="createBy" type="java.lang.String">
+			<column name="CREATE_By" />
+		</property>
+		<property name="deleteFlag" type="java.lang.Long">
+			<column name="DELETE_FLAG" precision="1" scale="0" />
+		</property>
+	</class>
+</hibernate-mapping>
