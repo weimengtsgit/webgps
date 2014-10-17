@@ -23,6 +23,7 @@ public class ParseShouHangG40 extends ParseBase {
 		//System.out.println("接收到SH原始数据：" + hexString);
 		hexString = this.recParseData(hexString);
 		byte[] cont = Tools.fromHexString(hexString);
+
 		String scont = new String(cont);
 		//System.out.println("scont：" + scont);
 		//System.out.println("scont：" + scont);
@@ -55,7 +56,8 @@ public class ParseShouHangG40 extends ParseBase {
 		deviceid = hSimCardId;
 		this.setDeviceSN(deviceid);
 		String phnum = null;
-		phnum = "018201248264";
+		phnum = "018201248264";//山西
+        phnum = "014701569028";//山东
 /*		phnum = GBLTerminalList.getInstance().getSimcardNum(this.getDeviceSN());
 		//phnum = "144012171029";
 		if (phnum == null || hexString == null || phnum.trim().length() == 0
@@ -222,7 +224,7 @@ public class ParseShouHangG40 extends ParseBase {
 				if(l>0){
 					byte[] lc = new byte [l];//里程
 					System.arraycopy(gpsdata, 30, lc, 0, l);
-					bi = new BigInteger(lc);;
+					bi = new BigInteger(lc);
 					//System.out.println("附加信息里程1：" + bi.toString());
 					float lcl = bi.floatValue();
 					try{
@@ -237,30 +239,42 @@ public class ParseShouHangG40 extends ParseBase {
 					this.setLC("0");
 				}
 			}
+			
+
+	        byte[] bExtras = new byte [6]; //附加信息
+	        System.arraycopy(gpsdata, gpsdata.length - 6, bExtras, 0, bExtras.length);
+            byte bExtrasCmd = bExtras[0]; //附加信息的指令码 2b
+            byte bExtrasLength = bExtras[1]; //长度 04
+            if(bExtrasCmd == 0x2b && bExtrasLength == 0x04){
+              byte[] bExtrasWD = new byte [2]; //温度
+              System.arraycopy(bExtras, 2, bExtrasWD, 0, bExtrasWD.length);
+              String hExtrasWD = Tools.bytesToHexString(bExtrasWD);
+              this.setTemperature(hExtrasWD);
+              byte[] bExtrasSD = new byte [2]; //湿度
+              System.arraycopy(bExtras, 4, bExtrasSD, 0, bExtrasSD.length);
+              String hExtrasSD = Tools.bytesToHexString(bExtrasSD);
+              this.setHumidity(hExtrasSD);
+            }
+	        
 		}
 		
 		
 		
-		
+		String desc = "已定位GPS数据";
 		if (this.getLocateStatus() != null
 				&& this.getLocateStatus().equals("1")) {
-			this.sentPost(true);
-			Log.getInstance().outLog(
-					this.getDeviceSN() + " 已定位GPS数据：x=" + this.getCoordX()
-							+ ",y=" + this.getCoordY() + ",s="
-							+ this.getSpeed() + ",dirction="
-							+ this.getDirection() + ",lc=" + this.getLC()
-							+ ",temperature=" + this.getTemperature()
-							+ ",gpstime=" + this.getTime());
+//			this.sentPost(true);aa
 		} else {
-			Log.getInstance().outLog(
-					this.getDeviceSN() + " 未定位GPS数据：x=" + this.getCoordX()
-							+ ",y=" + this.getCoordY() + ",s="
-							+ this.getSpeed() + ",dirction="
-							+ this.getDirection() + ",lc=" + this.getLC()
-							+ ",temperature=" + this.getTemperature()
-							+ ",gpstime=" + this.getTime());
+		  desc = "未定位GPS数据";
 		}
+        Log.getInstance().outLog(
+            this.getDeviceSN() + desc+"：lng=" + this.getCoordX()
+                    + ",lat=" + this.getCoordY() + ",Speed="
+                    + this.getSpeed() + ",Dirction="
+                    + this.getDirection() + ",Mileage=" + this.getLC()
+                    + ",Temperature=" + this.getTemperature()
+                    + ",Humidity=" + this.getHumidity()
+                    + ",gpstime=" + this.getTime());
 	}
 	
 	private String recParseData(String data){
@@ -301,9 +315,11 @@ public class ParseShouHangG40 extends ParseBase {
 		//String hex = "7e0200001c144012171031007d010200002614401217103100a900080000000000020262a94506ee34ba0e7e";
 		//String hex = "7e0200001c14401217103100f202000026144012171031002200080000000000020262d71b06f445a45f7e";
 		//String hex = "7e0200001c144012171031007d0102000026144012171031002200080000000000020262d71b06f445a4d07e";
-//		String hex = "7e0200001c14401217103100de0000000000000003026249e006ee6d8c003701d80153120516184631a17e";
-		String hex = "7e0200002f01820124826403480200000000040003025dfd2a06be4ecc03d80000000014092813571101040000e99e03020000690100ef0400000000da7e";
-		
+	    //String hex = "7e0200001c14401217103100de0000000000000003026249e006ee6d8c003701d80153120516184631a17e";
+	    //山西
+	    //String hex = "7e0200002f01820124826403480200000000040003025dfd2a06be4ecc03d80000000014092813571101040000e99e03020000690100ef0400000000da7e";
+	    //山东
+	    String hex = "7e0200003001470156902800040000000000000003021f5d5906f9de84005c0000b30014101416384701040000408202020000030200002b04001e0277347e";
 		ParseShouHangG40 sh = new ParseShouHangG40();
 		sh.parseGPRS(hex);
 		

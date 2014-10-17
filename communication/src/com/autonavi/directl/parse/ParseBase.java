@@ -28,6 +28,7 @@ public abstract class ParseBase implements Cloneable {
 	private String picUrl; // 终端上传的图片URL
 	private String alarmDesc; // 报警描述
 	private String temperature;// 温度值
+	private String humidity;//湿度值
 	private String accStatus = "";// 默认未点火
 	private String signalFlag = "0";
 	private String programVersion = "";
@@ -97,7 +98,15 @@ public abstract class ParseBase implements Cloneable {
 	private Socket socket;// 客户端地址
 	private ArrayList<ParseBase> parseList = new ArrayList<ParseBase>();
 
-	public String getLc() {
+	public String getHumidity() {
+    return humidity;
+  }
+
+  public void setHumidity(String humidity) {
+    this.humidity = humidity;
+  }
+
+  public String getLc() {
 		return lc;
 	}
 
