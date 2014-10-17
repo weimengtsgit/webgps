@@ -1,0 +1,126 @@
+td
+{
+	 font-family: Arial, Helvetica, sans-serif;
+	 font-size:12px;
+}
+html,body
+{
+     margin:0px;
+     height:100%;
+     width:100%;
+
+}
+.leftNM 
+{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:198px;
+	height:100%;
+	z-index:1;	
+	background:url(../picNew/leftcenter1.gif);
+}
+
+.leftMenuSub 
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #000000;
+	width:98%;
+	height:20px;
+	background-color: #7DACF9;
+	border-bottom:1px solid #fff;
+	display:none;
+	cursor: hand;
+}
+
+.leftMenuSubGZ
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: #000000;
+	width:98%;
+	height:30px;
+	border-bottom:1px solid #fff;
+	cursor: hand;
+	background-color: #F0F0F0;
+}
+
+
+.leftMenuSubSub 
+{
+	font-family: "ËÎÌו";
+	font-size: 12px;
+	left:1px;
+	top:1px;
+	width:100%;
+	height:150px;
+}
+
+.leftMenuSubSubDD
+{
+	font-family: "ËÎÌו";
+	font-size: 12px;
+	left:1px;
+	top:1px;
+	width:100%;
+	height:200px;
+	display:none;
+}
+
+
+
+.leftMenuSubSubGZ 
+{
+	font-family: "ËÎÌו";
+	font-size: 12px;
+	left:1px;
+	top:1px;
+	width:100%;
+
+
+}
+
+#tHidden 
+{
+	position:absolute;
+	background:url(../picNew/centerbg.gif);
+  height:100%;
+  float:left;
+	left:198px;
+	top:0px;
+	width:5px;
+}
+#tools 
+{
+	
+	left:203px;
+	top:0px;
+	width:100%;
+	height:28px;
+	background:url(../picNew/dt2.jpg)
+}
+#TEmap 
+{
+	float:right;
+	left:203px;
+	top:28px;
+	width:100%;
+	height:86%;
+	background:#00FF66;
+}
+
+#Tools1 
+{
+	left:200px;
+	top:473px;
+	width:100%;
+	height:48px;
+	background:url(../picNew/dt2.jpg)
+}
+.classLM
+{
+	cursor: hand;
+}

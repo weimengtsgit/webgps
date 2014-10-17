@@ -1,0 +1,50 @@
+/* application specific styles */
+.x-flag-persion {
+    background-image:url(gif/persion.gif) !important;
+}
+.x-flag-car {
+    background-image:url(gif/car.gif) !important;
+}
+.x-flag-ship {
+    background-image:url(gif/ship.gif) !important;
+}
+.x-flag-1060 {
+    background-image:url(gif/1060.gif) !important;
+}
+.x-flag-1063 {
+    background-image:url(gif/1063.gif) !important;
+}
+.x-flag-1065 {
+    background-image:url(gif/1065.gif) !important;
+}
+.x-flag-1080 {
+    background-image:url(gif/1080.gif) !important;
+}
+.x-flag-dc {
+    background-image:url(gif/dc.gif) !important;
+}
+.x-flag-ttj {
+    background-image:url(gif/ttj.gif) !important;
+}
+.x-flag-wj {
+    background-image:url(gif/wj.gif) !important;
+}
+/* Ext.ux.IconCombo mandatory styles */
+.x-icon-combo-icon {
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    width: 18px;
+    height: 14px;
+}
+.x-icon-combo-input {
+    padding-left: 25px;
+}
+.x-form-field-wrap .x-icon-combo-icon {
+    top: 3px;
+    left: 5px;
+}
+.x-icon-combo-item {
+    background-repeat: no-repeat !important;
+    background-position: 3px 50% !important;
+    padding-left: 24px;
+}

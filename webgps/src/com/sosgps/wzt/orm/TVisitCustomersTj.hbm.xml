@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-4-24 20:08:52 by Hibernate Tools 3.2.5.Beta -->
+<hibernate-mapping>
+ <class name="com.sosgps.wzt.orm.TVisitCustomersTj" table="T_VISIT_CUSTOMERS_TJ">
+  <id name="id" type="java.lang.Long">
+   <column name="ID" precision="22" scale="0"/>
+   <generator class="sequence">
+    <param name="sequence">SEQ_VISIT_CUSTOMERS_TJ</param>
+   </generator>
+  </id>
+  <property generated="never" lazy="false" name="deviceId" type="java.lang.String">
+   <column length="50" name="DEVICE_ID" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="arriveTime" type="java.util.Date">
+   <column length="7" name="ARRIVE_TIME"/>
+  </property>
+  <property generated="never" lazy="false" name="leaveTime" type="java.util.Date">
+   <column length="7" name="LEAVE_TIME"/>
+  </property>
+  <property generated="never" lazy="false" name="tjDate" type="java.util.Date">
+   <column length="7" name="TJ_DATE"/>
+  </property>
+  <property generated="never" lazy="false" name="poiId" type="java.lang.Long">
+   <column name="POI_ID" precision="22" scale="0"/>
+  </property>
+  <property generated="never" lazy="false" name="locId" type="java.lang.Long">
+   <column name="LOC_ID" precision="22" scale="0"/>
+  </property>
+  <property generated="never" lazy="false" name="longitude" type="java.lang.Double">
+   <column name="LONGITUDE" precision="126" scale="0"/>
+  </property>
+  <property generated="never" lazy="false" name="latitude" type="java.lang.Double">
+   <column name="LATITUDE" precision="126" scale="0"/>
+  </property>
+  <property generated="never" lazy="false" name="jmx" type="java.lang.String">
+   <column length="20" name="JMX"/>
+  </property>
+  <property generated="never" lazy="false" name="jmy" type="java.lang.String">
+   <column length="20" name="JMY"/>
+  </property>
+  <property generated="never" lazy="false" name="locDesc" type="java.lang.String">
+   <column length="500" name="LOC_DESC"/>
+  </property>
+  <property generated="never" lazy="false" name="poiName" type="java.lang.String">
+   <column length="40" name="POI_NAME"/>
+  </property>
+ </class>
+</hibernate-mapping>

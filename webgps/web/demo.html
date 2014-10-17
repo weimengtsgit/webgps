@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<input type="button" value="人员定位初始化" onClick="javascript:loginLocate(xml1)">
+<input type="button" value="定位(赵云峰，耿峰)" onClick="javascript:locate(xml1)">
+<input type="button" value="定位(赵云峰)" onClick="javascript:locate(xml2)">
+<input type="button" value="定位(耿峰)" onClick="javascript:locate(xml3)">
+<input type="button" value="平台登录" onClick="javascript:lbsLocate(xml4)">
+<input type="button" value="车辆维护" onClick="javascript:lbsLocate(xml5)">
+
+<iframe name="frame1" id="frame1" src="" width="100%" height="800"></iframe>
+<script language="javascript">
+function loginLocate(xml){
+	lbsLocate(xml);
+}
+function locate(xml){
+	top.frame1.fun(xml);
+}
+
+var xml1="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+			+"<REQUEST>"
+			+"<HEAD>"
+			+"<companyID>empRoot</companyID>"
+			+"<user_name>testnew</user_name>"
+			+"<password>e358efa489f58062f10dd7316b65649e</password>"
+			+"<passkey>ab2be16663e495854b348db7a55cc4a0</passkey>"
+			+"<type>2</type>"
+			+"</HEAD>"
+			+"<BODY>"
+			+"   <person>"
+			+"         <mobile>13953130020</mobile>"
+			+"         <name>赵云峰</name>"
+			+"   </person>"
+			+"  <person>"
+			+"         <mobile>13805310234</mobile>"
+			+"         <name>耿峰</name>"
+			+"   </person>"
+			+"</BODY>"
+			+"</REQUEST>";
+var xml2="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+			+"<REQUEST>"
+			+"<HEAD>"
+			+"<companyID>empRoot</companyID>"
+			+"<user_name>testnew</user_name>"
+			+"<password>e358efa489f58062f10dd7316b65649e</password>"
+			+"<passkey>ab2be16663e495854b348db7a55cc4a0</passkey>"
+			+"<type>2</type>"
+			+"</HEAD>"
+			+"<BODY>"
+			+"   <person>"
+			+"         <mobile>13953130020</mobile>"
+			+"         <name>赵云峰</name>"
+			+"   </person>"
+			+"</BODY>"
+			+"</REQUEST>";
+var xml3="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+			+"<REQUEST>"
+			+"<HEAD>"
+			+"<companyID>empRoot</companyID>"
+			+"<user_name>testnew</user_name>"
+			+"<password>e358efa489f58062f10dd7316b65649e</password>"
+			+"<passkey>ab2be16663e495854b348db7a55cc4a0</passkey>"
+			+"<type>2</type>"
+			+"</HEAD>"
+			+"<BODY>"
+			+"  <person>"
+			+"         <mobile>13805310234</mobile>"
+			+"         <name>耿峰</name>"
+			+"   </person>"
+			+"</BODY>"
+			+"</REQUEST>";
+
+var xml4="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+			+"<REQUEST>"
+			+"<HEAD>"
+			+"<companyID>empRoot</companyID>"
+			+"<user_name>testnew</user_name>"
+			+"<password>e358efa489f58062f10dd7316b65649e</password>"
+			+"<passkey>ab2be16663e495854b348db7a55cc4a0</passkey>"
+			+"<type>1</type>"
+			+"</HEAD>"
+			+"<BODY>"
+			+"</BODY>"
+			+"</REQUEST>";
+var xml5="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+			+"<REQUEST>"
+			+"<HEAD>"
+			+"<companyID>empRoot</companyID>"
+			+"<user_name>testnew</user_name>"
+			+"<password>e358efa489f58062f10dd7316b65649e</password>"
+			+"<passkey>ab2be16663e495854b348db7a55cc4a0</passkey>"
+			+"<type>3</type>"
+			+"</HEAD>"
+			+"<BODY>"
+			+"</BODY>"
+			+"</REQUEST>";
+
+
+function lbsLocate(requestXML){
+    var xmlHttp;
+	var browser = navigator.appName;
+    if(browser == "Microsoft Internet Explorer"){
+		try{
+			xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+		}catch (e){
+			try{
+				xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}catch (e2){
+				xmlHttp = false;
+			}
+		}
+    }else{
+       	xmlHttp = new XMLHttpRequest();
+    }
+
+
+	var locs;
+
+	xmlHttp.onreadystatechange=function(){
+        if (xmlHttp.readyState == 4) {  
+            if(xmlHttp.status==200){
+							
+				var urlStr;
+				urlStr=parseLbsLocateXml(xmlHttp.responseXML)+"&t="+new Date();
+				document.getElementById("frame1").src=urlStr;
+				
+			}
+	    }
+	}
+	xmlHttp.open("POST","http://localhost:8010/gps",true);
+	xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+	xmlHttp.send(requestXML);
+}
+function parseLbsLocateXml(xmlDoc){
+	
+
+	var locrecords = xmlDoc.getElementsByTagName("RESPONSE");
+	var size = locrecords.length;
+
+    for(var j = 0;j < size;j ++){
+    	var locrecord = locrecords[j];
+		var	url = locrecord.getElementsByTagName("RequestURL")[0].firstChild.nodeValue;
+		return url;
+	}
+
+
+}
+</script>
+</body>
+</html>

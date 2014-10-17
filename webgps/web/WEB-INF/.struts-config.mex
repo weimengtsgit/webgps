@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/login.do" location="427,0" dimension="286,84" />
+  <StrutsActivity path="/logout.do" location="813,0" dimension="292,84" />
+  <StrutsActivity path="/welcome.do" location="134,184" dimension="298,84" />
+  <StrutsActivity path="/lbs.do" location="199,461" dimension="256,84" />
+  <StrutsActivity path="/t11login.do" location="350,650" dimension="304,84" />
+  <StrutsActivity path="invalid_token;6" location="0,461" dimension="154,72" />
+  <StrutsActivity path="/index.jsp" location="884,202" dimension="100,48" />
+  <StrutsActivity path="/error.jsp" location="532,202" dimension="100,48" />
+  <StrutsActivity path="/main/left.jsp" location="0,368" dimension="124,48" />
+  <StrutsActivity path="/main.jsp" location="224,368" dimension="94,48" />
+  <StrutsActivity path="/maps/map.jsp" location="418,368" dimension="118,48" />
+  <StrutsActivity path="/t11thngame/lbsMap.jsp" location="950,550" dimension="172,48" />
+  <StrutsActivity path="/invalidSubmit.jsp" location="3,633" dimension="148,48" />
+  <StrutsActivity path="/t11lbs.do" location="650,350" dimension="274,84" />
+  <StrutsActivity path="/t11thngame/vehicleFrm.html" location="650,550" dimension="202,48" />
+  <StrutsTransition id="/welcome.do,init,/main/left.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="184,268" />
+      <AbsolutePoint location="184,318" />
+      <AbsolutePoint location="62,318" />
+      <AbsolutePoint location="62,368" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/t11login.do,error,/error.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="551,650" />
+      <AbsolutePoint location="551,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/t11lbs.do,init,/t11thngame/lbsMap.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="924,392" />
+      <AbsolutePoint location="1036,392" />
+      <AbsolutePoint location="1036,550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/welcome.do,success,/maps/map.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="382,268" />
+      <AbsolutePoint location="382,318" />
+      <AbsolutePoint location="477,318" />
+      <AbsolutePoint location="477,368" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/t11VehicleLogin.do,welcome,/t11thngame/vehicleFrm.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,692" />
+      <AbsolutePoint location="751,692" />
+      <AbsolutePoint location="751,598" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/t11VehicleLogin.do,error,/error.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1107,650" />
+      <AbsolutePoint location="1107,613" />
+      <AbsolutePoint location="600,613" />
+      <AbsolutePoint location="600,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/logout.do,logout,/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="959,84" />
+      <AbsolutePoint location="959,202" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/t11login.do,welcome,/welcome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,353" />
+      <AbsolutePoint location="313,353" />
+      <AbsolutePoint location="313,268" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/welcome.do,welcome,/main.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="283,268" />
+      <AbsolutePoint location="283,318" />
+      <AbsolutePoint location="271,318" />
+      <AbsolutePoint location="271,368" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,login,/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="665,84" />
+      <AbsolutePoint location="665,134" />
+      <AbsolutePoint location="909,134" />
+      <AbsolutePoint location="909,202" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,error,/error.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="570,84" />
+      <AbsolutePoint location="570,134" />
+      <AbsolutePoint location="582,134" />
+      <AbsolutePoint location="582,202" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,welcome,/welcome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="474,84" />
+      <AbsolutePoint location="474,134" />
+      <AbsolutePoint location="283,134" />
+      <AbsolutePoint location="283,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="invalid_token;6,null,/invalidSubmit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="77,533" />
+      <AbsolutePoint location="77,633" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/t11VehicleLogin.do,welcome,/welcome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1137,650" />
+      <AbsolutePoint location="1137,265" />
+      <AbsolutePoint location="432,265" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/t11lbs.do,error,/error.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,392" />
+      <AbsolutePoint location="630,392" />
+      <AbsolutePoint location="630,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.sosgps.v21.model">
+	<class name="Cost" table="t_cost" schema="MAPSEARCH">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" precision="22" scale="0" />
+			<generator class="sequence">
+				<param name="sequence">seq_t_cost</param>
+			</generator>
+		</id>
+
+		<!-- dependent -->
+		<property name="deviceId" type="java.lang.String">
+			<column name="device_id" />
+		</property>
+
+		<property name="meal" type="java.math.BigDecimal">
+			<column name="meal" />
+		</property>
+		<property name="transportation" type="java.math.BigDecimal">
+			<column name="transportation" />
+		</property>
+		<property name="accommodation" type="java.math.BigDecimal">
+			<column name="accommodation" />
+		</property>
+		<property name="communication" type="java.math.BigDecimal">
+			<column name="communication" />
+		</property>
+		<property name="gift" type="java.math.BigDecimal">
+			<column name="gift" />
+		</property>
+		<property name="other" type="java.math.BigDecimal">
+			<column name="other" />
+		</property>
+			<!-- add by renxianliang for xinhuamai 2013-7-4 -->
+		<property name="expand1" type="java.math.BigDecimal">
+			<column name="expand1" />
+		</property>
+		<property name="expand2" type="java.math.BigDecimal">
+			<column name="expand2" />
+		</property>
+		<property name="expand3" type="java.math.BigDecimal">
+			<column name="expand3" />
+		</property>
+		<property name="expand4" type="java.math.BigDecimal">
+			<column name="expand4" />
+		</property>
+		<property name="expand5" type="java.math.BigDecimal">
+			<column name="expand5" />
+		</property>
+		
+		<property name="dateTime" type="java.lang.Long">
+			<column name="DATETIME" precision="22" scale="0" />
+		</property>
+		<property name="remarks" type="java.lang.String">
+			<column name="REMARKS" length="200" />
+		</property>
+		<property name="renderTime" type="java.lang.Long">
+			<column name="render_time" precision="22" scale="0" />
+		</property>
+		<property name="approved" type="java.lang.Integer">
+			<column name="approved" precision="1" scale="0" />
+		</property>
+		<property name="verifier" type="java.lang.String">
+			<column name="verifier" length="100" />
+		</property>
+		<!-- common -->
+		<property name="states" type="java.lang.Integer">
+			<column name="states" precision="1" scale="0" />
+		</property>
+		<property name="createBy" type="java.lang.String">
+			<column name="createby" length="100" />
+		</property>
+		<property name="lastUpdateBy" type="java.lang.String">
+			<column name="lastupdateby" length="100" />
+		</property>
+		<property name="createOn" type="java.lang.Long">
+			<column name="createon" precision="22" scale="0" />
+		</property>
+		<property name="lastUpdateOn" type="java.lang.Long">
+			<column name="lastupdateon" precision="22" scale="0" />
+		</property>
+
+		<!-- redundancy -->
+		<property name="groupName" type="java.lang.String">
+			<column name="group_name" length="100" />
+		</property>
+		<property name="vehicleNumber" type="java.lang.String">
+			<column name="vehicle_number" length="100" />
+		</property>
+		<property name="entCode" type="java.lang.String">
+			<column name="ent_code" length="100" />
+		</property>
+		<property name="entId" type="java.lang.Long">
+			<column name="ent_id" precision="22" scale="0" />
+		</property>
+		<property name="groupId" type="java.lang.Long">
+			<column name="group_id" precision="22" scale="0" />
+		</property>
+		<property name="terminalName" type="java.lang.String">
+			<column name="terminal_name" length="100" />
+		</property>
+	</class>
+</hibernate-mapping>

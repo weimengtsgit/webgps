@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-usergroup-service-bean</description>
+	<!-- Add Managers here -->	
+	<bean id="tTargetObjectService"
+		class="com.sosgps.wzt.terminal.service.impl.TerminalServiceImpl">
+		<property name="TTargetGroupDao">
+			<ref bean="tTargetGroupDao" />
+		</property>
+		<property name="TTargetObjectDao">
+			<ref bean="tTargetObjectDao" />
+		</property>
+		<property name="TTerminalTypeDao">
+			<ref bean="tTerminalTypeDao" />
+		</property>
+		<property name="RTermGroupDAO">
+			<ref bean="refTermGroupDAO" />
+		</property>
+		<property name="TEntDAO">
+			<ref bean="tEntDAO" />
+		</property>
+		<property name="structionDAO">
+			<ref bean="ttStructionsDAO" />
+		</property>
+		<property name="speedCaseDao">
+			<ref bean="SpeedCaseHibernateDao" />
+		</property>
+		<property name="terminalManageDao">
+			<ref bean="TerminalManageHibernateDao" />
+		</property>
+	</bean>
+</beans>

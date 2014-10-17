@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close" lazy-init="default" autowire="default"
+		dependency-check="default">
+		<property name="driverClass">
+			<value>oracle.jdbc.driver.OracleDriver</value>
+		</property>
+		<property name="jdbcUrl">
+			<!--线上<value>jdbc:oracle:thin:@gps.cj7ichrehk06.ap-southeast-1.rds.amazonaws.com:gps</value>-->
+			<value>jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=gps.cj7ichrehk06.ap-southeast-1.rds.amazonaws.com)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=gps)(SERVER=DEDICATED)))</value> 
+		</property>
+		<property name="user">
+			<value>mapsearch</value>
+		</property>
+		<property name="password">
+			<value>mapsearch</value>
+		</property>
+
+		<!--连接池中保留的最小连接数。 -->
+		<property name="minPoolSize">
+			<value>10</value>
+		</property>
+
+		<!--连接池中保留的最大连接数。Default: 15 -->
+		<property name="maxPoolSize">
+			<value>50</value>
+		</property>
+
+		<!--初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
+		<property name="initialPoolSize">
+			<value>10</value>
+		</property>
+
+		<!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
+		<property name="maxIdleTime">
+			<value>60</value>
+		</property>
+
+		<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+		<property name="acquireIncrement">
+			<value>5</value>
+		</property>
+
+		<!--JDBC的标准参数，用以控制数据源内加载的PreparedStatements数量。但由于预缓存的statements 属于单个connection而不是整个连接池。所以设置这个参数需要考虑到多方面的因素。 
+			如果maxStatements与maxStatementsPerConnection均为0，则缓存被关闭。Default: 0 -->
+		<property name="maxStatements">
+			<value>0</value>
+		</property>
+
+		<!--每60秒检查所有连接池中的空闲连接。Default: 0 -->
+		<property name="idleConnectionTestPeriod">
+			<value>60</value>
+		</property>
+
+		<!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
+		<property name="acquireRetryAttempts">
+			<value>30</value>
+		</property>
+
+		<!--获取连接失败将会引起所有等待连接池来获取连接的线程抛出异常。但是数据源仍有效 保留，并在下次调用getConnection()的时候继续尝试获取连接。如果设为true，那么在尝试 
+			获取连接失败后该数据源将申明已断开并永久关闭。Default: false -->
+		<property name="breakAfterAcquireFailure">
+			<value>false</value>
+		</property>
+
+		<!--因性能消耗大请只在需要的时候使用它。如果设为true那么在每个connection提交的 时候都将校验其有效性。建议使用idleConnectionTestPeriod或automaticTestTable 
+			等方法来提升连接测试的性能。Default: false -->
+		<property name="testConnectionOnCheckout">
+			<value>false</value>
+		</property>
+		<!-- 当连接池用完时客户端调用getConnection()后等待获取新连接的时间，超时后将抛出 SQLException,如设为0则无限期等待。单位毫秒。Default: 
+			0 -->
+		<property name="checkoutTimeout">
+			<value>30000</value>
+		</property>
+	</bean>
+	<!-- Hibernate Interceptor -->
+	<bean id="customizeInterceptor" class="com.sosgps.v21.interceptor.CustomizeInterceptor" />
+	<!-- Hibernate SessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+		<property name="entityInterceptor">
+			<ref bean="customizeInterceptor" />
+		</property>
+		<property name="mappingResources">
+			<list>
+
+				<value>com/sosgps/wzt/orm/TModule.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TDictItem.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TUser.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TModuleGroup.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TLoginLog.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/RefUserRole.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TOptLog.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/RefModuleRole.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TDict.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TRole.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/RefTermGroup.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TTerminal.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TEnt.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TEntTermtype.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TTermGroup.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/RefUserTgroup.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TMutiMedium.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TLastLocrecord.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TInactiveAlarmLoc.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TStructions.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TMessage.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TAreaLocrecord.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TSpeedAlarmLoc.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TArea.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TLineAlarm.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TAlarmShow.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TSpeedCase.hbm.xml</value>
+
+				<value>com/sosgps/wzt/orm/TAlarmTjDay.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TAlarmTjMonth.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TAlarmTjYear.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TCallRecord.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TVersion.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TFreq.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TDistanceYear.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TDistanceMonth.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TDistanceDay.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/CarTypeInfo.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TempShortMessage.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TBossRole.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TempOnlineUser.hbm.xml</value>
+
+				<value>com/sosgps/wzt/orm/ShandongSmsWait.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/ShandongUnusedReport.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/ShandongSmsRecv.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/ShandongLogSend.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/ShandongLogRecv.hbm.xml</value>
+
+				<value>com/sosgps/wzt/orm/RefTermAttrule.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/RefTermSimrule.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TAttendanceArea.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TAttendanceRule.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TAttendanceLocrecord.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TSimpleRule.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TAttendanceRuleWait.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/RefTermAttruleWait.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/RefEntCallednumber.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/Configure.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TBajuTask.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TTask.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TVirtualGroup.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/RefTermVirgroup.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TLbsLocrecord.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TLianxuxingshiTj.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TCarspeedTjDay.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TCarspeedTjMonth.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TCarspeedTjYear.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TCitytrafficinfo.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/THiwaytrafficinfo.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TYwClwfSdall.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TJbWfdm.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TTermNotify.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/RefTermAreaalarm.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TLayers.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/RefUserLayer.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TPoi.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/RefLayerPoi.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/RefTermPoi.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TLocrecord.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TVisitTj.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TReportFilepath.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TDiary.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TVehicleExpense.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TOiling.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TDiaryMark.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TDiaryMarkTj.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TInsurance.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TVehiclesMaintenance.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TAnnualExamination.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TToll.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TDriverLicense.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TTotalDistance.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TDispatchMoney.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/TVehicleNorm.hbm.xml</value>
+				<value>com/sosgps/wzt/orm/SmsAccounts.hbm.xml</value>
+				<value>com/sosgps/v21/model/Cash.hbm.xml</value>
+				<value>com/sosgps/v21/model/Cost.hbm.xml</value>
+				<value>com/sosgps/v21/model/EmailSendLog.hbm.xml</value>
+				<value>com/sosgps/v21/model/Kpi.hbm.xml</value>
+				<value>com/sosgps/v21/model/Visit.hbm.xml</value>
+				<value>com/sosgps/v21/model/SignBill.hbm.xml</value>
+				<value>com/sosgps/v21/model/TargetTemplate.hbm.xml</value>
+				<value>com/sosgps/v21/model/Email.hbm.xml</value>
+				<!-- 2.1需求变更 -->
+		        <value>com/sosgps/v21/model/EmployeeAttend.hbm.xml</value>
+		        <value>com/sosgps/v21/model/TravelCost.hbm.xml</value>
+		        <!-- 手机模块监控报表 -->
+		        <value>com/sosgps/wzt/orm/TMobileeventdata.hbm.xml</value>
+		        <!-- 终端配置文件 -->
+		        <value>com/sosgps/wzt/orm/TermParamConfig.hbm.xml</value>
+		        
+		        <!-- add by 2012-12-13 zss 促销上报 -->
+		        <value>com/sosgps/v21/model/Promotion.hbm.xml</value>
+                <value>com/sosgps/wzt/orm/TVehicleMsg.hbm.xml</value>
+		        	
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.OracleDialect
+				</prop>
+				<prop key="hibernate.jdbc.fetch_size">100</prop>
+				<prop key="hibernate.jdbc.batch_size">50</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.cglib.use_reflection_optimizer">
+					true
+				</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- Configuration HibernateTemplate -->
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- Configuration JDBCTemplate -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- Transaction manager for a single Hibernate SessionFactory (alternative 
+		to JTA) -->
+	<bean id="hibernateTransactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="hibernateProxy" abstract="true" lazy-init="true"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref local="hibernateTransactionManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="save*">
+					PROPAGATION_REQUIRED, -Exception
+				</prop>
+				<prop key="remove*">
+					PROPAGATION_REQUIRED, -Exception
+				</prop>
+				<prop key="update*">
+					PROPAGATION_REQUIRED, -Exception
+				</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

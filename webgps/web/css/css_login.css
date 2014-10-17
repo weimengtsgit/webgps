@@ -1,0 +1,184 @@
+/* CSS Document */
+body,div,ul,li,table,tr,td{ margin:0px; padding:0px; border:0px; font-size:12px;}
+html{overflow-x: hidden; overflow-y: auto;}
+/*------登录页面样式--------*/
+.loadtop{
+	width:1020px;
+	height:119px;
+	margin:0 auto 0 auto;
+	background-image:url(../img/imgload/load.jpg);
+	background-repeat:no-repeat;
+	background-position:center;
+	}
+.loadmid{
+	width:1020px;
+	height:186px;
+	margin:0 auto 0 auto;}
+.loadmid1{
+	width:513px;
+	height:186px;
+	background-image:url(../img/imgload/load1.jpg);
+	background-position:top right;
+	background-repeat:no-repeat;
+	float:left;}
+.loadmid2{
+	width:507px;
+	height:186px;
+	background-image:url(../img/imgload/load2.jpg);
+	background-repeat:no-repeat;
+	background-position:top left;
+	float:left;
+	position:relative;}
+.loadbottom1{
+	width:1020px;
+	height:139px;
+	margin:0 auto 0 auto;
+	background-image:url(../img/imgload/load3.jpg);
+	background-repeat:no-repeat;
+	background-position:center;}
+.loadbottom2{
+	width:1020px;
+	height:156px;
+	margin:0 auto 0 auto;
+	background-image:url(../img/imgload/load4.jpg);
+	background-repeat:no-repeat;
+	background-position:center;}
+.loadtable{
+	width:250px;
+	margin-top:40px;
+	position:relative;
+	line-height:25px;
+	padding:3px;}
+.textinput{
+	width:120px;
+	height:19px;
+	border:1px solid #97a9d2;
+	font-family:"宋体";
+	font-size:12px;
+	line-height:19px;
+	text-align:left;
+	text-indent:2px;}
+/*------二级页面样式--------*/
+.2j_bj{
+	width:1004px;
+	height:600px;
+	margin:0 auto 0 auto;
+	display:inline;}
+.left1{
+	width:166px;
+	height:100%;
+	float:left;
+	background-image:url(../img/imgpart/bj1.jpg);
+	background-repeat:no-repeat;
+	background-position:left;
+	list-style-type:none;
+	display:inline;}
+.left2{
+	width:159px;
+	height:100%;
+	float:left;
+	background-image:url(../img/imgpart/bj2.jpg);
+	background-repeat:no-repeat;
+	background-position:left;
+	list-style-type:none;
+	display:inline;}
+.left3{
+	width:575px;
+	height:100%;
+	float:left;
+	background-image:url(../img/imgpart/bj3.jpg);
+	background-repeat:no-repeat;
+	background-position:left;
+	list-style-type:none;
+	display:inline;}
+.left4{
+	width:105px;
+	height:100%;
+	float:left;
+	background-image:url(../img/imgpart/bj4.jpg);
+	background-repeat:no-repeat;
+	background-position:left;
+	list-style-type:none;
+	display:inline;}
+/*------三级页面样式--------*/
+/*head部样式*/
+.hs_head{
+	width:100%;
+	height:62px;
+	background-color:#05090f;
+	background-image:url(../img/huangshan/head_01.jpg);
+	background-position:left;
+	background-repeat:no-repeat;
+	margin:0 auto 0 auto;}
+/*上海head部样式*/
+.sh_head{
+	width:100%;
+	height:62px;
+	background-color:#05090f;
+	background-image:url(../img/imgload/shanghai.jpg);
+	background-position:left;
+	background-repeat:no-repeat;
+	margin:0 auto 0 auto;}
+/*深圳head部样式*/	
+.sz_head{
+	width:100%;
+	height:62px;
+	background-color:#05090f;
+	background-image:url(../img/imgload/shenzhen.jpg);
+	background-position:left;
+	background-repeat:no-repeat;
+	margin:0 auto 0 auto;}
+/*北京head部样式*/	
+.bj_head{
+	width:100%;
+	height:62px;
+	background-color:#05090f;
+	background-image:url(../img/imgload/bj_head.jpg);
+	background-position:left;
+	background-repeat:no-repeat;
+	margin:0 auto 0 auto;}	
+/*左部页面背景样式*/
+.left_site{
+	background-color:#e7e7e7;}
+/*伸缩纽所在的div样式*/
+.yd{
+	width:10px;
+	height:515px;
+	float:right;
+	margin:0px;
+	padding-top:180px;}
+/*功能按纽所的在最外层表格样式*/
+.round{
+	width:193px;
+	float:right;
+	border:1px solid #cfcfcf;
+	background-image:url(../img/huangshan/left_bj.jpg);
+	background-repeat:repeat-y;}
+.round tr td{ vertical-align:top;}
+/*左侧按纽子菜单所在表格样式*/
+.leftlist{
+	width:100%;
+	line-height:25px;
+	text-align:center;
+	border-collapse:collapse;}
+.leftlist tr td{
+	height:25px;
+	font-family:"宋体";
+	text-align:center;
+	border-collapse:collapse;}
+/*左侧按纽子菜单标题样式*/
+.listtype{
+	background-color:#d3d3d3;
+	background-image:url(../img/huangshan/list_a.png);
+	font-size: 13px;
+	font-family: "宋体";
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: 20px 3px;
+	border-bottom:1px solid #FFFFFF;
+	border-top:1px solid #ffffff;
+	border-collapse:collapse;
+	height:25px;
+	line-height:25px;
+	text-align:center;}
+

@@ -1,0 +1,39 @@
+BODY {
+	BACKGROUND-COLOR: #fff
+}
+HTML {
+	HEIGHT: 100%
+}
+BODY {
+	HEIGHT: 100%
+}
+HTML BODY {
+	FONT: 12px Arial, Helvetica, sans-serif; COLOR: #333333
+}
+HTML > BODY {
+	FONT: 12px Arial, Helvetica, sans-serif; COLOR: #333333
+}
+#TB_overlay {
+	Z-INDEX: 100; POSITION: absolute; FILTER: alpha(opacity=60); BACKGROUND-COLOR: #ccc; WIDTH: 100%; HEIGHT: 100%; TOP: 0px; LEFT: 0px; -moz-opacity: 0.6; opacity: 0.6
+}
+#TB_window {
+	Z-INDEX: 102; BORDER-BOTTOM: #666 5px solid; POSITION: fixed; BORDER-LEFT: #666 5px solid; DISPLAY: none; BACKGROUND: #fff; COLOR: #000000; BORDER-TOP: #666 5px solid; TOP: 0px; BORDER-RIGHT: #666 5px solid; LEFT: 0px; _position: absolute
+}
+#TB_caption {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 25px; PADDING-RIGHT: 30px; HEIGHT: 25px; PADDING-TOP: 10px
+}
+#TB_closeWindow {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 25px; FLOAT: right; HEIGHT: 25px; PADDING-TOP: 10px
+}
+#TB_closeAjaxWindow {
+	TEXT-ALIGN: right; PADDING-BOTTOM: 7px; BACKGROUND-COLOR: #e8e8e8; PADDING-LEFT: 0px; PADDING-RIGHT: 10px; MARGIN-BOTTOM: 1px; PADDING-TOP: 5px
+}
+#TB_ajaxContent {
+	PADDING-BOTTOM: 15px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; OVERFLOW: auto; PADDING-TOP: 2px
+}
+#TB_load {
+	Z-INDEX: 101; POSITION: absolute; TEXT-ALIGN: center; WIDTH: 100%; DISPLAY: block; VISIBILITY: visible; OVERFLOW: visible; TOP: 50%; LEFT: 0px
+}
+#TB_loadContent {
+	POSITION: absolute; WIDTH: 250px; HEIGHT: 100px; VISIBILITY: visible; MARGIN-LEFT: -125px; TOP: -50px; LEFT: 50%
+}

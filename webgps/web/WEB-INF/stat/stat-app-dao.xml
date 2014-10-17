@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-optlog-dao-bean</description>
+	<!-- Add DAOs here -->
+	<bean id="AlarmStatHibernateDao"
+		class="com.sosgps.wzt.stat.dao.hibernate.AlarmStatHibernateDao">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="DistanceStatHibernateDao" class="com.sosgps.wzt.stat.dao.hibernate.DistanceStatHibernateDao">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="VisitStatHibernateDao" class="com.sosgps.wzt.stat.dao.hibernate.VisitStatHibernateDao">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="TReportFilepathHibernateDao" class="com.sosgps.wzt.stat.dao.hibernate.TReportFilepathHibernateDao">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="AttendanceStatHibernateDao" class="com.sosgps.wzt.stat.dao.hibernate.AttendanceStatHibernateDao">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+</beans>
+
+
+

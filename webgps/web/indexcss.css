@@ -1,0 +1,51 @@
+
+BODY {
+	MARGIN-TOP: 0px; MARGIN-LEFT: 0px
+}
+.input3{ width:80px; height:18px; line-height:18px; border:1px solid #000;}
+.inputs{width:220px; height:264px;margin:15px auto 0 auto; text-align:center;}
+.input1{ width:140px; height:18px; line-height:18px; border:1px solid #000;}
+.input2{ width:122px; height:47px; border:none; background: url(../images/ao_but.gif); cursor:pointer; margin:8px 0 0 -16px;}
+.input4{ text-align:left;font-family:Arial,ËÎÌå;font-size:12px;padding:0;margin:0;border:0;line-height:22px;}
+.STYLE1 {
+	FONT-WEIGHT: 700; FONT-SIZE: 16px
+}
+.STYLE2 {
+	FONT-WEIGHT: 900; FONT-SIZE: 16px; COLOR: #636058
+}
+.STYLE3 {
+	FONT-WEIGHT: 900; FONT-SIZE: 12px; COLOR: #636058
+}
+A {
+	FONT-SIZE: 12px; CURSOR: pointer
+}
+A:link {
+	TEXT-DECORATION: none
+}
+A:visited {
+	TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #f00; TEXT-DECORATION: underline
+}
+.foot_1_1 {
+	FONT-SIZE: 18px; FLOAT: left; COLOR: #fff;
+}
+.foot_1_2 {
+	FONT-SIZE: 13px; FLOAT: left; COLOR: #fff;
+}
+.foot_1_3 {
+	FONT-SIZE: 12px; FLOAT: left; COLOR: #1a1817; 
+}
+.bt_1 {
+	PADDING-LEFT: 4px; FONT-WEIGHT: 900; FONT-SIZE: 34px; COLOR: #555346; FONT-FAMILY: 'Î¢ÈíÑÅºÚ'; WHITE-SPACE: nowrap; LETTER-SPACING: 2px
+}
+.bt_2 {
+	PADDING-LEFT: 4px; FONT-WEIGHT: bold; FONT-SIZE: 21px; COLOR: #555346; FONT-FAMILY: 'Î¢ÈíÑÅºÚ'; WHITE-SPACE: nowrap; LETTER-SPACING: 2px
+}
+.bt_3 {
+	PADDING-LEFT: 4px; FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #555346; FONT-FAMILY: 'Î¢ÈíÑÅºÚ'; WHITE-SPACE: nowrap; LETTER-SPACING: 2px
+}
+.img {
+	BORDER-RIGHT: #e7e7e7 1px solid; BORDER-TOP: #e7e7e7 1px solid; BORDER-LEFT: #e7e7e7 1px solid; BORDER-BOTTOM: #e7e7e7 1px solid
+}

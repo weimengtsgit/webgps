@@ -1,0 +1,289 @@
+/* CSS Document */
+A:link { COLOR: #051948 ;TEXT-DECORATION: none} 
+A:visited { COLOR: #051948;TEXT-DECORATION:none } 
+A:hover { COLOR: #ff0000; TEXT-DECORATION: underline } 
+A.wihte:link { COLOR:#ffffff ;TEXT-DECORATION: none}
+A.wihte:visited { COLOR: #ffffff;TEXT-DECORATION:none }
+A.wihte:hover { COLOR: #ff0000; TEXT-DECORATION: underline }
+BODY {
+    FONT-FAMILY: "宋体", "Arial";
+    FONT-SIZE: 12px;
+/*	scrollbar-face-color:#FF9900;
+	filter:chroma(color:ffffff);
+	scrollbar-highlight-color:#ffffff;
+	scrollbar-shadow-color:#ffffff;
+	scrollbar-3Dlight-color:#faa71b;
+	scrollbar-arrow-color:#ffffff;
+	scrollbar-track-color:#ffffff;
+	scrollbar-darkshadow-color:#faa71b;
+	background-color:#ffffff;*/
+	}
+TD { FONT-FAMILY:"宋体", "Arial"; FONT-SIZE: 9pt }
+P { LINE-HEIGHT: 150% }
+LI { LINE-HEIGHT: 150%}
+.unnamed1 {  line-height: 200%}
+.big { FONT-FAMILY: "宋体", "Arial"; FONT-SIZE: 14px }
+.line { line-height: 120%} 
+.he1 { COLOR:#ffffff; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; TEXT-DECORATION: none }
+.b21 { COLOR:#000000; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; TEXT-DECORATION: none }
+.path{
+   /* background-image:url(images/path.gif);
+	background-repeat:no-repeat;
+	background-position:left;
+	padding-left:64px;*/
+    TEXT-DECORATION: none;
+	color:#666666;
+	text-align:left;
+	padding-left:5px;
+}
+/*框架应用样式*/
+tr.line{
+    line-height:14px;
+	background-color:#999999;
+}
+tr.denglu{
+    background-image:url(./images/pat.gif);
+	font-size:12px;
+	color:#333333;
+	text-align:right;
+	padding-top:3px;
+	padding-bottom:0px;
+	height:24px;
+}
+tr.top_bg{
+    background-image:url(../images/logo_bj.jpg);
+	height:10px;
+}
+.top_text{       /*首页、业务处理、业务报表、业务资料等所用样式*/
+    font-family:"宋体", "Arial";
+	font-size:12px;
+	color:#333333;
+	padding-right:12px;
+	line-height:41px;
+	text-align:right;
+}
+/*框架应用样式*/
+/*报表应用样式*/
+td.top{
+  background-color:#BFBFBF;
+  height:31px;
+  width:100%;
+  padding-top:6px;
+  text-align:right;
+  vertical-align:middle;
+}
+td.title{
+  color:#333333;
+  font-weight:bolder;
+  background-color:#ffad00;
+  height:25px;
+  width:100%;
+  padding-left:6px;
+  vertical-align:middle;
+}
+td.fullscreen{
+    text-align:right;
+	background-image:url(images/fullscreen.gif);
+	background-repeat: no-repeat;
+	background-position: right;
+	padding-top:5px;
+	padding-right:24px;
+	padding-bottom:3px;
+}
+
+/*系统提示、修改密码、取回密码背景样式*/
+/*left应用样式*/
+.bodybg{
+    background-color:#FCDB78;
+}
+.mokuai{
+    color:#333333;
+	font-weight:bolder;
+	padding-left:6px;
+}
+.page{
+    color:#333333;
+	padding-left:6px;
+}
+td.pic{
+	text-align: right;
+    width:32px;
+	height:24px;
+}
+/*left应用样式*/
+/*用户身份文字*/
+td.sf{
+    color:#333333;
+	font-size:9pt;    
+}
+/*用户身份文字*/
+/*业务链接*/
+a.yw:link{
+    color:#333333;
+	font-size:9pt;
+	text-decoration:none;
+	padding-right:6pt;
+	padding-left:6pt;
+}
+a.yw:visited,a.yw:active,a.yw:ahover{
+    color:#333333;
+	font-size:9pt;
+	padding-right:6pt;
+	padding-left:6pt;
+}
+/*业务链接*/
+/*灰色input框样式*/
+.inp{
+    background-color:#eeeeee;
+	bolder:1px;
+}
+/*input框样式*/
+/*列表*/
+tr.list{
+  background-color:#FCf09e;
+  color:#000066;
+  height:26px;
+  text-align:center;
+}
+tr.llist{
+  background-color:#FCf09e;
+  color:#000066;
+  height:18px;
+  text-align:center;
+}
+td.tdllist{
+  background-color:#FCf09e;
+  color:#000066;
+  height:18px;
+  text-align:center;
+}
+td.tdlist{
+  background-color:#FCf09e;
+  color:#000066;
+  height:26px;
+  text-align:center;
+}
+/*列表*/
+/*列表内容样式*/
+table.conlist{
+	background-color:#f3f3f3;
+	color:#000000;
+	text-align:center;
+}
+/*列表内容样式*/
+.table_top{
+  color:#ffffff;
+  width:100%;
+  height:25pt;
+  bgcolor:#666666;
+}
+.list_table{
+  border:1pt;
+  cellpadding:1pt;
+  bordercolorlight:#999999;
+  bordercolordark:#ffffff;
+}
+.list_tr{
+  bgcolor:#f3f3f3;
+  text-align:center;
+}
+.list_td{
+  color:#333333;
+  text-align:center;
+}
+.table_bottom{
+  color:#000000;
+  width:100%;
+  hright:25pt;
+  bgcolor:#FCf09e;
+}
+.table_foot{
+  color:#000000;
+  width:100%;
+  hright:31pt;
+  bgcolor:#BFBFBF;
+}
+/*--------------------------------------------------------------------lab--------------------------------------------------------------------*/
+a.a2:link,a.a2:visited {
+	font-size: 12px;
+	font-family: 宋体, Arial;
+	font-weight:bolder;
+	text-decoration:none;
+	color: #eeeeee;
+	line-height : 14px;
+	padding-left : 4px;
+	padding-right : 4px;
+}
+a.a2:hover {
+	font-size:12px;
+	font-family: 宋体, Arial;
+	font-weight:bolder;
+	text-decoration:none;
+	color: #ffffff;
+	line-height : 14px;
+	padding-left : 4px;
+	padding-right : 4px;
+}
+a.a2:active {
+	font-size:12px;
+	font-family: 宋体, Arial;
+	text-decoration:none;
+	color: White;
+	line-height : 14px;
+	letter-spacing : 1px;
+	padding-left : 4px;
+	padding-right : 4px;
+}
+a.a1:link,a.a1:visited {
+	font-size:12px;
+	font-family: 宋体, Arial;
+	text-decoration:none;
+	color:#333333;
+	line-height : 14px;
+	letter-spacing : 1px;
+	padding-left : 4px;
+	padding-right : 4px;
+}
+a.a1:hover {
+	font-size:12px;
+	font-family: 宋体, Arial;
+	text-decoration:none;
+	color: #666666;
+	line-height : 14px;
+	letter-spacing : 1px;
+	padding-left : 4px;
+	padding-right : 4px;
+}
+a.a1:active {
+	font-size:12ptx;
+	font-family: 宋体, Arial;
+	text-decoration:none;
+	color: #666666;
+	line-height : 14px;
+	letter-spacing : 1px;
+	padding-left : 4px;
+	padding-right : 4px;
+}
+td.selected{
+    background-image:url(../images/selected.gif);
+	width:90px;
+	text-align:center;
+	padding-top:4px;
+
+}
+td.unselected{
+    background-image:url(../images/unselected.gif);
+	width:90px;
+	text-align:center;
+	padding-top:4px;
+
+}
+td.title1{ TEXT-DECORATION: none;color:#333333;text-align:left;padding-left:5px;background-color:#FCDB78;height:18px;font-weight:bolder;}
+td.title2{ TEXT-DECORATION: none;color:#ffffff;text-align:left;padding-left:5px;background-color:#999999;height:18px;font-weight:bolder;}
+/*--------------------------------------------------------------------lab--------------------------------------------------------------------*/
+/*-----------------------------------------------------  top'bottom  -----------------------------------------------------*/
+td.selected_line{ height:5px; background-color:#666666;}
+td.selected_line_shadow{ height:1px; background-color:#808080;}
+td.line_left{ }
+td.line_right{ width:300px; background-image:url(images/002.gif);}
+/*----------------------------------------------------  top'bottom  -----------------------------------------*/

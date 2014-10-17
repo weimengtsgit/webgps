@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-4-24 20:08:52 by Hibernate Tools 3.2.5.Beta -->
+<hibernate-mapping>
+ <class name="com.sosgps.wzt.orm.TVisitCountTj" table="T_VISIT_COUNT_TJ">
+  <id name="id" type="java.lang.Long">
+   <column name="ID" precision="22" scale="0"/>
+   <generator class="sequence">
+    <param name="sequence">SEQ_VISIT_COUNT_TJ</param>
+   </generator>
+  </id>
+  <property generated="never" lazy="false" name="deviceId" type="java.lang.String">
+   <column length="50" name="DEVICE_ID" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="vehicleNumber" type="java.lang.String">
+   <column length="100" name="VEHICLE_NUMBER"/>
+  </property>
+  <property generated="never" lazy="false" name="crtdate" type="java.util.Date">
+   <column length="7" name="CRTDATE"/>
+  </property>
+  <property generated="never" lazy="false" name="tjDate" type="java.util.Date">
+   <column length="7" name="TJ_DATE"/>
+  </property>
+  <property generated="never" lazy="false" name="visitCount" type="java.lang.Long">
+   <column name="VISIT_COUNT" precision="22" scale="0"/>
+  </property>
+  <property generated="never" lazy="false" name="visitCusCount" type="java.lang.Long">
+   <column name="VISIT_CUS_COUNT" precision="22" scale="0"/>
+  </property>
+  <property generated="never" lazy="false" name="visitPlaceCount" type="java.lang.Long">
+   <column name="VISIT_PLACE_COUNT" precision="22" scale="0"/>
+  </property>
+ </class>
+</hibernate-mapping>

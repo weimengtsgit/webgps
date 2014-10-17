@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/terminal.do" location="165,105" dimension="346,84" />
+  <StrutsActivity path="/terminal_view.jsp" location="650,150" dimension="148,48" />
+  <StrutsActivity path="/terminal_list.jsp" location="390,360" dimension="148,48" />
+  <StrutsActivity path="/terminal_add.jsp" location="75,345" dimension="142,48" />
+  <StrutsActivity path="/terminal_manager_left.jsp" location="60,255" dimension="196,48" />
+  <StrutsActivity path="/terminal_manager_right.jsp" location="495,255" dimension="202,48" />
+  <StrutsActivity path="/terminal_win.jsp" location="950,150" dimension="142,48" />
+  <StrutsActivity path="/terminal_.jsp" location="950,250" dimension="124,48" />
+  <StrutsActivity path="/terminal_manager.jsp" />
+  <StrutsTransition id="/terminal.do,tTargetGroup,/terminal_manager_left.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="241,189" />
+      <AbsolutePoint location="241,255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/terminal.do,tTargetObjectAdd,/terminal_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="285,189" />
+      <AbsolutePoint location="285,363" />
+      <AbsolutePoint location="217,363" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/terminal.do,tTargetObject,/terminal_manager_right.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="510,189" />
+      <AbsolutePoint location="510,255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/terminal.do,tTargetObjectList,/terminal_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="405,189" />
+      <AbsolutePoint location="405,360" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/terminal.do,tTargetObjectView,/terminal_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="511,165" />
+      <AbsolutePoint location="650,165" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/terminal.do,terminal_manager,/terminal_manager.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="338,147" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

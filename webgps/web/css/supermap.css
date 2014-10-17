@@ -1,0 +1,90 @@
+@CHARSET "GBK";
+/* CSS Document */
+html, body{margin:0 auto;text-align:center;font-family:宋体,Arial;font-size:12px;line-height:22px;background:#fff;width:100%;height:100%;} 
+html>/**/body body{line-height:20px;word-spacing:5px;}
+*+html html,*+html body{ position:relative;}
+div,table,form,h5,p{ text-align:left;font-family:Arial,宋体;font-size:12px;padding:0;margin:0;border:0;line-height:22px;}
+ul,li,ol,form,label{ margin:0;padding:0;list-style:none;}
+input{ display:inline;vertical-align:middle;height:26px;}
+img,a{ border:0;margin:0;padding:0;}
+a{ color:#375b96;text-decoration:none;}
+a:hover,a:active{ color:#375b96;text-decoration:none;}
+h6{ font-size:12px; margin:0; height:30px; line-height:30px; cursor:pointer; float:left; width:300px;}
+
+.supermap_supermap{ position:relative; z-index:10;width:100%;height:100%;left:0;top:0;}
+
+/*5元素*/
+.supermap_to{ width:200px; height:14px; position:absolute; top:0px; right:0px; z-index:100; cursor:pointer;}
+.supermap_self_hot_div{ width:150px;height:100px; position:absolute; z-index:60;}
+.supermap_list{ width:200px; height:400px; position:absolute; right:0px; top:0px;z-index:100; border:1px solid #375b96;}
+.supermap_bg{ width:200px; height:400px; position:absolute; right:0px; top:0px;z-index:9;background:#fff;FILTER:alpha(opacity=60);-moz-opacity:0.6; border:1px solid #375b96;}
+
+
+/*small操作按钮*/
+ul.supermap_map_cont{ width:200px; height:24x; background:url(../images/pane/titlebg.jpg) repeat-x;}
+html>/**/body ul.supermap_map_cont{ float:left;}
+ul.supermap_map_cont li{ width:65px; height:24px; float:left; text-align:center;cursor:pointer; line-height:24px; color:#375b96;}
+ul.supermap_map_cont li.supermap_cur{ width:76px; height:23px; background:url(../images/pane/supermap_cur.jpg); margin-top:1px; font-weight:bold;}
+
+
+
+/*地图搜索*/
+.supermap_map_input, .supermap_route_input{ width:200px; float:left; padding:10px 0 0 10px; line-height:34px;}
+.supermap_map_input img{ display:inline; vertical-align:middle; cursor:pointer;}
+.s_input1, .supermap_input2, .supermap_input3{ line-height:19px; height:19px; border:1px solid #666;}
+.s_input1{ width:50px; border-right:none;} .supermap_input2{ width:90px;} .supermap_input3{ width:140px;}
+
+.supermap_map_input .supermap_self_div{ position:absolute; left:40px; top:40px; background:#fff; border:1px solid #ccc; width:200px; height:100px;}
+html>/**/body .supermap_map_input .supermap_self_div{ left:37px;}
+*html  .supermap_map_input .supermap_self_div{ top:35px;}
+
+
+.supermap_map_list, .supermap_route_list{ width:200px; float:left;}
+.supermap_listtop{ width:200px; height:249px; color:#666; padding-right:18px; overflow:auto; overflow-x:hidden; background:#fff;scrollbar-face-color:#EEF0F4;scrollbar-3dlight-color:#A9B3CB;scrollbar-shadow-color:#A9B3CB;scrollbar-darkshadow-color:#ffffff;scrollbar-track-color:#F3F3F4;scrollbar-arrow-color:#5F719D;}
+html>/**/body .supermap_listtop{ width:200px; height:215px; padding:0;}
+.supermap_listtop img{ margin-top:5px;}
+.supermap_where{ float:left; width:200px; height:24px; line-height:24px; text-indent:10px;}
+
+
+
+.supermap_page{ width:200px; height:20px;float:left;}
+*html .supermap_page{ width:200px;}
+
+
+
+/*驾车线路*/
+.supermap_route_input img{ display:inline; vertical-align:middle; cursor:pointer;}
+.supermap_input4{ line-height:19px; height:19px; border:1px solid #666; width:80px;}
+.supermap_input5{ line-height:19px; height:19px; border:1px solid #666; border-right:none; width:50px;}
+.supermap_one1{ display:inline; vertical-align:middle; width:12px; height:12px; margin:-2px 2px 0 2px;}
+
+.supermap_route_list .supermap_listtop{ height:280px;margin-top:10px;}
+.supermap_route_title{ width:200px; height:30px; line-height:30px; text-indent:14px; background:#7e7e7e; color:#fff; float:left;}
+.supermap_tbbg{ border-bottom:1px solid #ccc; height:36px;}
+.supermap_tbbg1{ background:#e1e1e1; border-bottom:1px solid #ccc; height:36px;}
+
+/**/
+.supermap_choose{ height:370px;}
+.supermap_start, .supermap_start1, .supermap_start2{ width:160px; padding-left:20px; border-bottom:1px solid #ccc; line-height:20px; margin-bottom:5px;}
+.supermap_start1{ border-bottom:none;}
+.supermap_start2{ text-align:center; border-bottom:none;}
+ul.supermap_startarea{ width:160px; height:60px; border:1px solid #ccc; line-height:22px; overflow:auto; overflow-x:hidden;scrollbar-face-color:#EEF0F4;scrollbar-3dlight-color:#A9B3CB;scrollbar-shadow-color:#A9B3CB;scrollbar-darkshadow-color:#ffffff;scrollbar-track-color:#F3F3F4;scrollbar-arrow-color:#5F719D;}
+ul.supermap_startarea li{ float:left; width:140px; text-indent:10px; cursor:pointer;}
+ul.supermap_startarea li.supermap_itemarea{}
+
+/*城市选择*/
+.supermap_self_hot_div, .supermap_self_all_div{ position:absolute;z-index:12; border:1px solid #ccc; width:180px; height:160px; padding-bottom:5px;color:#666; background:#fff;}
+html>/**/body .supermap_self_hot_div, .supermap_self_all_div{height:140px;}
+a.supermap_yellow{padding:2px;line-height:22px;}
+a.supermap_yellow:hover{padding:2px;background:#FF9900;text-decoration:none;color:#fff;line-height:22px;}
+.supermap_citytitle{ width:140px; height:23px; margin:0 auto; border-bottom:1px solid #ccc;}
+
+.supermap_city_close{ width:12px; height:12px; background:url(http://www.mapabc.com/qnmap/images/supermap/supermap_cityclose.jpg) no-repeat; cursor:pointer; float:right; margin:6px 6px 0 0;}
+.supermap_city_close1{ width:12px; height:12px; background:url(http://www.mapabc.com/qnmap/images/supermap/supermap_cityclose1.jpg) no-repeat; cursor:pointer; float:right; margin:6px 6px 0 0;}
+
+.supermap_onbyone{ width:100%; height:120px; overflow:auto; overflow-x:hidden;scrollbar-face-color:#EEF0F4;scrollbar-3dlight-color:#A9B3CB;scrollbar-shadow-color:#A9B3CB;scrollbar-darkshadow-color:#ffffff;scrollbar-track-color:#F3F3F4;scrollbar-arrow-color:#5F719D;}
+.supermap_onbyone table{ margin:0 auto;}
+.supermap_item{ width:100%; cursor:pointer;}
+.supermap_item1{ width:100%; background:#f3f3f3; cursor:pointer;}
+
+

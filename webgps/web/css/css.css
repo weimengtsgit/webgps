@@ -1,0 +1,417 @@
+/* CSS Document */
+body{ height:100%;background-color:#CCCCCC; font-family:"宋体"; font-size:12px; margin:0px; padding:0px; border:0px;}
+div,ul,li,table,tr,td{ margin:0; padding:0; border:0;}
+.head{
+margin:0 auto 0 auto;
+width:100%;
+height:55px;
+background-image:url(../images/logo_bj.gif);
+background-repeat:repeat-x;}
+.logo{
+width:808px;
+height:55px;
+float:left;
+background-image:url(../images/logo.jpg);
+background-repeat:no-repeat;}
+.left{
+width:210px;
+margin-right:-220px;
+height:100%;
+/*width:auto;
+min-width:210px;
+max-width:250px;
+width:20%;*/
+float:left;
+/*height:auto;
+min-height:490px;
+/*height:490px;*/
+margin-top:5px;
+margin-left:5px;
+background:#CCCCCC;}
+.right{
+width:auto;
+height:100%;
+margin:0 3px 0 215px;
+/*width:75%;*/
+float:left;
+background:#CCCCCC;
+border-top:1px solid #bbbbbb;
+border-left:1px solid #bbbbbb;
+text-align:left;}
+.shrink{
+width:10px;
+height:100%;
+float:left;}
+.function_block{
+width:184px;
+float:left;}
+.function_bj{
+vertical-align:top;
+}
+.function_btnr{
+width:100%;
+border-collapse:collapse;
+border:1px solid #BBBBBB;
+background-color:#EEEEEE;}
+/*---------------------------左侧功能按纽样式----------------------------------------*/
+.function_btn1{
+	width:50%;
+	border-collapse:collapse;
+	height:24px;
+	line-height:24px;
+	border:1px solid #BBBBBB;
+	text-indent:26px;
+	word-break: break-all;
+	padding-right:3px;
+	background-image:url(../images/l_img1.gif);
+	background-position:2px;
+	background-repeat:no-repeat;
+	background-color: #FFFFFF;
+}
+.function_btn1_on{
+	width:50%;
+	border-collapse:collapse;
+	height:24px;
+	line-height:24px;
+	border:1px solid #BBBBBB;
+	text-indent:26px;
+	word-break: break-all;
+	padding-right:3px;
+	background-image:url(../images/l_img1.gif);
+	background-position:2px;
+	background-repeat:no-repeat;
+	background-color:e1e1e1;}
+.function_btn2{
+	width:50%;
+	border-collapse:collapse;
+	height:24px;
+	line-height:20px;
+	padding-right:3px;
+	border:1px solid #BBBBBB;
+	text-indent:26px;
+	word-break: break-all;
+	background-image:url(../images/l_img2.gif);
+	background-position:2px;
+	background-repeat:no-repeat;
+	background-color: #FFFFFF;
+}
+.function_btn2_on{
+	width:50%;
+	border-collapse:collapse;
+	height:24px;
+	line-height:20px;
+	padding-right:3px;
+	border:1px solid #BBBBBB;
+	text-indent:26px;
+	word-break: break-all;
+	background-image:url(../images/l_img2.gif);
+	background-position:2px;
+	background-repeat:no-repeat;
+	background-color: #e1e1e1;
+}
+.function_btn3{
+	width:50%;
+	border-collapse:collapse;
+	height:24px;
+	line-height:24px;
+	border:1px solid #BBBBBB;
+	padding-right:3px;
+	text-indent:26px;
+	word-break: break-all;
+	background-image:url(../images/l_img3.gif);
+	background-position:2px;
+	background-repeat:no-repeat;
+	background-color: #FFFFFF;
+}
+.function_btn3_on{
+	width:50%;
+	border-collapse:collapse;
+	height:24px;
+	line-height:20px;
+	padding-right:3px;
+	border:1px solid #BBBBBB;
+	text-indent:26px;
+	word-break: break-all;
+	background-image:url(../images/l_img3.gif);
+	background-position:2px;
+	background-repeat:no-repeat;
+	background-color: #e1e1e1;
+}
+.function_btn4{
+	width:50%;
+	border-collapse:collapse;
+	height:24px;
+	line-height:24px;
+	border:1px solid #BBBBBB;
+	padding-right:3px;
+	text-indent:26px;
+	word-break: break-all;
+	background-image:url(../images/l_img4.gif);
+	background-position:2px;
+	background-repeat:no-repeat;
+	background-color: #FFFFFF;
+}
+.function_btn4_on{
+	width:50%;
+	border-collapse:collapse;
+	height:24px;
+	line-height:20px;
+	padding-right:3px;
+	border:1px solid #BBBBBB;
+	text-indent:26px;
+	word-break: break-all;
+	background-image:url(../images/l_img4.gif);
+	background-position:2px;
+	background-repeat:no-repeat;
+	background-color: #e1e1e1;
+}
+.function_btn5{
+	width:50%;
+	border-collapse:collapse;
+	height:24px;
+	line-height:24px;
+	border:1px solid #BBBBBB;
+	padding-right:3px;
+    text-indent:26px;
+	word-break: break-all;
+	background-image:url(../images/l_img5.gif);
+	background-position:2px;
+	background-repeat:no-repeat;
+	background-color: #FFFFFF;
+}
+.function_btn5_on{
+	width:50%;
+	border-collapse:collapse;
+	height:24px;
+	line-height:20px;
+	padding-right:3px;
+	border:1px solid #BBBBBB;
+	text-indent:26px;
+	word-break: break-all;
+	background-image:url(../images/l_img5.gif);
+	background-position:2px;
+	background-repeat:no-repeat;
+	background-color: #e1e1e1;
+}
+.function_btn6{
+	width:50%;
+	border-collapse:collapse;
+	height:24px;
+	line-height:24px;
+	border:1px solid #BBBBBB;
+	padding-right:3px;
+	text-indent:26px;
+	word-break: break-all;
+	background-image:url(../images/l_img6.gif);
+	background-position:2px;
+	background-repeat:no-repeat;
+	background-color: #FFFFFF;
+}
+.function_btn6_on{
+	width:50%;
+	border-collapse:collapse;
+	height:24px;
+	line-height:20px;
+	padding-right:3px;
+	border:1px solid #BBBBBB;
+	text-indent:26px;
+	word-break: break-all;
+	background-image:url(../images/l_img6.gif);
+	background-position:2px;
+	background-repeat:no-repeat;
+	background-color: #e1e1e1;
+}
+/*-----------------------------------------------------------------------------------*/
+.function_area{
+border:1px solid #bbbbbb;
+background-color:#ffffff;
+border-collapse:collapse;}
+.left_mt{
+width:100%;
+height:3px;
+border-left:1px solid #bbbbbb;
+border-right:1px solid #bbbbbb;
+background:#eeeeee;}
+/*------------------------------导航部分及按纽样式-------------------------------*/
+.navibox{
+width:auto;
+margin:0 215px 0 0;
+margin-top:3px;
+/*width:790px;*/
+height:66px;
+background-image:url(../images/bj_navi.jpg);
+background-repeat:repeat-x;
+position:absolute;
+bottom:0px;
+}
+.naviul{
+height:66px;
+float:left;
+list-style:none;
+display:inline;
+margin:0px;}
+.btn1{
+width:54px;
+height:50px;
+float:left;
+display:inline;
+margin-right:1px;
+margin-left:15px;
+background-image:url(../images/btn1.gif);
+background-repeat:no-repeat;
+list-style-type:none;}
+.btn2{
+width:54px;
+height:50px;
+float:left;
+display:inline;
+margin-right:1px;
+background-image:url(../images/btn2.gif);
+background-repeat:no-repeat;
+list-style-type:none;}
+.btn3{
+width:54px;
+height:50px;
+float:left;
+display:inline;
+margin-right:1px;
+background-image:url(../images/btn3.gif);
+background-repeat:no-repeat;
+list-style-type:none;}
+.btn4{
+width:54px;
+height:50px;
+float:left;
+display:inline;
+margin-right:1px;
+background-image:url(../images/btn4.gif);
+background-repeat:no-repeat;
+list-style-type:none;}
+.btnmid{
+width:305px;
+height:66px;
+float:left;
+display:inline;
+text-align:center;
+background-image:url(../images/bj_navi_mid.jpg);
+background-repeat:no-repeat;
+list-style-type:none;}
+.btn5{
+width:54px;
+height:50px;
+float:left;
+display:inline;
+margin-right:1px;
+background-image:url(../images/btn5.gif);
+background-repeat:no-repeat;
+list-style-type:none;}
+.btn6{
+width:54px;
+height:50px;
+float:left;
+display:inline;
+margin-right:1px;
+background-image:url(../images/btn6.gif);
+background-repeat:no-repeat;
+list-style-type:none;}
+.btn7{
+width:54px;
+height:50px;
+float:left;
+display:inline;
+margin-right:1px;
+background-image:url(../images/btn7.gif);
+background-repeat:no-repeat;
+list-style-type:none;}
+.btn8{
+width:54px;
+height:50px;
+float:left;
+display:inline;
+margin-right:15px;
+background-image:url(../images/btn8.gif);
+background-repeat:no-repeat;
+list-style-type:none;}
+/*-------------------------------*/
+.btn1:hover{
+width:54px;
+height:50px;
+float:left;
+display:inline;
+margin-right:1px;
+margin-left:15px;
+background-image:url(../images/btn1_on.gif);
+background-repeat:no-repeat;
+list-style-type:none;}
+.btn2:hover{
+width:54px;
+height:50px;
+float:left;
+display:inline;
+margin-right:1px;
+background-image:url(../images/btn2_on.gif);
+background-repeat:no-repeat;
+list-style-type:none;}
+.btn3:hover{
+width:54px;
+height:50px;
+float:left;
+display:inline;
+margin-right:1px;
+background-image:url(../images/btn3_on.gif);
+background-repeat:no-repeat;
+list-style-type:none;}
+.btn4:hover{
+width:54px;
+height:50px;
+float:left;
+display:inline;
+margin-right:1px;
+background-image:url(../images/btn4_on.gif);
+background-repeat:no-repeat;
+list-style-type:none;}
+/*.btnmid{
+width:305px;
+height:66px;
+float:left;
+display:inline;
+margin-right:1px;
+background-image:url(../images/bj_navi_mid.jpg);
+background-repeat:no-repeat;
+list-style-type:none;}*/
+.btn5:hover{
+width:54px;
+height:50px;
+float:left;
+display:inline;
+margin-right:1px;
+background-image:url(../images/btn5_on.gif);
+background-repeat:no-repeat;
+list-style-type:none;}
+.btn6:hover{
+width:54px;
+height:50px;
+float:left;
+display:inline;
+margin-right:1px;
+background-image:url(../images/btn6_on.gif);
+background-repeat:no-repeat;
+list-style-type:none;}
+.btn7:hover{
+width:54px;
+height:50px;
+float:left;
+display:inline;
+margin-right:1px;
+background-image:url(../images/btn7_on.gif);
+background-repeat:no-repeat;
+list-style-type:none;}
+.btn8:hover{
+width:54px;
+height:50px;
+float:left;
+display:inline;
+margin-right:15px;
+background-image:url(../images/btn8_on.gif);
+background-repeat:no-repeat;
+list-style-type:none;}

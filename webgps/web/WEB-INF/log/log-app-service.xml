@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-optlog-service-bean</description>
+	<!-- Add Managers here -->	
+	<bean id="loginLoggerService"
+		class="com.sosgps.wzt.log.service.impl.LoginLoggerServiceImpl">
+		<property name="loginLogDao">
+			<ref bean="loginLogDao" />
+		</property>
+	</bean>
+	<bean id="optLoggerService"
+		class="com.sosgps.wzt.log.service.impl.OptLoggerServiceImpl">
+		<property name="optLogDao">
+			<ref bean="optLogDao" />
+		</property>
+	</bean>
+
+</beans>
+
+
+

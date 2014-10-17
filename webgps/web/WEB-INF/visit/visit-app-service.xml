@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-signBill-service-bean</description>
+	<!-- Add Managers here -->	
+	<bean id="visitService"
+		class="com.sosgps.v21.visit.service.impl.VisitServiceImpl">
+		<property name="visitDao">
+			<ref bean="VisitDao" />
+		</property>
+		<property name="targetDao">
+			<ref bean="TargetDao" />
+		</property>
+		<property name="targetTemplateDao">
+			<ref bean="TargetTemplateDao" />
+		</property>
+		<property name="layerAndPoiDao">
+			<ref bean="LayerAndPoiHibernateDao" />
+		</property>		
+	</bean>
+</beans>

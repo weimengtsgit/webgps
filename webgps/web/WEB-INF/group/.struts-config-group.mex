@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/group.do" location="350,50" dimension="280,84" />
+  <StrutsActivity path="/group_manager_left.jsp" location="615,180" dimension="178,48" />
+  <StrutsActivity path="/group_manager_right.jsp" location="210,255" dimension="184,48" />
+  <StrutsTransition id="/group.do,tTargetGroup,/group_manager_left.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="630,92" />
+      <AbsolutePoint location="704,92" />
+      <AbsolutePoint location="704,180" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/group.do,tTargetGroupCtl,/group_manager_right.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="379,134" />
+      <AbsolutePoint location="379,255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

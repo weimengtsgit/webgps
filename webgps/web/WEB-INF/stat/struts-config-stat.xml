@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+    "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<!-- ===================== Form Bean Definitions ===================== -->
+	<form-beans>
+
+	</form-beans>					
+
+	<!-- ===================== Action Mapping Definitions ===================== -->
+	<action-mappings>
+	<action 
+            path="/alarmStat" 
+			scope="request"
+			parameter="method"
+			type="com.sosgps.wzt.stat.action.AlarmStatAction">
+			<forward name="success"  path="/alarmCurrentDayMap.jsp"></forward>
+	</action>
+	<action 
+            path="/distanceStat" 
+			scope="request"
+			parameter="method"
+			type="com.sosgps.wzt.stat.action.DistanceStatAction">
+	</action>
+	<action 
+            path="/visitStat" 
+			scope="request"
+			parameter="method"
+			type="com.sosgps.wzt.stat.action.VisitStatAction">
+			<forward name="error" path="/stat-error.jsp"></forward>
+	</action>
+	<action 
+            path="/visitStatChart"
+			scope="request"
+			parameter="method"
+			type="com.sosgps.wzt.stat.action.VisitStatChartAction">
+			<forward name="chart" path="/visitStatChart.jsp"></forward>
+	</action>
+	<action 
+            path="/attendanceStat"
+			scope="request"
+			parameter="method"
+			type="com.sosgps.wzt.stat.action.AttendanceStatAction">
+	</action>
+	</action-mappings>
+	
+	<!-- ===================== Controller Definitions ===================== -->
+	<controller nocache="true" processorClass="org.sos.web.servlet.RequestProcessorSupport" />
+</struts-config>
+
+

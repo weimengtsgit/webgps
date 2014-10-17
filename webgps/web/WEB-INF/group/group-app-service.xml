@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-group-service-bean</description>
+	<!-- Add Managers here -->	
+	<bean id="tTargetGroupService"
+		class="com.sosgps.wzt.group.service.impl.GroupServiceImpl">
+		<property name="TTargetGroupDao">
+			<ref bean="tTargetGroupDao" />
+		</property>
+		<property name="TEntDAO">
+			<ref bean="tEntDAO" />
+		</property>
+		 
+	</bean>
+</beans>

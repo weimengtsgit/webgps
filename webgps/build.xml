@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<project default="jar" basedir=".">
+	<property name="build" value="web/WEB-INF/classes" />
+	<target name="jar">
+		<echo message="打包mapsearch.jar" />
+		<jar basedir="${build}" destfile="mapsearch.jar" excludes="*.properties,*.xml,*.dat,*.data,*.xls">
+		</jar>
+	</target>
+	<target name="jarAndProperties" depends="jar">
+		<echo message="压缩mapsearch-jarAndProperties.zip" />
+		<zip destfile="mapsearch-jarAndProperties.zip">
+			<fileset dir="src" includes="*.properties,*.xml,*.dat,*.data,*.xls">
+			</fileset>
+			<fileset file="mapsearch.jar">
+			</fileset>
+		</zip>
+	</target>
+	<target name="deploy" depends="jar">
+		<echo message="拷贝mapsearch.jar至web/WEB-INF/lib" />
+		<copy todir="web/WEB-INF/lib" overwrite="true">
+			<fileset file="mapsearch.jar" />
+		</copy>
+		<echo message="创建web/WEB-INF/classes" />
+		<mkdir dir="web/WEB-INF/classes" />
+		<echo message="拷贝配置文件至web/WEB-INF/classes" />
+		<copy todir="web/WEB-INF/classes" overwrite="true">
+			<fileset dir="src" includes="*.properties,*.xml,*.dat,*.data,*.xls">
+			</fileset>
+		</copy>
+		<echo message="压缩mapsearch.zip" />
+		<zip destfile="mapsearch.zip">
+			<fileset dir="web">
+			</fileset>
+		</zip>
+		<echo message="清除web/WEB-INF/lib/mapsearch.jar和web/WEB-INF/classes" />
+		<delete file="web/WEB-INF/lib/mapsearch.jar" />
+		<delete dir="web/WEB-INF/classes" />
+	</target>
+</project>

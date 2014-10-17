@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+    "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<data-sources>
+	</data-sources>
+	<!-- ===================== Form Bean Definitions ===================== -->
+	<form-beans>
+		<form-bean name="ModuleGroupForm" type="com.sosgps.wzt.system.form.ModuleGroupForm" />
+		<form-bean name="ModuleNewForm" type="com.sosgps.wzt.system.form.ModuleNewForm" />
+		<form-bean name="ModuleForm" type="com.sosgps.wzt.system.form.ModuleForm" />
+		<form-bean name="RoleForm" type="com.sosgps.wzt.system.form.RoleForm" />
+		<form-bean name="UserForm" type="com.sosgps.wzt.system.form.UserForm" />
+		<form-bean name="LoginForm" type="com.sosgps.wzt.system.form.LoginForm" />
+		<form-bean name="RefEntCalledNumberForm"
+			type="com.sosgps.wzt.system.form.RefEntCalledNumberForm" />
+		<form-bean name="EntForm" type="com.sosgps.wzt.system.form.EntForm" />
+		<form-bean name="TermLocCfgForm" type="com.sosgps.wzt.system.form.TermLocCfgForm"></form-bean>
+	</form-beans>
+	<global-exceptions>
+	</global-exceptions>
+	<global-forwards>
+	</global-forwards>
+	<!-- ===================== Action Mapping Definitions ===================== -->
+	<action-mappings>
+		<action path="/moduleGroup" name="ModuleGroupForm"
+			type="com.sosgps.wzt.system.action.ModuleGroupAction" scope="request"
+			parameter="method">
+			<forward name="init" path="/newModuleGroup.jsp" />
+			<forward name="displayList" path="/queryGroupList.jsp" />
+			<forward name="view" path="/viewModuleGroup.jsp" />
+			<forward name="modify" path="/modifyModuleGroup.jsp" />
+			<forward name="createSuccess" path="/queryGroupList.jsp" />
+			<forward name="message" path="/../message.jsp" />
+		</action>
+
+		<action path="/moduleManager" name="ModuleNewForm"
+			type="com.sosgps.wzt.system.action.ModuleManagerAction" scope="request"
+			parameter="method">
+			<forward name="view" path="/moduleManager.jsp" />
+			<forward name="success" path="/moduleManager.do?method=view" />
+		</action>
+
+
+		<action name="ModuleForm" path="/module"
+			type="com.sosgps.wzt.system.action.ModuleAction" parameter="method"
+			scope="request">
+			<forward name="init" path="/newModule.jsp" />
+			<forward name="modify" path="/modifyModule.jsp"></forward>
+			<forward name="displayList" path="/queryModuleList.jsp"></forward>
+			<forward name="view" path="/viewModule.jsp" />
+			<forward name="createSuccess" path="/queryModuleList.jsp"></forward>
+			<forward name="message" path="/../message.jsp" />
+		</action>
+
+		<action path="/role" name="RoleForm"
+			type="com.sosgps.wzt.system.action.RoleAction" scope="request"
+			parameter="method">
+			<forward name="init" path="/newRole.jsp" />
+			<forward name="createSuccess" path="/queryRoleList.jsp" />
+			<forward name="modify" path="/modifyRole.jsp" />
+			<forward name="displayList" path="/queryRoleList.jsp" />
+			<forward name="view" path="/viewRole.jsp" />
+			<forward name="message" path="/../message.jsp" />
+		</action>
+
+		<action path="/sysrole" name="RoleForm"
+			type="com.sosgps.wzt.system.action.SysRoleAction" scope="request"
+			parameter="method">
+			<forward name="init" path="/newRole.jsp" />
+			<forward name="createSuccess" path="/queryRoleList.jsp" />
+			<forward name="modify" path="/modifyRole.jsp" />
+			<forward name="displayList" path="/queryRoleList.jsp" />
+			<forward name="empList" path="/empRoleList.jsp" />
+			<forward name="view" path="/viewRole.jsp" />
+			<forward name="message" path="/../message.jsp" />
+		</action>
+		<action path="/emprole" name="RoleForm"
+			type="com.sosgps.wzt.system.action.EmpRoleAction" scope="request"
+			parameter="method">
+			<forward name="init" path="/newEmpRole.jsp" />
+			<forward name="createSuccess" path="/queryEmpRoleList.jsp" />
+			<forward name="modify" path="/modifyEmpRole.jsp" />
+			<forward name="displayList" path="/queryEmpRoleList.jsp" />
+			<forward name="viewEmp" path="/viewEmpRole.jsp" />
+			<forward name="message" path="/../message.jsp" />
+		</action>
+		<action name="UserForm" path="/user" parameter="method" scope="request"
+			type="com.sosgps.wzt.system.action.UserAction">
+			<forward name="init" path="/newUser.jsp" />
+			<forward name="initModifyPassword" path="/modifyPassword.jsp" />
+			<forward name="view" path="/viewUser.jsp" />
+			<forward name="modify" path="/modifyUser.jsp" />
+			<forward name="createSuccess" path="/user.do?method=displayList" />
+			<forward name="displayList" path="/queryUserList.jsp" />
+			<forward name="empList" path="/empList.jsp" />
+			<forward name="message" path="/../message.jsp" />
+		</action>
+
+		<action name="UserForm" path="/empuser" parameter="method"
+			scope="request" type="com.sosgps.wzt.system.action.EmpUserAction">
+			<forward name="init" path="/newUser.jsp" />
+			<forward name="view" path="/viewUser.jsp" />
+			<forward name="modify" path="/modifyUser.jsp" />
+			<forward name="createSuccess" path="/queryUserList.jsp" />
+			<forward name="displayList" path="/queryUserList.jsp" />
+			<forward name="empList" path="/empList.jsp" />
+			<forward name="message" path="/../message.jsp" />
+		</action>
+
+		<action name="UserForm" path="/sysuser" parameter="method"
+			scope="request" type="com.sosgps.wzt.system.action.SysUserAction">
+			<forward name="init" path="/newUser.jsp" />
+			<forward name="view" path="/viewUser.jsp" />
+			<forward name="modify" path="/modifyUser.jsp" />
+			<forward name="createSuccess" path="/queryUserList.jsp" />
+			<forward name="displayList" path="/queryUserList.jsp" />
+			<forward name="empList" path="/empList.jsp" />
+			<forward name="message" path="/../message.jsp" />
+		</action>
+
+		<action path="/shortMessage" name="LoginForm"
+			type="com.sosgps.wzt.system.action.ShortMessageAction" scope="request"
+			parameter="method">
+			<forward name="SendSuccess" path="/sendMessageSucceed.html" />
+			<forward name="SendFail" path="/sendMessageFailed.html" />
+			<forward name="SendMessageAlert" path="/sendMessageAlert.jsp" />
+		</action>
+
+		<action path="/validateCode" type="com.sosgps.wzt.system.action.ValidateCodeAction"
+			scope="request" parameter="method">
+		</action>
+		<action path="/enterpManage" type="com.sosgps.wzt.system.action.EnterpManageAction"
+			scope="request" parameter="method">
+			<forward name="entDetailInfo" path="/entDetailInfo.jsp" />
+			<forward name="entList" path="/enterpManage.do?method=getEntInfoList" />
+			<forward name="showEntList" path="/entInfoList.jsp" />
+		</action>
+
+		<action path="/refEntCalledNumber" name="RefEntCalledNumberForm"
+			type="com.sosgps.wzt.system.action.RefEntCalledNumberAction" scope="request"
+			parameter="method">
+			<forward name="init" path="/newEntCallednumber.jsp" />
+			<forward name="displayList" path="/entCallednumberList.jsp" />
+			<forward name="modify" path="/newEntCallednumber.jsp" />
+			<forward name="view" path="/viewEntCallednumber.jsp" />
+			<forward name="show" path="/refEntCalledNumber.do?method=view" />
+		</action>
+		<action path="/ent" name="EntForm"
+			type="com.sosgps.wzt.system.action.EntAction" scope="request"
+			parameter="method">
+			<forward name="init" path="/newEnt.jsp" />
+			<forward name="list" path="/entList.jsp" />
+			<forward name="modify" path="/newEnt.jsp" />
+			<forward name="view" path="/viewEnt.jsp" />
+			<forward name="showList" path="/ent.do?method=displayList" />
+		</action>
+	</action-mappings>
+	<!-- ===================== Controller Definitions ===================== -->
+	<controller nocache="true"
+		processorClass="org.sos.web.servlet.RequestProcessorSupport" />
+</struts-config>

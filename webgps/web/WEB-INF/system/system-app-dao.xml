@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-appfuse-dao-bean</description>
+	<!-- Add DAOs here -->
+	<bean id="tModuleGroupDao" class="com.sosgps.wzt.system.dao.hibernate.TModuleGroupDaoImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+
+	<bean id="tModuleDao" class="com.sosgps.wzt.system.dao.hibernate.TModuleDaoImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+
+	<bean id="tempShortMessageDao"
+		class="com.sosgps.wzt.system.dao.hibernate.TempShortMessageDaoImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="tBossRoleDao" class="com.sosgps.wzt.system.dao.hibernate.TBossRoleDaoImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="refUserRoleDao" class="com.sosgps.wzt.system.dao.hibernate.RefUserRoleDaoImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+
+	<bean id="tRoleDao" class="com.sosgps.wzt.system.dao.hibernate.TRoleDaoImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+
+	<bean id="refModuleRoleDao"
+		class="com.sosgps.wzt.system.dao.hibernate.RefModuleRoleDaoImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+
+	<bean id="tUserDao" class="com.sosgps.wzt.system.dao.hibernate.TUserDaoImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="tEntDao" class="com.sosgps.wzt.system.dao.hibernate.TEntHibernateDao">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="configDao" class="com.sosgps.wzt.system.dao.hibernate.ConfigDaoImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="tempOnlineUserDao"
+		class="com.sosgps.wzt.system.dao.hibernate.TempOnlineUserDaoImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="connectDao" class="com.sosgps.wzt.util.ConnectDao">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="enterpManageJdbcDao" class="com.sosgps.wzt.system.dao.jdbc.EnterpManageJdbcDaoImpl">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate" />
+		</property>
+	</bean>
+	<bean id="refEntCalledNumberDao"
+		class="com.sosgps.wzt.system.dao.hibernate.RefEntCalledNumberHibernateDao">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/viewTermGroup.do" location="0,297" dimension="454,84" />
+  <StrutsActivity path="/termGroupManage.do" location="587,0" dimension="454,84" />
+  <StrutsActivity path="/findTermByGroupId.do" location="0,574" dimension="394,84" />
+  <StrutsActivity path="/terminalManage.do" location="0,703" dimension="394,84" />
+  <StrutsActivity path="/test_ent_term_group.jsp" location="11,481" dimension="184,48" />
+  <StrutsActivity path="/left_up.jsp" location="295,481" dimension="112,48" />
+  <StrutsActivity path="/Edit_Terminal_In_Group.jsp" location="0,204" dimension="202,48" />
+  <StrutsActivity path="/Ent_User_List_Show.jsp" location="302,204" dimension="178,48" />
+  <StrutsActivity path="/User_Term_Group_Edit.jsp" location="580,204" dimension="190,48" />
+  <StrutsActivity path="/Group_Edit_Right.jsp" location="870,204" dimension="166,48" />
+  <StrutsActivity path="/Group_Edit_Left.jsp" location="1136,204" dimension="160,48" />
+  <StrutsTransition id="/termGroupManage.do,list,/Ent_User_List_Show.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="700,84" />
+      <AbsolutePoint location="700,144" />
+      <AbsolutePoint location="391,144" />
+      <AbsolutePoint location="391,204" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/viewTermGroup.do,viewEntTermGroupPage,/test_ent_term_group.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="113,381" />
+      <AbsolutePoint location="113,431" />
+      <AbsolutePoint location="103,431" />
+      <AbsolutePoint location="103,481" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/termGroupManage.do,editUserTermGroup,/User_Term_Group_Edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="776,84" />
+      <AbsolutePoint location="776,174" />
+      <AbsolutePoint location="675,174" />
+      <AbsolutePoint location="675,204" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/termGroupManage.do,viewEntTermGroupPage,/Group_Edit_Left.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="927,84" />
+      <AbsolutePoint location="927,144" />
+      <AbsolutePoint location="1176,144" />
+      <AbsolutePoint location="1176,204" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/termGroupManage.do,userViewTermGroupPage,/Group_Edit_Left.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1003,84" />
+      <AbsolutePoint location="1003,114" />
+      <AbsolutePoint location="1256,114" />
+      <AbsolutePoint location="1256,204" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/termGroupManage.do,self,/Group_Edit_Right.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="851,84" />
+      <AbsolutePoint location="851,174" />
+      <AbsolutePoint location="953,174" />
+      <AbsolutePoint location="953,204" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/termGroupManage.do,editTerminalInGroup,/Edit_Terminal_In_Group.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="624,84" />
+      <AbsolutePoint location="624,114" />
+      <AbsolutePoint location="101,114" />
+      <AbsolutePoint location="101,204" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/viewTermGroup.do,userViewTermGroupPage,/left_up.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="340,381" />
+      <AbsolutePoint location="340,431" />
+      <AbsolutePoint location="351,431" />
+      <AbsolutePoint location="351,481" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

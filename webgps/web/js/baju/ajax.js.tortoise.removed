@@ -1,0 +1,87 @@
+	function ajaxObj()
+{
+	var xmlHttp=""; 
+	var today = new Date();
+	var regexp1 = /<script(.|\n)*?>(.|\n|\r\n)*?<\/script>/ig;
+	var regexp2 = /<script(.|\n)*?>((.|\n|\r\n)*)?<\/script>/im;
+	if(window.XMLHttpRequest) {//Mozilla         浏览器 
+		xmlHttp = new XMLHttpRequest(); 
+		if (xmlHttp.overrideMimeType)  {//设置MiME 类别 
+			 xmlHttp.overrideMimeType("text/xml"); 
+		} 
+	} 
+	else if (window.ActiveXObject) { // IE 浏览器 
+		try  { 
+			 xmlHttp = new ActiveXObject("Msxml2.XMLHTTP"); 
+		} catch (e) { 
+			 try  { 
+				  xmlHttp = new ActiveXObject("Microsoft.XMLHTTP"); 
+			 } catch (e) {} 
+		} 
+	} 
+	
+
+	this.sendtocall=function(postpage,postvalue,body)//操作返回请求页信息
+	{
+		var xxx = "" ;
+		xmlHttp.open("POST", postpage, true); 
+		xmlHttp.onreadystatechange = function f() 
+		{ 
+			if (xmlHttp.readyState==4)
+			{ 
+				if (xmlHttp.status == 200 || xmlHttp.status == 0) {
+					xxx = xmlHttp.responseText ;
+					document.getElementById(body).innerHTML = xxx.replace(regexp1, "");
+					var text = xxx.match(regexp1);
+					if(text)
+					{
+						var scText=text;
+						for (var i = 0; i < scText.length; i++) {
+							var scTextOk = scText[i].match(regexp2);
+							var scriptElement = document.createElement('SCRIPT');
+								//scriptElement.text = "" ;
+							//if(scTextOk[0].indexOf("src")>0)//有JS调用页的情况。
+							//{
+								//var xUrl = scTextOk[0].replace(/<script(.|\n)*?src=/im,""); //检查出JS连接进行加载
+								//var url = xUrl.split(" ")[0];
+								//var text = this.sendtocall(url,null);
+								//scriptElement.text += text ;
+							//}
+							scriptElement.text += scTextOk[2];
+							document.body.appendChild(scriptElement);
+						}
+					}
+                }
+				else
+					alert("请求失败，请稍侯重试。");
+			}
+		}
+		xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+		xmlHttp.send(postvalue); 
+	}
+
+	this.out=function(postpage,body,postvalue)//写入页面元素中
+	{
+		this.sendtocall(postpage,postvalue,body);
+	}
+	
+	this.appenJs=function(scText)
+	{
+		if (scText) {
+			for (var i = 0; i < scText.length; i++) {
+				var scTextOk = scText[i].match(regexp2);
+				var scriptElement = document.createElement('SCRIPT');
+					//scriptElement.text = "" ;
+				//if(scTextOk[0].indexOf("src")>0)//有JS调用页的情况。
+				//{
+					//var xUrl = scTextOk[0].replace(/<script(.|\n)*?src=/im,""); //检查出JS连接进行加载
+					//var url = xUrl.split(" ")[0];
+					//var text = this.sendtocall(url,null);
+					//scriptElement.text += text ;
+				//}
+				scriptElement.text += scTextOk[2];
+				document.body.appendChild(scriptElement);
+			}
+		}
+	}
+}

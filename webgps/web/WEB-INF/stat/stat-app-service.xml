@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-stat-service-bean</description>
+	<!-- Add Managers here -->
+	<bean id="AlarmStatServiceImpl" class="com.sosgps.wzt.stat.service.impl.AlarmStatServiceImpl">
+		<property name="alarmStatDao">
+			<ref bean="AlarmStatHibernateDao" />
+		</property>
+	</bean>
+	<bean id="DistanceStatServiceImpl"
+		class="com.sosgps.wzt.stat.service.impl.DistanceStatServiceImpl">
+		<property name="distanceStatDao">
+			<ref bean="DistanceStatHibernateDao" />
+		</property>
+	</bean>
+	<bean id="VisitStatServiceImpl" class="com.sosgps.wzt.stat.service.impl.VisitStatServiceImpl">
+		<property name="visitStatDao">
+			<ref bean="VisitStatHibernateDao" />
+		</property>
+	</bean>
+	<bean id="TReportFilepathImpl" class="com.sosgps.wzt.stat.service.impl.TReportFilepathImpl">
+		<property name="tReportFilepathDao">
+			<ref bean="TReportFilepathHibernateDao" />
+		</property>
+	</bean>
+	<bean id="AttendanceStatServiceImpl" class="com.sosgps.wzt.stat.service.impl.AttendanceStatServiceImpl">
+		<property name="attendanceStatDao">
+			<ref bean="AttendanceStatHibernateDao" />
+		</property>
+	</bean>
+	<bean id="downLoadReportService"
+		class="com.sosgps.wzt.stat.report.impl.DownLoadReportServiceImpl">
+		<property name="terminalDAO" ref="tTargetObjectDao"></property>
+		<property name="rarPath" value="D:\Program Files\WinRAR\"></property>
+	</bean>
+</beans>
+
+
+

@@ -1,0 +1,18 @@
+.area_poi_icons{ 
+	top:100px; 
+	right:100px;
+	position:absolute; 
+	z-index:3; 
+}
+.add_icons{
+	background-image: url(../areaalarm/images/add.gif) !important;
+}
+.modify_icons{
+	background-image: url(../areaalarm/images/modify.gif) !important;
+}
+.del_icons{
+	background-image: url(../areaalarm/images/del.gif) !important;
+}
+.user_add_icons{
+	background-image: url(../areaalarm/images/user_add.gif) !important;
+}

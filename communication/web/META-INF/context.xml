@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/CommuniServer" reloadable="true"  crossContext="true">
+<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<!--   <Resource 
+		name="jdbc/wzt" 
+		author="Container" 
+		type="javax.sql.DataSource"
+		driverClassName="oracle.jdbc.driver.OracleDriver"
+		maxActive="100"
+		maxIdle="30"
+		maxWait="1000"
+		username="shandongwzt"
+		password="mapabc"
+		url="jdbc:oracle:thin:@172.17.40.52:1521:lbs"
+	  />
+	  
+ <Resource auth="Container" 
+    description="DB Connection" 
+    driverClass="oracle.jdbc.driver.OracleDriver" 
+    maxPoolSize="100" 
+    minPoolSize="30" 
+    acquireIncrement="2" 
+    name="jdbc/wzt"
+    user="shandongwzt" 
+    password="mapabc" 
+    factory="org.apache.naming.factory.BeanFactory" 
+    type="com.mchange.v2.c3p0.ComboPooledDataSource" 
+    jdbcUrl="jdbc:oracle:thin:@172.17.40.52:1521:lbs" /> 
+	  
+	 
+	  <Resource
+        name="jdbc/mydatasource"
+        auth="Container"
+        type="javax.sql.DataSource"
+        factory="org.logicalcobwebs.proxool.ProxoolDataSource"
+        proxool.alias="hrs"
+        user="joe"
+        password="******"
+        delegateProperties="foo=bar"
+        proxool.driver-url="jdbc:oracle:thin:@127.0.0.1:1521:DB"
+        proxool.driver-class="oracle.jdbc.driver.OracleDriver"/> -->
+</Context>

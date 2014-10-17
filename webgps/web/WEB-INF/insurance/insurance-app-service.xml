@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-insurance-service-bean</description>
+	<!-- Add Managers here -->	
+	<bean id="InsuranceServiceImpl"
+		class="com.sosgps.wzt.insurance.service.impl.InsuranceServiceImpl">
+		<property name="insuranceDaoImpl">
+			<ref bean="InsuranceDaoImpl" />
+		</property>
+	</bean>
+</beans>

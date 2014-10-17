@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://xfire.codehaus.org/config/1.0">
+
+	<service>
+		<name>CommonGatewayService</name>
+		<serviceClass>
+			com.autonavi.lbsgateway.service.ICommonGatewayService
+		</serviceClass>
+		<implementationClass>
+			com.autonavi.lbsgateway.service.CommonGatewayServiceImpl
+		</implementationClass>
+		<style>wrapped</style>
+		<use>literal</use>
+		<scope>application</scope>
+	</service>
+	
+</beans>

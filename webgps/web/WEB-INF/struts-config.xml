@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<!-- ===================== Form Bean Definitions ===================== -->
+	<form-beans>
+		<form-bean name="LoginForm" type="com.sosgps.wzt.system.form.LoginForm" />
+		<form-bean name="WelcomeForm" type="com.sosgps.wzt.system.form.WelcomeForm"/>
+	</form-beans>
+
+	<global-exceptions>
+		<exception key="errors.unknow" type="java.lang.Exception"
+			path="/error_system.jsp" />
+		<exception key="errors.app"
+			type="org.sos.exception.AppException"
+			handler="org.sos.exception.StrutsExceptionHandler"
+			path="/history_back.jsp" scope="request" />
+		<exception key="errors.web"
+			type="org.sos.exception.WebException"
+			handler="org.sos.exception.StrutsExceptionHandler"
+			path="/history_back.jsp" scope="request" />
+	</global-exceptions>
+
+	<!-- ===================== Global Forward Definitions ===================== -->
+	<global-forwards>
+		<forward name="invalid_token" path="/invalidSubmit.jsp"
+			redirect="true" contextRelative="true" />
+	</global-forwards>
+
+
+	<!-- ===================== Action Mapping Definitions ===================== -->
+	<action-mappings>
+	    <action 
+	    		name="LoginForm"
+	    		path="/login"
+	      		parameter="method"
+	      		scope="request"
+	     		type="com.sosgps.wzt.system.action.LoginAction">
+		      	<forward name="welcome"  path="/welcome.do?method=welcome"></forward>  
+		      	<forward name="login_zh_cn"  path="/index.jsp"></forward>
+		      	<forward name="login_en"  path="/index_en.jsp"></forward>
+		      	<forward name="login_zh_cnhnwl"  path="/index_hnwl.jsp"></forward>
+		      	<forward name="login_zh_cnjml"  path="/index_jml.jsp"></forward>
+		      	<forward name="login_zh_cnseagate"  path="/seagate.jsp"></forward>
+		      	<forward name="login_zh_cnbinbao"  path="/binbao.jsp"></forward>
+		      	<forward name="login_enbinbao"  path="/binbao_en.jsp"></forward>
+		      	<forward name="login_zh_cnjinji"  path="/jinji.jsp"></forward>
+		      	<forward name="login_zh_cn_np"  path="/index.jsp"></forward>
+		      	<forward name="login_zh_cnindex_gx"  path="/index_gx.jsp"></forward>
+		      	<forward name="error"  path="/error.jsp"></forward>      
+	    </action>
+	    <action 
+	    		path="/loginAlone"
+	      		parameter="method"
+	      		scope="request"
+	     		type="com.sosgps.wzt.system.action.LoginAloneAction">
+		      	<forward name="welcome"  path="/welcome.do?method=welcome"></forward>  
+		      	<forward name="login"  path="/index2.jsp"></forward>
+		      	<forward name="error"  path="/error.jsp"></forward>      
+	    </action>
+	    <action 
+	    		name="LoginForm"
+	    		path="/logout"
+	      		parameter="method"
+	      		scope="request"
+	     		type="com.sosgps.wzt.system.action.LogoutAction">
+		      	<forward name="logout_zh_cn"  path="/index.jsp"></forward>
+		      	<forward name="logout_zh_cnhnwl"  path="/index_hnwl.jsp"></forward>
+		      	<forward name="logout_zh_cnjml"  path="/index_jml.jsp"></forward>
+		      	<forward name="logout_zh_cnseagate"  path="/seagate.jsp"></forward>
+		      	<forward name="logout_zh_cnbinbao"  path="/binbao.jsp"></forward>
+		      	<forward name="logout_enbinbao"  path="/binbao_en.jsp"></forward>
+		        <forward name="logout_zh_cnjinji"  path="/jinji.jsp"></forward>
+		      	<forward name="logout_zh_cnindex_gx"  path="/index_gx.jsp"></forward>
+		      	<forward name="logout_en"  path="/index_en.jsp"></forward>
+	    </action>
+        <action name="WelcomeForm" 
+    		path="/welcome"
+			scope="request"
+			parameter="method"
+			type="com.sosgps.wzt.system.action.WelcomeAction">
+			<forward name="welcome"
+				path="/main.jsp">
+			</forward>
+			<forward name="init" path="/main/left.jsp"></forward>
+			<forward name="success" path="/main/index.jsp"></forward>
+		</action>
+		<action  
+            path="/lbs" 
+			scope="request"
+			parameter="method"
+			type="com.sosgps.wzt.lbs.action.LbsAction">
+		</action>
+		<action  
+            path="/t11lbs" 
+			scope="request"
+			parameter="method"
+			type="com.sosgps.t11thngame.action.LbsAction">
+		      	<forward name="init"  path="/t11thngame/lbsMap.jsp"></forward>    
+		      	<forward name="error"  path="/error.jsp"></forward>      
+		</action>
+	    <action 
+	    		path="/t11login"
+	      		parameter="method"
+	      		scope="request"
+	     		type="com.sosgps.t11thngame.action.T11LoginAction">
+		      	<forward name="welcome"  path="/welcome.do?method=welcome"></forward>    
+		      	<forward name="error"  path="/error.jsp"></forward>      
+	    </action>
+	    
+	</action-mappings>
+  </struts-config>
+
+

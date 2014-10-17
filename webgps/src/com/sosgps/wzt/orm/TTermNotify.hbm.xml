@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2009-12-16 10:15:48 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.sosgps.wzt.orm.TTermNotify" table="T_TERM_NOTIFY">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">SEQ_TERM_NOTIFY</param>
+            </generator>
+        </id>
+        <property name="deviceId" type="java.lang.String">
+            <column name="DEVICE_ID" length="50" not-null="true" />
+        </property>
+        <property name="notifyNumber" type="java.lang.String">
+            <column name="NOTIFY_NUMBER" length="50" not-null="true" />
+        </property>
+        <property name="userId" type="java.lang.Long">
+            <column name="USER_ID" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="USER_NAME" length="20" not-null="true" />
+        </property>
+        <property name="createDate" type="java.util.Date">
+            <column name="CREATE_DATE" length="7" />
+        </property>
+        <property name="entCode" type="java.lang.String">
+            <column name="ENT_CODE" length="20" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

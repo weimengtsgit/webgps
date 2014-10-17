@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-oiling-service-bean</description>
+	<!-- Add Managers here -->	
+	<bean id="OilingServiceImpl"
+		class="com.sosgps.wzt.oiling.service.impl.OilingServiceImpl">
+		<property name="oilingDaoImpl">
+			<ref bean="OilingDaoImpl" />
+		</property>
+	</bean>
+</beans>
+
+
+

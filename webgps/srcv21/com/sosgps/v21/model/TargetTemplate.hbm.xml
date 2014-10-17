@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.sosgps.v21.model">
+	<class name="TargetTemplate" table="t_target_template"
+		schema="MAPSEARCH">
+		<!-- id -->
+		<id name="id" type="java.lang.Long">
+			<column name="ID" precision="22" scale="0" />
+			<generator class="sequence">
+				<param name="sequence">seq_t_target_template</param>
+			</generator>
+		</id>
+		<property name="type" type="java.lang.Integer">
+			<column name="type" precision="22" scale="0" />
+		</property>
+		<property name="deviceId" type="java.lang.String">
+			<column name="device_id" />
+		</property>
+		<property name="visitAmount" type="java.lang.Integer">
+			<column name="visit_amount" />
+		</property>
+		<property name="cashAmount" type="java.lang.Double">
+			<column name="cash_amount" />
+		</property>
+		<property name="billAmount" type="java.lang.Double">
+			<column name="bill_amount" />
+		</property>
+		<property name="costAmount" type="java.lang.Double">
+			<column name="cost_amount" />
+		</property>
+		<property name="year" type="java.lang.Integer">
+			<column name="year" precision="22" scale="0" />
+		</property>
+		<property name="targetOn" type="java.lang.Integer">
+			<column name="target_on" precision="22" scale="0" />
+		</property>
+		<property name="groupId" type="java.lang.Long">
+			<column name="group_id" precision="22" scale="0" />
+		</property>
+		<property name="groupName" type="java.lang.String">
+			<column name="group_name" length="100" />
+		</property>
+		<property name="vehicleNumber" type="java.lang.String">
+			<column name="vehicle_number" length="100" />
+		</property>
+		<property name="entCode" type="java.lang.String">
+			<column name="ent_code" length="100" />
+		</property>
+		<property name="entId" type="java.lang.Long">
+			<column name="ent_id" precision="22" scale="0" />
+		</property>
+		<!-- common -->
+		<property name="states" type="java.lang.Integer">
+			<column name="states" precision="1" scale="0" />
+		</property>
+		<property name="createOn" type="java.lang.Long">
+			<column name="createon" precision="22" scale="0" />
+		</property>
+		<property name="createBy" type="java.lang.String">
+			<column name="createby" length="100" />
+		</property>
+		<property name="lastUpdateOn" type="java.lang.Long">
+			<column name="lastupdateon" precision="22" scale="0" />
+		</property>
+		<property name="lastUpdateBy" type="java.lang.String">
+			<column name="lastupdateby" length="100" />
+		</property>
+		<property name="terminalName" type="java.lang.String">
+			<column name="terminal_name" length="100" />
+		</property>
+		<property name="cusVisitAmount" type="java.lang.Integer">
+			<column name="cus_visit_amount" />
+		</property>
+	</class>
+</hibernate-mapping>

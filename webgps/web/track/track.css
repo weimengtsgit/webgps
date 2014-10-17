@@ -1,0 +1,31 @@
+    .media_controls_light_first {
+	    background-image: url(../track/images/track/media_controls_light_first.png) !important;
+	}
+	.media_controls_light_play {
+	    background-image: url(../track/images/track/media_controls_light_play.png) !important;
+	}
+	.media_controls_light_pause {
+	    background-image: url(../track/images/track/media_controls_light_pause.png) !important;
+	}
+	.media_controls_light_stop {
+	    background-image: url(../track/images/track/media_controls_light_stop.png) !important;
+	}
+	.media_controls_light_last {
+	    background-image: url(../track/images/track/media_controls_light_last.png) !important;
+	}
+	
+	.media_controls_dark_first {
+	    background-image: url(../track/images/track/media_controls_dark_first.png) !important;
+	}
+	.media_controls_dark_play {
+	    background-image: url(../track/images/track/media_controls_dark_play.png) !important;
+	}
+	.media_controls_dark_pause {
+	    background-image: url(../track/images/track/media_controls_dark_pause.png) !important;
+	}
+	.media_controls_dark_stop {
+	    background-image: url(../track/images/track/media_controls_dark_stop.png) !important;
+	}
+	.media_controls_dark_last {
+	    background-image: url(../track/images/track/media_controls_dark_last.png) !important;
+	}

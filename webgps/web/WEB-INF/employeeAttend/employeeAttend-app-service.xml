@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-target-service-bean</description>
+	<bean id="employeeAttendService"
+		class="com.sosgps.v21.employeeAttend.service.impl.EmployeeAttendServiceImpl">
+		<property name="employeeAttendDao">
+			<ref bean="employeeAttendDao" />
+		</property>
+	</bean>
+</beans>

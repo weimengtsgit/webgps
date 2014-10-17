@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+    "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<!-- ===================== Form Bean Definitions ===================== -->
+	<form-beans>
+		<form-bean name="tTargetObjectForm" type="com.sosgps.wzt.terminal.form.TerminalForm" />
+	</form-beans>
+
+	<!-- ===================== Action Mapping Definitions ===================== -->
+	<action-mappings>
+
+	<action 
+			attribute="tTargetObjectForm"
+			name="tTargetObjectForm"
+            path="/terminal"
+			scope="request"
+			parameter="method"
+			type="com.sosgps.wzt.terminal.action.TerminalAction">
+			<forward name="tTargetGroup"  path="/terminal_manager_left.jsp"></forward>
+			<forward name="tTargetObject"  path="/terminal_manager_right.jsp"></forward>
+			<forward name="tTargetObjectList"  path="/terminal_list.jsp"></forward>
+			<forward name="tTargetObjectAdd"  path="/terminal_add.jsp"></forward>
+			<forward name="tTargetObjectView"  path="/terminal_view.jsp"></forward>
+			<forward name="terminal_manager"  path="/terminal_manager.jsp"></forward>
+			<forward name="viewTTargetObject" path="/terminal.do?method=viewTTargetObject"></forward>
+			 
+	</action>
+	</action-mappings>
+	
+	<!-- ===================== Controller Definitions ===================== -->
+	<controller nocache="true" processorClass="org.sos.web.servlet.RequestProcessorSupport" />
+</struts-config>
+
+

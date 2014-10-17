@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-4-10 16:44:48 by Hibernate Tools 3.2.5.Beta -->
+<hibernate-mapping>
+    <class name="com.sosgps.wzt.orm.TOiling" table="T_OILING">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">SEQ_OILING</param>
+            </generator>
+        </id>
+        <property name="deviceId" type="java.lang.String">
+            <column name="DEVICE_ID" length="50" />
+        </property>
+        <property name="empCode" type="java.lang.String">
+            <column name="EMP_CODE" length="100" />
+        </property>
+        <property name="userId" type="java.lang.Long">
+            <column name="USER_ID" precision="8" scale="0" />
+        </property>
+        <property name="oilLiter" type="java.lang.Long">
+            <column name="OIL_LITER" precision="8" scale="-2" />
+        </property>
+        <property name="oilCost" type="java.lang.Long">
+            <column name="OIL_COST" precision="8" scale="-2" />
+        </property>
+        <property name="createDate" type="java.util.Date">
+            <column name="CREATE_DATE" length="7" />
+        </property>
+        <property name="changeDate" type="java.util.Date">
+            <column name="CHANGE_DATE" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

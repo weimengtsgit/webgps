@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-target-service-bean</description>
+	<!-- Add Managers here -->	
+	<bean id="travelCostService"
+		class="com.sosgps.v21.travelcost.service.impl.TravelCostServiceImpl">
+		<property name="travelCostDao">
+			<ref bean="TravelCostDao"/>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,147 @@
+
+html, body {
+    margin:0;
+    padding:0;
+    border:0 none;
+    overflow:hidden;
+    height:100%;
+    width:100%;
+}
+
+
+#header{
+   border:0 none;
+   background:#1E4176 url(../images/logo1.gif) repeat-x 0 0;
+   padding-top:2px;
+   padding-left:2px;
+}
+
+
+.loading-indicator {
+    font-size:11px;
+    background-image:url(../ext-3.1.1/resources/images/default/grid/loading.gif);
+    background-repeat: no-repeat;
+    background-position:top left;
+    padding-left:20px;
+	height:18px;
+	text-align:left;
+}
+
+
+#loading-mask{
+	position:absolute;
+	left:0;
+	top:0;
+    width:100%;
+    height:100%;
+    z-index:20000;
+    background-color:white;
+}
+#loading{
+	position:absolute;
+	left:45%;
+	top:40%;
+	padding:2px;
+	z-index:20001;
+    height:auto;
+}
+
+#loading .loading-indicator{
+	background:white;
+	color:#555;
+	font:bold 13px tahoma,arial,helvetica;
+	padding:10px;
+	margin:0;
+    text-align:center;
+    height:auto;
+}
+
+.icon-car {
+    background-image: url(../images/car.png) !important;
+}
+.icon-user {
+    background-image: url(../images/persion_1.gif) !important;
+}
+.icon-car1 {
+    background-image: url(../images/car1.png) !important;
+}
+.icon-user1 {
+    background-image: url(../images/persion_2.gif) !important;
+}
+.icon-userend {
+    background-image: url(../images/persionend.png) !important;
+}
+.icon-carend {
+    background-image: url(../images/carend.png) !important;
+}
+.icon-car2 {
+    background-image: url(../images/car2.png) !important;
+}
+.icon-user2 {
+    background-image: url(../images/persion_3.gif) !important;
+}
+.icon-pkg {
+    background-image: url(../images/pkg.gif) !important;
+}
+.icon-trackqueryload{
+	background-image: url(../images/wait.gif) !important;
+}
+.icon-trackquery{
+	background-image: url(../images/s.gif) !important;
+}
+
+
+
+.icon-folder {
+	background-image:url(../images/folder.gif) !important;
+}
+.icon-folder-open {
+	background-image:url(../images/folder-open.gif) !important;
+}
+.icon-elbow {
+	background-image:url(../images/elbow.gif) !important;
+}
+.icon-elbow-end {
+	background-image:url(../images/elbow-end.gif) !important;
+}
+.icon-leaf {
+	background-image:url(../images/leaf.gif) !important;
+}
+
+
+
+#action-panel .x-panel {
+	margin-bottom:3px;
+	margin-right:0;
+}
+#action-panel .x-panel-body {
+	border:0 none;
+}
+#action-panel .x-panel-body li {
+	margin:3px;
+}
+#action-panel .x-panel-body li img {
+	width:16px;
+	height:16px;
+	vertical-align:middle;
+	margin-right:2px;
+	margin-bottom:2px;
+}
+#action-panel .x-panel-body li a {
+	text-decoration:none;
+	color:#3764A0;
+}
+//报警中心 解除警报,定位 按钮样式
+.btn3_mouseout {
+BORDER-RIGHT: #2C59AA 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #2C59AA 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#C3DAF5); BORDER-LEFT: #2C59AA 1px solid; CURSOR: hand; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #2C59AA 1px solid
+}
+.btn3_mouseover {
+BORDER-RIGHT: #2C59AA 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #2C59AA 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#D7E7FA); BORDER-LEFT: #2C59AA 1px solid; CURSOR: hand; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #2C59AA 1px solid
+}
+.btn3_mousedown
+{
+BORDER-RIGHT: #FFE400 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #FFE400 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#C3DAF5); BORDER-LEFT: #FFE400 1px solid; CURSOR: hand; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #FFE400 1px solid
+}
+.btn3_mouseup {
+BORDER-RIGHT: #2C59AA 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #2C59AA 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#C3DAF5); BORDER-LEFT: #2C59AA 1px solid; CURSOR: hand; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #2C59AA 1px solid
+}

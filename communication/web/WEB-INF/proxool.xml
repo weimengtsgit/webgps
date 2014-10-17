@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--   
+	the proxool configuration can be embedded within your own   
+	application's. Anything outside the "proxool" tag is ignored.   
+-->
+<something-else-entirely>
+	<proxool>
+		<alias>dbname</alias>
+		<driver-url>jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=gps.cj7ichrehk06.ap-southeast-1.rds.amazonaws.com)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=gps)(SERVER=DEDICATED)))</driver-url>
+		<driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+		<driver-properties>
+			<property name="user" value="mapsearch" />
+			<property name="password" value="mapsearch" />
+		</driver-properties>
+		<maximum-connection-count>40</maximum-connection-count>
+		<minimum-connection-count>10</minimum-connection-count>
+		<house-keeping-sleep-time>3000</house-keeping-sleep-time>
+		<maximum-new-connections>50</maximum-new-connections>
+		<prototype-count>10</prototype-count>
+		<test-before-use>true</test-before-use>
+		<house-keeping-test-sql>
+			select sysdate from dual
+		</house-keeping-test-sql>
+		<!-- 某一时间点的最大连接数 -->
+		<simultaneous-build-throttle>10</simultaneous-build-throttle>
+
+		<!-- 连接最大时间活动 默认5分钟 单位：秒 -->
+		<maximum-active-time>120000</maximum-active-time>
+		<!-- 连接最大生命时间 默认4小时 单位：秒 -->
+		<maximum-connection-lifetime>600000</maximum-connection-lifetime>
+	</proxool>
+</something-else-entirely>

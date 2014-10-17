@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-cash-dao-bean</description>
+	<!-- Add by 2012-12-13 zss -->
+	<bean id="PromotionDao"
+		class="com.sosgps.v21.dao.impl.hibernate.PromotionDaoImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+</beans>

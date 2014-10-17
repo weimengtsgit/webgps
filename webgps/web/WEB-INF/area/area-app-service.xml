@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-area-service-bean</description>
+	<!-- Add Managers here -->	
+	<bean id="AreaServiceImpl"
+		class="com.sosgps.wzt.area.service.impl.AreaServiceImpl">
+		<property name="areaDAO">
+			<ref bean="AreaDAOImpl" />
+		</property>
+	</bean>
+</beans>

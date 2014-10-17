@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="WebApp_ID"
+	version="2.4"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>wzt</display-name>
+	<distributable/>
+	<!-- ContextLoaderListener -->
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	<listener>
+		<listener-class>
+			com.sosgps.wzt.system.util.UserSessionListener
+		</listener-class>
+	</listener>
+	<listener>
+		<listener-class>
+			com.sosgps.v21.listener.SystemInitListener
+		</listener-class>
+	</listener>
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+	<!--
+		- Location of the XML file that defines the root application context.
+		- Applied by ContextLoaderServlet. - - Can include
+		"/WEB-INF/dataAccessContext-local.xml" for a single-database -
+		context, or "/WEB-INF/dataAccessContext-jta.xml" for a two-database
+		context.
+	-->
+	<!-- weimeng 2012-9-17 v2.1 -->
+	<context-param>
+		<param-name>messageLocation</param-name>
+		<param-value>classpath:message/</param-value>
+	</context-param>
+	<!-- weimeng 2012-9-17 v2.1 -->
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/applicationContext.xml,
+			/WEB-INF/system/system-*.xml, 
+			/WEB-INF/log/log-*.xml,
+			/WEB-INF/manage/manage-*.xml, 
+			/WEB-INF/terminal/terminal-*.xml,
+			/WEB-INF/group/group-*.xml,
+			/WEB-INF/locate/locate-*.xml,
+			/WEB-INF/struction/struction-*.xml,
+			/WEB-INF/stat/stat-*.xml,
+			/WEB-INF/area/area-*.xml,
+			/WEB-INF/poi/poi-*.xml,
+			/WEB-INF/sms/sms-*.xml,
+			/WEB-INF/diary/diary-*.xml,
+			/WEB-INF/oiling/oiling-*.xml,
+			/WEB-INF/vehicleExpense/vehicleExpense-*.xml,
+			/WEB-INF/carTypeInfo/carTypeInfo-*.xml
+			/WEB-INF/diarymark/diarymark-*.xml,
+			/WEB-INF/diarymarktj/diarymarktj-*.xml,
+			/WEB-INF/insurance/insurance-*.xml,
+			/WEB-INF/vehiclesMaintenance/vehiclesMaintenance-*.xml,
+			/WEB-INF/annualExamination/annualExamination-*.xml,
+			/WEB-INF/toll/toll-*.xml,
+			/WEB-INF/driverLicense/driverLicense-*.xml,
+			/WEB-INF/dispatchMoney/dispatchMoney-*.xml,
+			/WEB-INF/vehicleNorm/vehicleNorm-*.xml,
+			/WEB-INF/target/target-*.xml,
+			/WEB-INF/signBill/signBill-*.xml,
+			/WEB-INF/targetTemplate/targetTemplate-*.xml,
+			/WEB-INF/cost/cost-*.xml,
+			/WEB-INF/cash/cash-*.xml,
+			/WEB-INF/visit/visit-*.xml,
+			/WEB-INF/emaillog/emaillog-*.xml,
+			/WEB-INF/email/Email-*.xml,
+			/WEB-INF/employeeAttend/employeeAttend-*.xml,
+			/WEB-INF/travelcost/travelcost-*.xml,
+			/WEB-INF/mobileMonitoring/mobileMonitoring-*.xml,
+			<!-- add by 2012-12-13 zss 促销上报 -->
+			/WEB-INF/promotion/promotion-*.xml
+		</param-value>
+	</context-param>
+	<context-param>
+		<description>信息采集服务地址</description>
+		<param-name>infoAcquisitionUrl</param-name>
+		<!-- <param-value>http://www.sosgps.net.cn/info/</param-value> -->
+		<!--<param-value>http://220.181.105.90/info/</param-value>-->
+		<param-value>http://localhost:8088/info/</param-value>
+	</context-param>
+	<!-- GBK Encodinbg Filter definition -->
+	<filter>
+		<filter-name>Set Character Encoding</filter-name>
+		<filter-class>
+			org.sos.context.SetRequestEncodingFilter
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>GBK</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>Set Character Encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Set Character Encoding</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	<!--  Filter response definition -->
+	<filter>
+		<filter-name>Response Filter</filter-name>
+		<filter-class>
+			org.sos.context.SetResponseEncodingFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Response Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Response Filter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>
+			org.apache.struts.action.ActionServlet
+		</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/system</param-name>
+			<param-value>
+				/WEB-INF/system/struts-config-system.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/log</param-name>
+			<param-value>
+				/WEB-INF/log/struts-config-log.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/manage</param-name>
+			<param-value>
+				/WEB-INF/manage/struts-config-manage.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/group</param-name>
+			<param-value>
+				/WEB-INF/group/struts-config-group.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/terminal</param-name>
+			<param-value>
+				/WEB-INF/terminal/struts-config-terminal.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/locate</param-name>
+			<param-value>
+				/WEB-INF/locate/struts-config-locate.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/stat</param-name>
+			<param-value>
+				/WEB-INF/stat/struts-config-stat.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/area</param-name>
+			<param-value>
+				/WEB-INF/area/struts-config-area.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/poi</param-name>
+			<param-value>
+				/WEB-INF/poi/struts-config-poi.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/fileupload</param-name>
+			<param-value>
+				/WEB-INF/fileupload/struts-config-fileload.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/struction</param-name>
+			<param-value>
+				/WEB-INF/struction/struts-config-struction.xml
+			</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>config/sms</param-name>
+			<param-value>
+				/WEB-INF/sms/struts-config-sms.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/diary</param-name>
+			<param-value>
+				/WEB-INF/diary/struts-config-diary.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/oiling</param-name>
+			<param-value>
+				/WEB-INF/oiling/struts-config-oiling.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/vehicleExpense</param-name>
+			<param-value>
+				/WEB-INF/vehicleExpense/struts-config-vehicleExpense.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/carTypeInfo</param-name>
+			<param-value>
+				/WEB-INF/carTypeInfo/struts-config-carTypeInfo.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/diarymark</param-name>
+			<param-value>
+				/WEB-INF/diarymark/struts-config-diarymark.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/diarymarktj</param-name>
+			<param-value>
+				/WEB-INF/diarymarktj/struts-config-diarymarktj.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/insurance</param-name>
+			<param-value>
+				/WEB-INF/insurance/struts-config-insurance.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/vehiclesMaintenance</param-name>
+			<param-value>
+				/WEB-INF/vehiclesMaintenance/struts-config-vehiclesMaintenance.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/annualExamination</param-name>
+			<param-value>
+				/WEB-INF/annualExamination/struts-config-annualExamination.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/toll</param-name>
+			<param-value>
+				/WEB-INF/toll/struts-config-toll.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/driverLicense</param-name>
+			<param-value>
+				/WEB-INF/driverLicense/struts-config-driverLicense.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/dispatchMoney</param-name>
+			<param-value>
+				/WEB-INF/dispatchMoney/struts-config-dispatchMoney.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/vehicleNorm</param-name>
+			<param-value>
+				/WEB-INF/vehicleNorm/struts-config-vehicleNorm.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/driverLicense</param-name>
+			<param-value>
+				/WEB-INF/driverLicense/struts-config-driverLicense.xml
+			</param-value>
+		</init-param>
+		
+		<!-- 2012-8-9 by weimeng -->
+		<init-param>
+			<param-name>config/target</param-name>
+			<param-value>
+				/WEB-INF/target/struts-config-target.xml
+			</param-value>
+		</init-param>
+		<!-- 2012-11-7 by wangzhen -->
+		<init-param>
+			<param-name>config/employeeAttend</param-name>
+			<param-value>
+				/WEB-INF/employeeAttend/struts-config-employeeAttend.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/travelcost</param-name>
+			<param-value>
+				/WEB-INF/travelcost/struts-config-travelcost.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/mobileMonitoring</param-name>
+			<param-value>
+				/WEB-INF/mobileMonitoring/struts-config-mobileMonitoring.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/signBill</param-name>
+			<param-value>
+				/WEB-INF/signBill/struts-config-signBill.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/targetTemplate</param-name>
+			<param-value>
+				/WEB-INF/targetTemplate/struts-config-targetTemplate.xml
+			</param-value>
+		</init-param>
+		<!--  add by 2012-12-13 zss 促销上报  -->
+		<init-param>
+			<param-name>config/promotion</param-name>
+			<param-value>
+				/WEB-INF/promotion/struts-config-promotion.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/cost</param-name>
+			<param-value>
+				/WEB-INF/cost/struts-config-cost.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/cash</param-name>
+			<param-value>
+				/WEB-INF/cash/struts-config-cash.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/visit</param-name>
+			<param-value>
+				/WEB-INF/visit/struts-config-visit.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config/emaillog</param-name>
+			<param-value>
+				/WEB-INF/emaillog/struts-config-emaillog.xml
+			</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>2</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>2</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>springHelper</servlet-name>
+		<servlet-class>org.sos.helper.SpringHelper</servlet-class>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>webInitServlet</servlet-name>
+		<servlet-class>
+			com.sosgps.wzt.system.util.WebInitServlet
+		</servlet-class>
+		<load-on-startup>4</load-on-startup>
+	</servlet>
+	
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!-- jfreechart -->
+	<servlet>
+		<servlet-name>DisplayChart</servlet-name>
+		<servlet-class>org.jfree.chart.servlet.DisplayChart</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DisplayChart</servlet-name>
+		<url-pattern>/DisplayChart</url-pattern>
+	</servlet-mapping>
+</web-app>
+

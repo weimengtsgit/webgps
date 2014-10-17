@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-cash-service-bean</description>
+	<!-- Add by 2012-12-13 zss -->
+	<bean id="promotionService"
+		class="com.sosgps.v21.cash.service.impl.PromotionServiceImpl">
+		<property name="promotionDao">
+			<ref bean="PromotionDao" />
+		</property>		
+		<property name="targetDao">
+			<ref bean="TargetDao" />
+		</property>
+		<property name="targetTemplateDao">
+			<ref bean="TargetTemplateDao" />
+		</property>
+	</bean>
+</beans>

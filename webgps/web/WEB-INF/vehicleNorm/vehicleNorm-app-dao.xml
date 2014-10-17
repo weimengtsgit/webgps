@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- Add DAOs here -->
+	<bean id="vehicleNormDaoImpl"
+		class="com.sosgps.wzt.vehiclenorm.dao.hibernate.VehicleNormDaoImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+</beans>
+
+
+

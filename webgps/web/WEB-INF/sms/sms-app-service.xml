@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- Add Managers here -->	
+	<bean id="SmsServiceImpl"
+		class="com.sosgps.wzt.sms.service.impl.SmsServiceImpl">
+		<property name="srcNumber">
+			<value>10000065</value>
+		</property>
+		<property name="smsWaitDao">
+			<ref bean="SmsWaitHibernateDao" />
+		</property>
+		<property name="smsReceiveDao">
+			<ref bean="SmsReceiveHibernateDao" />
+		</property>
+		<property name="smsAccountsDao">
+			<ref bean="SmsAccountsHibernateDao" />
+		</property>
+	</bean>
+</beans>
+
+
+

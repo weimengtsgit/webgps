@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-group-dao-bean</description>
+	<!-- Add DAOs here -->
+	<bean id="tTargetGroupDao"
+		class="com.sosgps.wzt.group.dao.hibernate.GroupDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	  <bean id="tEntDAO"
+		class="com.sosgps.wzt.orm.TEntDAO">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+</beans>
+
+
+

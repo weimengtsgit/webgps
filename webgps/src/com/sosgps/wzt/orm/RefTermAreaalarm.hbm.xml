@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2010-4-10 9:20:50 by Hibernate Tools 3.2.5.Beta -->
+<hibernate-mapping>
+    <class name="com.sosgps.wzt.orm.RefTermAreaalarm" table="REF_TERM_AREAALARM">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">SEQ_REF_TERM_AREAALARM</param>
+            </generator>
+        </id>
+        <many-to-one name="TArea" class="com.sosgps.wzt.orm.TArea" fetch="select">
+            <column name="AREA_ID" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="TTerminal" class="com.sosgps.wzt.orm.TTerminal" fetch="select">
+            <column name="DEVICE_ID" length="50" not-null="true" />
+        </many-to-one>
+        <property name="alarmType" type="java.lang.Long">
+            <column name="ALARM_TYPE" precision="22" scale="0" />
+        </property>
+        <property name="startTime" type="java.lang.String">
+            <column name="START_TIME" length="5" />
+        </property>
+        <property name="endTime" type="java.lang.String">
+            <column name="END_TIME" length="5" />
+        </property>
+    </class>
+</hibernate-mapping>

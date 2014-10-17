@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-signBill-service-bean</description>
+	<!-- Add Managers here -->	
+	<bean id="signBillService"
+		class="com.sosgps.v21.signBill.service.impl.SignBillServiceImpl">
+		<property name="signBillDao">
+			<ref bean="SignBillDao" />
+		</property>
+		<property name="targetDao">
+			<ref bean="TargetDao" />
+		</property>
+		<property name="targetTemplateDao">
+			<ref bean="TargetTemplateDao" />
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-alarm-dao-bean</description>
+	<!-- Add DAOs here -->
+ 
+	<bean id="ttStructionsDAO"
+		class="com.sosgps.wzt.struction.dao.hibernate.StructionDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	<bean id="SpeedCaseHibernateDao"
+		class="com.sosgps.wzt.struction.dao.hibernate.SpeedCaseHibernateDao">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+</beans>
+
+
+

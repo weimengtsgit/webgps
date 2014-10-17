@@ -1,0 +1,43 @@
+/* CSS Document */
+.STYLE1 {
+	font-family: "ËÎÌו";
+	font-weight: bold;
+	font-size: 28px;
+}
+
+-->
+body {
+	color: #000000;
+	background: #ffffff;
+}
+
+.tdstyle {
+	border: 2px solid #D6E3F3;
+	background: #fff;
+	font-size: 11px;
+	color: #000000;
+}
+
+.STYLE2 {
+	font-size: 10px;
+	/*font-weight: bold;*/
+}
+
+.STYLE3 {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.STYLE4 {
+	font-size: 10px
+}
+
+.STYLE5 {
+	font-size: 18px;
+	font-weight: bold;
+	font-family: simsun;
+}
+/*---------for IE 5.x bug*/
+html>body td {
+	font-size: 11px;
+}

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>ZongCanServer</display-name>
+  <servlet>
+    <servlet-name>ServletConfigurator</servlet-name>
+    <servlet-class>
+			org.logicalcobwebs.proxool.configuration.ServletConfigurator
+		</servlet-class>
+    <init-param>
+      <param-name>xmlFile</param-name>
+      <param-value>WEB-INF/proxool.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>StartServlet</servlet-name>
+    <servlet-class>
+			com.autonavi.lbsgateway.service.StartServlet
+		</servlet-class>
+    <load-on-startup>20</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>DealInstructionServlet</servlet-name>
+    <servlet-class>
+			com.autonavi.lbsgateway.service.DealInstructionServlet
+		</servlet-class>
+		<load-on-startup>50</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>TimerServlet</servlet-name>
+    <servlet-class>
+			com.autonavi.lbsgateway.service.TimerServlet
+	 </servlet-class>
+    
+  </servlet>
+  <servlet>
+    <servlet-name>ConnectionStaus</servlet-name>
+    <servlet-class>
+			com.autonavi.lbsgateway.service.UDPConnectionStateServlet
+	 </servlet-class>
+    <load-on-startup>80</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>Admin</servlet-name>
+    <servlet-class>
+			org.logicalcobwebs.proxool.admin.servlet.AdminServlet
+		</servlet-class>
+  </servlet>
+  <!-- udp photo save service -->
+  <servlet>
+    <servlet-name>UdpPhotoService</servlet-name>
+    <servlet-class>
+			com.autonavi.lbsgateway.service.udpphoto.UdpPhotoService
+		</servlet-class>
+		<load-on-startup>81</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Admin</servlet-name>
+    <url-pattern>/admin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StartServlet</servlet-name>
+    <url-pattern>/StartServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DealInstructionServlet</servlet-name>
+    <url-pattern>/servlet/DealInstructionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TimerServlet</servlet-name>
+    <url-pattern>/servlet/TimerServlet</url-pattern>
+  </servlet-mapping>
+  <!-- udp photo save service -->
+  <servlet-mapping>
+    <servlet-name>UdpPhotoService</servlet-name>
+    <url-pattern>/servlet/UdpPhotoService</url-pattern>
+  </servlet-mapping>
+  <resource-ref>
+    <description>DB Connection</description>
+    <res-ref-name>jdbc/wzt</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

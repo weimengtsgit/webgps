@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+    "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+  <data-sources>
+  </data-sources>
+  <!-- ===================== Form Bean Definitions ===================== -->
+  <form-beans>
+  </form-beans>
+  <global-exceptions>
+  </global-exceptions>
+  <global-forwards>
+  </global-forwards>
+  <action-mappings>
+    <!-- user view terminal group -->
+    <action path="/viewTermGroup" parameter="actionMethod" scope="request" type="com.sosgps.wzt.manage.terminalgroup.action.TerminalGroupManageAction">
+	 <forward name="userViewTermGroupPage" path="/left_up.jsp"/>
+	 <forward name="viewEntTermGroupPage" path="/test_ent_term_group.jsp"/>
+    </action>
+    <!-- terminal group manage -->
+    <action path="/termGroupManage" parameter="actionMethod" scope="request" type="com.sosgps.wzt.manage.terminalgroup.action.TerminalGroupManageAction">
+	 <forward name="userViewTermGroupPage" path="/Group_Edit_Left.jsp"/>
+	 <forward name="viewEntTermGroupPage" path="/Group_Edit_Left.jsp"/>
+	 <forward name="self" path="/Group_Edit_Right.jsp"/>
+	 <forward name="list" path="/Ent_User_List_Show.jsp"/>
+	 <forward name="editUserTermGroup" path="/User_Term_Group_Edit.jsp"/>
+	 <forward name="editTerminalInGroup" path="/Edit_Terminal_In_Group.jsp"></forward>
+    </action>
+    <!-- find terminal from terminal group -->
+    <action path="/findTermByGroupId" parameter="actionMethod" scope="request" type="com.sosgps.wzt.manage.terminal.action.TerminalManageAction">
+    </action>
+    <!-- terminal manage -->
+    <action path="/terminalManage" parameter="actionMethod" scope="request" type="com.sosgps.wzt.manage.terminal.action.TerminalManageAction">
+    </action>
+  </action-mappings>
+  <!-- ===================== Controller Definitions ===================== -->
+  <controller nocache="true" processorClass="org.sos.web.servlet.RequestProcessorSupport"/>
+</struts-config>

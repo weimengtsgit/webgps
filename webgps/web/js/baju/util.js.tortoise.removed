@@ -1,0 +1,184 @@
+//This function is to get parameters from URL
+function GetArgsFromHref(sArgName)
+{  
+    var sHref=window.location.href;
+    var args  = sHref.split("?");
+    var retval = "";
+    
+    if(args[0] == sHref) /*参数为空*/
+    {
+         return retval; /*无需做任何处理*/
+    }  
+    var str = args[1];
+    args = str.split("&");
+    for(var i = 0; i < args.length; i ++)
+    {
+        str = args[i];
+        var arg = str.split("=");
+        if(arg.length <= 1) continue;
+        if(arg[0] == sArgName) retval = arg[1]; 
+    }
+    return retval;
+}
+
+//Judge whether input is a number
+ function isNumber(oNum)
+ {
+     if(!oNum) return false;
+	 var strP=/^\d+(\.\d+)?$/;
+	 if(!strP.test(oNum)) return false;
+	 try{
+	 if(parseFloat(oNum)!=oNum) return false;
+	 }
+	 catch(ex)
+	 {
+	     return false;
+	 }
+	 return true;
+ }
+
+ function Rad(d){
+        return d * Math.PI / 180.0;
+ }
+ 
+ //Calculate distance between two points
+ function GetDistance(x1, y1, x2, y2) {
+        var radLat1 = Rad(y1);
+        var radLat2 = Rad(y2);
+        var a = radLat1 - radLat2;
+        var b = Rad(x1) - Rad(x2);
+        var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2) +Math.cos(radLat1) * Math.cos(radLat2) * Math.pow(Math.sin(b/2),2)));
+        s = s * 6378137.0 ;
+        s = Math.round(s * 10000) / 10000;
+        return s;
+ }
+ //Geocoding
+ function geocode(iptAddr){
+ 	 //CALL MAPABC SEARCH API
+   	 var startAdd = new MAddress();
+	 startAdd.setCity("");                            
+	 startAdd.setAddress(iptAddr);   
+	 var arr = new Array();
+	 arr.push(startAdd); 
+	 var geocode = new MGeoCode();
+	 geocode.setCallbackFunction(geocodingCallBack);
+	 geocode.geocoding(arr); 
+ }
+ //CALL MAPABC SEARCH API
+var sis = new MSISSearch();
+//Reverse geocoding
+function reverseGeocoding(x,y){
+	//CALL MAPABC SEARCH API
+    var searchspatialpara = new MSearchSpatialPara();
+    sis.setSISCallbackFunction(reverseGeocodingCallBack); 
+    searchspatialpara.setXY(x,y);
+    searchspatialpara.setPoiNumber("2");
+    searchspatialpara.setRange("200");
+    searchspatialpara.setPattern("1");
+    searchspatialpara.setLevel("0");
+    sis.reverseGeoCoding(searchspatialpara);
+}
+
+//search by a keyword
+function keywordSearch(keyword,city,keytype){
+	//CALL MAPABC SEARCH API
+    var searchpointpara = new MSearchPointPara(); 
+    sis.setSISCallbackFunction(keywordSearchCallBack);
+    searchpointpara.setCitycode(city);
+    searchpointpara.setKeyword(keyword);
+    searchpointpara.setSearchType(keytype);
+    searchpointpara.setNumber("10"); 
+    searchpointpara.setBatch("1"); 
+    sis.searchByKeyword(searchpointpara); 
+}
+
+
+
+//local search by center with lat/long
+function localSearch(x,y,keyword,rang,city,keytype){
+	//CALL MAPABC SEARCH API
+    var searchpointpara = new MSearchPointPara(); 
+    sis.setSISCallbackFunction(localSearchCallBack);
+    searchpointpara.setCitycode(city);
+    searchpointpara.setCenXY(x,y); 
+    searchpointpara.setKeyword(keyword);
+    searchpointpara.setSearchType(keytype);
+    searchpointpara.setRange(rang); 
+    searchpointpara.setNumber("10"); 
+    searchpointpara.setBatch("1"); 
+    sis.localSearchByXY(searchpointpara); 
+}
+//Search roads by name
+function searchRoadByName(roadName,city){
+	//CALL MAPABC SEARCH API
+	var sp = new MSearchSpatialPara();
+	sis.setSISCallbackFunction(searchRoadByNameCallBack); 
+	sp.setCitycode(city);
+	sp.setRoadName(roadName);
+	sp.setRoadLevel("0");
+	sis.searchRoadName(sp);
+}
+//search intersections by road ids
+function searchIntersectionByRoadId(id1,id2,city){
+	//CALL MAPABC SEARCH API
+	var sp = new MSearchSpatialPara();
+	sis.setSISCallbackFunction(searchIntersectionByRoadIdCallBack); 
+	sp.setCitycode(city);
+	sp.setFirstRoadId(id1);
+	sp.setSecondRoadId(id2);
+	sis.searchRoadIntersection(sp);
+}
+//search adjacent areas by a center with lat/long
+function searchDistrictByXy(x,y){
+	//CALL MAPABC SEARCH API
+	var sp = new MSearchPointPara();
+	sis.setSISCallbackFunction(searchDistrictByXyCallBack); 
+	sp.setCitycode("");
+	sp.setCenX(x);
+ 	sp.setPer(40);
+	sp.setCenY(y);
+	sp.setRange("1000");
+	sis.localSearchDistrictByXy(sp);
+}
+
+//generate a route
+function route(x1,y1,x2,y2,type)　
+{  
+    //CALL MAPABC SEARCH API
+　  var searchroutpara = new MSearchRoutPara();
+    sis.setSISCallbackFunction(searchDriverCallBack);　
+　  searchroutpara.setCitycode("010"); 
+　  searchroutpara.setStartX(x1);
+　  searchroutpara.setStartY(y1);
+　  searchroutpara.setEndX(x2);
+　  searchroutpara.setEndY(y2);
+　  searchroutpara.setRouteType(type);
+    //set search type is routing(while this function can also search bus transit solution)
+　  searchroutpara.setType("drive");
+  　sis.searchBusAndDrive(searchroutpara);
+}
+function searchDistrictByXyForUc11(x,y){
+	//CALL MAPABC SEARCH API
+	var sp = new MSearchPointPara();
+	sis.setSISCallbackFunction(searchDistrictByXyCallBack); 
+	sp.setCitycode("");
+	sp.setCenX(x);
+ 	sp.setPer(150);
+	sp.setCenY(y);
+	sp.setRange("0");
+	sis.localSearchDistrictByXy(sp);
+}
+//lat/long formatting
+function coordFormat(coord){
+    return coord.toFixed(6); 
+}
+
+
+function movepoint(x,y){
+  var bound =mapObj.getMapBound().split(';');
+  var left =bound[0].split(',');
+  var right =bound[1].split(',');
+  if((x<left[0] || x>right[0]) || (y<left[1] || y>right[1])){
+ 	 mapObj.setMapCenter(x+","+y); 
+  }
+}

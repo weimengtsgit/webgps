@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- Add Managers here -->	
+	<bean id="DispatchMoneyServiceImpl"
+		class="com.sosgps.wzt.dispatchmoney.service.impl.DispatchMoneyServiceImpl">
+		<property name="dispatchMoneyDaoImpl">
+			<ref bean="dispatchMoneyDaoImpl" />
+		</property>
+	</bean>
+</beans>
+
+
+

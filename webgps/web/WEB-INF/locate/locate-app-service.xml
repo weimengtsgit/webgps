@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>Locate-service-bean</description>
+	<!-- Add Managers here -->
+
+	<bean id="tLoccateService" class="com.sosgps.wzt.locate.service.impl.LocateServiceImpl">
+		<property name="TLocateDAO">
+			<ref bean="tLocateDAO" />
+		</property>
+		
+		<property name="lbsLocateDAO">
+			<ref bean="lbsLocateDAO" />
+		</property> 
+		
+		<property name="TLocrecordDao">
+			<ref bean="tLocrecordDao" />
+		</property> 
+		
+		<property name="oauth_consumer_key">
+			<value>l1test</value>
+		</property>
+		<property name="oauth_signature">
+			<value>123456</value>
+		</property>
+	</bean>
+
+</beans>
+
+
+

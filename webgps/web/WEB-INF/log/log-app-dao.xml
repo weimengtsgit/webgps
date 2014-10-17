@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-optlog-dao-bean</description>
+	<!-- Add DAOs here -->
+	<bean id="loginLogDao"
+		class="com.sosgps.wzt.log.dao.hibernate.LoginLogDaoImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+	
+		<bean id="optLogDao"
+		class="com.sosgps.wzt.log.dao.hibernate.OptLogDaoImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+ 
+</beans>
+
+
+

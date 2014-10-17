@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+    "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<!-- ===================== Form Bean Definitions ===================== -->
+ 				
+
+	<!-- ===================== Action Mapping Definitions ===================== -->
+	<action-mappings>
+
+	<action  
+            path="/locate" 
+			scope="request"
+			parameter="method"
+			type="com.sosgps.wzt.locate.action.LocateAction">
+			 
+			<forward name="init"  path="/locateMenu.jsp"></forward>
+			
+	</action>
+	 
+	
+	</action-mappings>
+	
+	<!-- ===================== Controller Definitions ===================== -->
+	<controller nocache="true" processorClass="org.sos.web.servlet.RequestProcessorSupport" />
+</struts-config>
+
+

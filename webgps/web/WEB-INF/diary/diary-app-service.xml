@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- Add Managers here -->	
+	<bean id="DiaryServiceImpl" class="com.sosgps.wzt.diary.service.impl.DiaryServiceImpl">
+		<property name="diaryDao">
+			<ref bean="DiaryHibernateDao" />
+		</property>
+		<property name="diaryMarkDao">
+			<ref bean="DiaryMarkHibernateDao" />
+		</property>
+	</bean>
+</beans>

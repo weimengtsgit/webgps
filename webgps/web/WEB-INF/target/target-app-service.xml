@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-target-service-bean</description>
+	<!-- Add Managers here -->	
+	<bean id="targetService"
+		class="com.sosgps.v21.target.service.impl.TargetServiceImpl">
+		<property name="targetDao">
+			<ref bean="TargetDao" />
+		</property>
+		<property name="groupDao">
+			<ref bean="tTargetGroupDao" />
+		</property>
+		<property name="targetTemplateDao">
+			<ref bean="TargetTemplateDao" />
+		</property>
+		<property name="signBillDao">
+			<ref bean="SignBillDao" />
+		</property>
+		<property name="costDao">
+			<ref bean="CostDao" />
+		</property>
+		<property name="cashDao">
+			<ref bean="CashDao" />
+		</property>
+		<property name="visitDao">
+			<ref bean="VisitDao" />
+		</property>
+		<property name="terminalDao">
+			<ref bean="tTargetObjectDao" />
+		</property>
+	</bean>
+</beans>

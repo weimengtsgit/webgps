@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+    "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<!-- ===================== Form Bean Definitions ===================== -->
+	<form-beans>
+
+	</form-beans>					
+
+	<!-- ===================== Action Mapping Definitions ===================== -->
+	<action-mappings>
+	<action 
+            path="/insurance" 
+			scope="request"
+			parameter="method"
+			type="com.sosgps.wzt.insurance.action.InsuranceAction">
+	</action>
+	</action-mappings>
+	
+	<!-- ===================== Controller Definitions ===================== -->
+	<controller nocache="true" processorClass="org.sos.web.servlet.RequestProcessorSupport" />
+</struts-config>
+
+

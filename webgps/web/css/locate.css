@@ -1,0 +1,107 @@
+/*孙敬伟*/
+body{
+	font-size: 13px;
+	/* margin: 0px;
+	papadding: 0px;*/
+}
+
+#locate{
+	/* border: solid 1px red; */
+	width:90%;
+	height:100%;
+	position: absolute;
+	margin: 0px;
+	/* padding: 0px;*/
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	padding-bottom: 12px;
+	/*background: url(../images/bottom.gif) no-repeat  right bottom;*/
+}
+#locate title{
+	
+	background: url(../images/toptitle.gif) no-repeat;
+	
+}
+/*==================一级目录===================*/
+#nav{
+	width:200px;
+	height:100%;
+	overflow:auto;
+	margin: 0px;
+	padding: 0px;
+}
+#nav li {
+	height: 25px;
+	background: url(../images/title.gif) repeat-x;
+	float:left;
+	/*float：left,本不应该设置，但由于在Firefox不能正常显示
+	继承Nav的width,限制宽度，li自动向下延伸*/
+}
+#nav li a {
+	width: 100%;
+	display: block;
+	padding: 5px 25px;
+	font-weight: bold;
+	color: white;
+	background: url(../images/back.gif) no-repeat 0px right;
+	cursor: hand;
+	border-bottom: 1px solid #ddd;
+	/*Width(一定要)，否则下面的Li会变形*/
+}
+#nav li a.collapsed {
+	background: url(../images/collapsed.gif) no-repeat 10px center;
+	display: none;
+}
+
+#nav li a:link  {
+	text-decoration:none;
+}
+#nav li a:visited  {
+	text-decoration:none;
+}
+#nav li a:hover{
+	text-decoration:none;
+}
+/*==================二级目录===================*/
+#nav li ul {
+	/*border: solid 1px red;*/
+	width:100%;
+	
+	list-style:none;
+	text-align:left;
+	margin-left: 0px;
+	background: #EBEBEB; /*二级目录的背景色*/
+}
+#nav li ul.collapsed {
+	height: 25px;
+	display: none;
+}
+#nav li ul a{
+	padding: 5px 10px;
+	background: #eee;
+	display: block;
+	border-bottom: 1px solid #ddd;
+	color: #066;
+}
+
+#nav li ul a:link {
+	text-decoration:underline;
+}
+#nav li ul a:visited  {
+	text-decoration:underline;
+}
+#nav li ul a:hover {
+	background : #066 url(../images/linkarrow.gif) no-repeat right center;
+	color: #fff;
+	text-decoration: none;
+}
+
+
+/*==================轨迹回放播放器===================*/
+.box { padding:0px;margin:0px;border: solid 1px red;}
+.slidebox { height:24px; width:170px; overflow:hidden; position:relative;}
+.lineBox { padding:0 6px;}
+.slidebox .line {background:url(../images/bg.gif) repeat-x left bottom; width:100%; height:24px; cursor:pointer}
+.slidebox .cursor { position:absolute; z-index:20; top:0px; left:0px; height:21px; width:11px;  overflow:hidden; background:url(../images/cursor.gif) no-repeat; cursor:pointer; filter:alpha(opacity=90); opacity:0.9}
+
+

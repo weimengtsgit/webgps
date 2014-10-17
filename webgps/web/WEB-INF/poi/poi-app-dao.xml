@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-poi-dao-bean</description>
+	<!-- Add DAOs here -->
+	<bean id="LayerAndPoiHibernateDao"
+		class="com.sosgps.wzt.poi.dao.hibernate.LayerAndPoiHibernateDao">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+	</bean>
+</beans>
+
+
+

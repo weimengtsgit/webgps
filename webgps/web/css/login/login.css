@@ -1,0 +1,21 @@
+@charset "utf-8";
+*{margin:0;padding:0;list-style:none;border:1;}
+.pos{width:1024px;margin:0 auto;background:url(../../images/login/login.jpg) no-repeat;height:100%;}
+/*DL, DT, DD TAGS LIST DATA*/ 
+dl { 
+padding:275px 360px;
+} 
+dl dt { 
+color:#000; 
+float:left; 
+width:100px; 
+} 
+dl dd { 
+padding:5px 0; 
+} 
+input{font-size:18px;width:130px;}
+.chkcode input{width:100px;}
+.btn{margin:20px 40px;}
+.btn input { padding:0px; border:none;margin:0 10px; }
+.btn2 { vertical-align:middle; background:url(../../images/login/login.png) no-repeat; color: #fff; display: inline-block; font: 700 12px "microsoft yahei"; cursor: pointer; text-align:center; height: 19px; line-height: 19px; width: 56px;padding:0px;}
+.copyright{margin:75px 20px;color:#fff;}

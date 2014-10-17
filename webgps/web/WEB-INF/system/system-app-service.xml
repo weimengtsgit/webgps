@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<description>app-system-service-bean</description>
+	<!-- Add Managers here -->
+	<bean id="moduleGroupService"
+		class="com.sosgps.wzt.system.service.impl.ModuleGroupServiceImpl">
+		<property name="TModuleGroupDao">
+			<ref bean="tModuleGroupDao" />
+		</property>
+	</bean>
+
+	<bean id="shortMessageService"
+		class="com.sosgps.wzt.system.service.impl.ShortMessageServiceImpl">
+		<property name="tempShortMessageDao">
+			<ref bean="tempShortMessageDao" />
+		</property>
+	</bean>
+
+	<bean id="moduleService" class="com.sosgps.wzt.system.service.impl.ModuleServiceImpl">
+		<property name="TModuleDao">
+			<ref bean="tModuleDao" />
+		</property>
+	</bean>
+
+	<bean id="moduleManagerService"
+		class="com.sosgps.wzt.system.service.impl.ModuleManagerServiceImpl">
+		<property name="TModuleDao">
+			<ref bean="tModuleDao" />
+		</property>
+	</bean>
+
+	<bean id="roleService" class="com.sosgps.wzt.system.service.impl.RoleServiceImpl">
+		<property name="TRoleDao">
+			<ref bean="tRoleDao" />
+		</property>
+	</bean>
+
+	<bean id="refModuleRoleService"
+		class="com.sosgps.wzt.system.service.impl.RefModuleRoleServiceImpl">
+		<property name="refModuleRoleDao">
+			<ref bean="refModuleRoleDao" />
+		</property>
+	</bean>
+
+	<bean id="userService" class="com.sosgps.wzt.system.service.impl.UserServiceImpl">
+		<property name="TUserDao">
+			<ref bean="tUserDao" />
+		</property>
+		<property name="refUserRoleDao">
+			<ref bean="refUserRoleDao" />
+		</property>
+	</bean>
+
+	<bean id="refUserRoleService"
+		class="com.sosgps.wzt.system.service.impl.RefUserRoleServiceImpl">
+		<property name="refUserRoleDao">
+			<ref bean="refUserRoleDao" />
+		</property>
+	</bean>
+	<bean id="onlineUserService"
+		class="com.sosgps.wzt.system.service.impl.OnlineUserServiceImpl">
+		<property name="tempOnlineUserDao">
+			<ref bean="tempOnlineUserDao" />
+		</property>
+	</bean>
+	<bean id="configService" class="com.sosgps.wzt.system.service.impl.ConfigServiceImpl">
+		<property name="configDao">
+			<ref bean="configDao" />
+		</property>
+	</bean>
+	<bean id="connectService" class="com.sosgps.wzt.util.ConnectService">
+		<property name="connectDao">
+			<ref bean="connectDao" />
+		</property>
+	</bean>
+	<bean id="enterpManageService"
+		class="com.sosgps.wzt.system.service.impl.EnterpManageServiceImpl">
+		<property name="enterpManageDao">
+			<ref bean="enterpManageJdbcDao" />
+		</property>
+	</bean>
+	<bean id="refEntCalledNumberService"
+		class="com.sosgps.wzt.system.service.impl.RefEntCalledNumnberServiceImpl">
+		<property name="refEntCalledNumberDao">
+			<ref bean="refEntCalledNumberDao" />
+		</property>
+		<property name="TEntDAO">
+			<ref bean="tEntDao" />
+		</property>
+	</bean>
+	<bean id="tEntService" class="com.sosgps.wzt.system.service.impl.TEntServiceImpl">
+		<property name="TEntDao">
+			<ref bean="tEntDao" />
+		</property>
+		<property name="layerAndPoiDao">
+			<ref bean="LayerAndPoiHibernateDao" />
+		</property>
+		<property name="userDao">
+			<ref bean="tUserDao" />
+		</property>
+		<property name="terminalDAO">
+			<ref bean="tTargetObjectDao" />
+		</property>
+		<property name="roleDao">
+			<ref bean="tRoleDao" />
+		</property>
+		<property name="targetDao">
+			<ref bean="TargetDao" />
+		</property>
+		<property name="emailDao">
+			<ref bean="EmailDao" />
+		</property>
+	</bean>
+</beans>

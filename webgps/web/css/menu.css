@@ -1,0 +1,11 @@
+/*基本信息*/
+body {padding:0px;font:12px Tahoma;margin:0px;text-align:center;background:#FFF;}
+a:link,a:visited {font-size:12px;text-decoration: none;}
+a:hover{}
+
+#menu {padding:0px 0px 0 0;}
+#menu ul {float:right;list-style:none;margin:0px;}
+#menu ul li {float:left;display:block;line-height:15px;margin:0 10px}
+#menu ul li a:link,#menu ul li a:visited {font-weight:bold;color:#666}
+#menu ul li a:hover{}
+.menuDiv {width:1px;height:14px;background:#999}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings>
+	<mapping>
+		<method name="getAllOnlineTerminals">
+			<return-type componentType="java.lang.String" />
+		</method>
+		<method name="getAllOnlineTerms">
+			<return-type
+				componentType="com.autonavi.directl.base.TerminalInfo" />
+		</method>
+	</mapping>
+</mappings>

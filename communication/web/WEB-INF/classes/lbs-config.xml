@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lbsconfig id="lbs">
+	<lbsServiceUrl>
+    http://localhost:8899/lbsService/services/LbsService
+	</lbsServiceUrl>
+	
+	<lbsId>915940</lbsId>
+	<lbsPwd>915940</lbsPwd>
+	<lbsServiceid>WZT</lbsServiceid>
+	<lbsReqestor>13953130020</lbsReqestor>
+</lbsconfig>

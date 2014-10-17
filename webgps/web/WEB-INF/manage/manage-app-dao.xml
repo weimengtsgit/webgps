@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="no" default-dependency-check="none">
+	<description>manage-dao-bean</description>
+	<!-- user view terminal group manage dao -->
+	<bean id="UserTerminalGroupManageHibernateDao" class="com.sosgps.wzt.manage.terminalgroup.dao.hibernate.UserTerminalGroupManageHibernateDao">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/>
+		</property>
+	</bean>
+	<!-- terminal group manage dao -->
+	<bean id="TerminalGroupManageHibernateDao" class="com.sosgps.wzt.manage.terminalgroup.dao.hibernate.TerminalGroupManageHibernateDao">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/>
+		</property>
+	</bean>
+	<!-- terminal manage dao -->
+	<bean id="TerminalManageHibernateDao" class="com.sosgps.wzt.manage.terminal.dao.hibernate.TerminalManageHibernateDao">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/>
+		</property>
+	</bean>
+	<!-- terminal group ref manage dao -->
+	<bean id="RefTermGroupHibernateDao" class="com.sosgps.wzt.manage.terminal.dao.hibernate.RefTermGroupHibernateDao">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/>
+		</property>
+	</bean>
+	<!-- user dao -->
+	<bean id="UserHibernateDao" class="com.sosgps.wzt.manage.terminalgroup.dao.hibernate.UserHibernateDao">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/>
+		</property>
+	</bean>
+</beans>
