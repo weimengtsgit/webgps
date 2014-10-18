@@ -63,5 +63,8 @@
         <property name="temperature" type="java.lang.Float">
             <column name="TEMPERATURE" precision="126" scale="0" />
         </property>
+        <property name="humidity" type="java.lang.Float">
+            <column name="HUMIDITY" precision="126" scale="0" />
+        </property>
     </class>
 </hibernate-mapping>

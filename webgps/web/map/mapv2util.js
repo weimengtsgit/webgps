@@ -1128,7 +1128,8 @@ function parseTrackData(res){
 				}
 			}
 			
-			var temper=res[i].temperature!=''?'<br>温    度 : '+res[i].temperature:'';
+			var temper=res[i].temperature!=''?'<br>温    度 : '+res[i].temperature+'℃':'';
+			var temhumidity=res[i].humidity!=''?'<br>湿    度 : '+res[i].humidity+'%':'';
 			var trackimage = path+'/track/images/track/car.gif';
 			var tmpscontent = '车牌号码 : '+parent.trackSearchDevicevehicleNumber+
 			'<br>手机号码 : '+parent.trackSearchDevicesimcard+
@@ -1140,6 +1141,8 @@ function parseTrackData(res){
 			'<br>速    度 : '+res[i].speed+'  km/h'+
 			//温度
 			temper+
+			//湿度
+			temhumidity+
 			'<br>里    程 : '+'距起点  '+global+'  km，'+
 			//与前一点距离
 			carDistance;

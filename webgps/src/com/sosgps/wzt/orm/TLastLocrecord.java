@@ -12,7 +12,12 @@ public class TLastLocrecord extends AbstractTLastLocrecord implements
 
 	// Constructors
 
-	/** default constructor */
+	/**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
+
+  /** default constructor */
 	public TLastLocrecord() {
 	}
 
@@ -20,9 +25,9 @@ public class TLastLocrecord extends AbstractTLastLocrecord implements
 	public TLastLocrecord(Float latitude, Float longitude, String jmx,
 			String jmy, Float speed, Float direction, Float height,
 			Float distance, Float statlliteNum, String deviceId, Date gpstime,
-			Date inputdate, String locateType) {
+			Date inputdate, String locateType, Float temperature, Float humidity) {
 		super(latitude, longitude, jmx, jmy, speed, direction, height,
-				distance, statlliteNum, deviceId, gpstime, inputdate, locateType);
+				distance, statlliteNum, deviceId, gpstime, inputdate, locateType, temperature, humidity);
 	}
 
 }

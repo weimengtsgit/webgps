@@ -10,7 +10,12 @@ public abstract class AbstractTLastLocrecord implements java.io.Serializable {
 
 	// Fields
 
-	private Long id;
+	/**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
+
+  private Long id;
 
 	private Float latitude;
 
@@ -44,13 +49,22 @@ public abstract class AbstractTLastLocrecord implements java.io.Serializable {
 
 	private String accStatus;
 	private Float temperature;
+    private Float humidity;
 	// Constructors
 
 	public String getLocateType() {
 		return this.locateType;
 	}
 
-	public void setLocateType(String locateType) {
+	public Float getHumidity() {
+      return humidity;
+    }
+  
+    public void setHumidity(Float humidity) {
+      this.humidity = humidity;
+    }
+
+    public void setLocateType(String locateType) {
 		this.locateType = locateType;
 	}
 
@@ -62,7 +76,7 @@ public abstract class AbstractTLastLocrecord implements java.io.Serializable {
 	public AbstractTLastLocrecord(Float latitude, Float longitude, String jmx,
 			String jmy, Float speed, Float direction, Float height,
 			Float distance, Float statlliteNum, String deviceId, Date gpstime,
-			Date inputdate, String locateType) {
+			Date inputdate, String locateType, Float temperature, Float humidity) {
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.jmx = jmx;
@@ -76,6 +90,8 @@ public abstract class AbstractTLastLocrecord implements java.io.Serializable {
 		this.gpstime = gpstime;
 		this.inputdate = inputdate;
 		this.locateType = locateType;
+        this.temperature = temperature;
+        this.humidity = humidity;
 	}
 
 	// Property accessors

@@ -240,7 +240,9 @@ public class LocateAction extends DispatchWebActionSupport {
 					//add by yuanchao @2014-01-17
 					jsonSb.append("direction:'"
 							+ CharTools.killNullFloat2String(tloc
-									.getDirection(), "") + "'");// direction
+									.getDirection(), "") + "',");// direction
+					jsonSb.append("humidity:'"
+                        + CharTools.killNullFloat2String(tloc.getHumidity(), "") + "'");//humidity
 					jsonSb.append("},");
 				}
 			}
@@ -333,8 +335,9 @@ public class LocateAction extends DispatchWebActionSupport {
 							+ CharTools.killNullString(DateUtility
 									.dateTimeToStr(tloc.getLastTime())) + "',");// lastTime
 					jsonSb.append("temperature:'"
-							+ CharTools.killNullFloat2String(tloc
-									.getTemperature(), "") + "'");// temperature
+							+ CharTools.killNullFloat2String(tloc.getTemperature(), "") + "',");// temperature
+                    jsonSb.append("humidity:'"
+                        + CharTools.killNullFloat2String(tloc.getHumidity(), "") + "'");//humidity
 					jsonSb.append("},");
 				}
 			}
@@ -417,7 +420,9 @@ public class LocateAction extends DispatchWebActionSupport {
 					jsonSb.append("lastTime:'" + "null" + "',");// 如果是自选时间就传空前台页面不显示
 					jsonSb.append("temperature:'"
 							+ CharTools.killNullFloat2String(tloc
-									.getTemperature(), "") + "'");// temperature
+									.getTemperature(), "") + "',");// temperature
+                    jsonSb.append("humidity:'"
+                        + CharTools.killNullFloat2String(tloc.getHumidity(), "") + "'");//humidity
 					jsonSb.append("},");
 				}
 			}
@@ -508,7 +513,9 @@ public class LocateAction extends DispatchWebActionSupport {
 					jsonSb.append("lastTime:'" + "null" + "',");// 如果是自选时间就传空前台页面不显示
 					jsonSb.append("temperature:'"
 							+ CharTools.killNullFloat2String(tloc
-									.getTemperature(), "") + "'");// temperature
+									.getTemperature(), "") + "',");// temperature
+                    jsonSb.append("humidity:'"
+                        + CharTools.killNullFloat2String(tloc.getHumidity(), "") + "'");//humidity
 					jsonSb.append("},");
 				}
 			}
@@ -743,7 +750,9 @@ public class LocateAction extends DispatchWebActionSupport {
 									+ "',");// accStatus
 							jsonSb.append("temperature:'"
 									+ CharTools.killNullFloat2String(loc
-											.getTemperature(), "") + "'");// temperature
+											.getTemperature(), "") + "',");// temperature
+		                    jsonSb.append("humidity:'"
+		                        + CharTools.killNullFloat2String(loc.getHumidity(), "") + "'");//humidity
 							// end
 							jsonSb.append("},");
 						}
@@ -1139,7 +1148,9 @@ public class LocateAction extends DispatchWebActionSupport {
 							+ CharTools.javaScriptEscape(accStatus) + "',");// accStatus
 					jsonSb.append("temperature:'"
 							+ CharTools.killNullFloat2String(tloc
-									.getTemperature(), "") + "'");// temperature
+									.getTemperature(), "") + "',");// temperature
+                    jsonSb.append("humidity:'"
+                        + CharTools.killNullFloat2String(tloc.getHumidity(), "") + "'");//humidity
 					// end
 					jsonSb.append("},");
 				} catch (Exception e) {

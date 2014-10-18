@@ -49,7 +49,7 @@ function searchVehicleGPSInfoGrid(){
 var VehicleGPSInfoStore = new Ext.data.Store({
 	restful: true,
 	proxy: new Ext.data.HttpProxy({url: path+'/stat/visitStat.do?method=listVehicleGPS'}),
-	reader: new Ext.data.JsonReader({totalProperty: 'total',successProperty: 'success', root: 'data' }, [{name: 'deviceId'},{name: 'vehicleNumber'},{name: 'simcard'},{name: 'gpsTime'},{name: 'pd'},{name: 'visitId'},{name: 'visitName'},{name: 'longitude'},{name: 'latitude'},{name: 'speed'},{name: 'direction'},{name: 'distance'},{name: 'accStatus'},{name: 'temperature'}]),
+	reader: new Ext.data.JsonReader({totalProperty: 'total',successProperty: 'success', root: 'data' }, [{name: 'deviceId'},{name: 'vehicleNumber'},{name: 'simcard'},{name: 'gpsTime'},{name: 'pd'},{name: 'visitId'},{name: 'visitName'},{name: 'longitude'},{name: 'latitude'},{name: 'speed'},{name: 'direction'},{name: 'distance'},{name: 'accStatus'},{name: 'temperature'},{name: 'humidity'}]),
 	listeners:{
 		beforeload:{
 			fn: function(thiz,options){
@@ -86,7 +86,8 @@ var VehicleGPSInfoGrid = {
 			}
 		},
 		{header: '时间', width: 130, sortable: true,  dataIndex: 'gpsTime'},
-		{header: '温度', width: 130, sortable: true,  dataIndex: 'temperature',renderer:function(r,d,v){return r=="null"?"":r;}}
+		{header: '温度', width: 130, sortable: true,  dataIndex: 'temperature',renderer:function(r,d,v){return r=="null"?"":r + '℃';}},
+		{header: '湿度', width: 130, sortable: true,  dataIndex: 'humidity',renderer:function(r,d,v){return r=="null"?"":r + "%";}}
 	],
 	stripeRows: true,
 	stateful: true,

@@ -4,8 +4,8 @@
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
 <appender name="ERROR" class="org.apache.log4j.DailyRollingFileAppender">
-<param name="File" value="d:/ww/log/mapsearch/err.log" />
-<!-- <param name="File" value="/home/ec2-user/opt/logs/webgps/err.log" />-->
+<!-- <param name="File" value="d:/ww/log/mapsearch/err.log" />-->
+<param name="File" value="/home/ec2-user/opt/logs/webgps/err.log" />
 <param name="Append" value="true" />
 <layout class="org.apache.log4j.PatternLayout">
 <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss}- %c - %-5p %x - %m%n"/>
@@ -17,8 +17,8 @@
 </filter>
 </appender>
 <appender name="INFO" class="org.apache.log4j.DailyRollingFileAppender">
-<param name="File" value="d:/ww/log/mapsearch/info.log" />
-<!-- <param name="File" value="/home/ec2-user/opt/logs/webgps/info.log" />-->
+<!-- <param name="File" value="d:/ww/log/mapsearch/info.log" />-->
+<param name="File" value="/home/ec2-user/opt/logs/webgps/info.log" />
 <param name="Append" value="true" />
 <layout class="org.apache.log4j.PatternLayout">
 <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} - %-5p %x - %m%n"/>

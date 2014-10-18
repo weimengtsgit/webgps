@@ -10,7 +10,11 @@ public abstract class AbstractTLocrecord implements java.io.Serializable {
 
 	// Fields
 
-	private Long id;
+	/**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
+  private Long id;
 	private String deviceId;
 	private Float latitude;
 	private Float longitude;
@@ -34,14 +38,23 @@ public abstract class AbstractTLocrecord implements java.io.Serializable {
 	private Float temperature;
 	private String varExt1;
 	private String imsi;
+    private Float humidity;
 
 	// Constructors
+
+    public Float getHumidity() {
+      return humidity;
+    }
+  
+    public void setHumidity(Float humidity) {
+      this.humidity = humidity;
+    }
 
 	public String getImsi() {
 		return imsi;
 	}
 
-	public void setImsi(String imsi) {
+  public void setImsi(String imsi) {
 		this.imsi = imsi;
 	}
 
@@ -60,7 +73,8 @@ public abstract class AbstractTLocrecord implements java.io.Serializable {
 	/** full constructor */
 	public AbstractTLocrecord(String deviceId, Float latitude, Float longitude,
 			String jmx, String jmy, Float speed, Float direction, Float height,
-			Float distance, Long statlliteNum, Date gpstime, Date inputdate,String locDesc,String varExt1, String imsi) {
+			Float distance, Long statlliteNum, Date gpstime, Date inputdate,
+			String locDesc,String varExt1, String imsi, Float temperature, Float humidity) {
 		this.deviceId = deviceId;
 		this.latitude = latitude;
 		this.longitude = longitude;
@@ -76,6 +90,8 @@ public abstract class AbstractTLocrecord implements java.io.Serializable {
 		this.locDesc = locDesc;
 		this.varExt1 = varExt1;
 		this.imsi = imsi;
+        this.temperature = temperature;
+        this.humidity = humidity;
 	}
 
 	// Property accessors

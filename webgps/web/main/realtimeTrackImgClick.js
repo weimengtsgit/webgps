@@ -352,7 +352,12 @@ function RealtimeTrackInterval() {
 					content += '速&nbsp;&nbsp;度：' + loc.speed + '&nbsp;km/h';
 					if (loc.temperature != "") {
 						content += "<br>";
-						content += '温&nbsp;&nbsp;度：' + loc.temperature
+						content += '温&nbsp;&nbsp;度：' + loc.temperature + '℃'
+								+ '&nbsp;';
+					}
+					if (loc.humidity != "") {
+						content += "<br>";
+						content += '湿&nbsp;&nbsp;度：' + loc.humidity + "%"
 								+ '&nbsp;';
 					}
 				}

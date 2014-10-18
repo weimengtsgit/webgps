@@ -1505,6 +1505,7 @@ public class VisitStatAction extends DispatchWebActionSupport {
 			excelWorkBook.addHeader("到访客户", 30);// 拜访点名称
 			excelWorkBook.addHeader("时间", 10);// 数据上报时间
 			excelWorkBook.addHeader("温度", 10);// 温度
+            excelWorkBook.addHeader("湿度", 10);// 湿度
 			int row = 0;
 			CoordCvtAPI coordCvtApi = new CoordCvtAPI();
 			com.sos.sosgps.api.CoordAPI coordApizw = new com.sos.sosgps.api.CoordAPI();
@@ -1567,10 +1568,9 @@ public class VisitStatAction extends DispatchWebActionSupport {
 						.javaScriptEscape(DateUtility.dateTimeToStr(locrecord
 								.getGpstime())));
 				excelWorkBook.addCell(
-						col++,
-						row,
-						CharTools.killNullFloat2String(
-								locrecord.getTemperature(), "0"));
+						col++, row, CharTools.killNullFloat2String(locrecord.getTemperature(), "0"));
+                excelWorkBook.addCell(
+                    col++, row, CharTools.killNullFloat2String(locrecord.getHumidity(), "0"));
 			}
 			// add by 2012-12-18 zss 导出定位信息
 			UserInfo userInfo = this.getCurrentUser(request);
@@ -1704,7 +1704,10 @@ public class VisitStatAction extends DispatchWebActionSupport {
 					// "',");// 门状态
 					jsonSb.append("temperature:'"
 							+ CharTools.killNullFloat2String(
-									locrecord.getTemperature(), "0") + "'");// 温度
+									locrecord.getTemperature(), "0") + "',");// 温度
+                    jsonSb.append("humidity:'"
+                        + CharTools.killNullFloat2String(
+                                locrecord.getHumidity(), "0") + "'");// 湿度
 					jsonSb.append("},");
 				}
 				if (jsonSb.length() > 0) {

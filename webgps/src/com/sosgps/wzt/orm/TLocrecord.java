@@ -9,6 +9,11 @@ import java.util.Date;
  */
 public class TLocrecord extends AbstractTLocrecord implements java.io.Serializable {
 
+    /**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
+
     // Constructors
 
     /** default constructor */
@@ -17,8 +22,8 @@ public class TLocrecord extends AbstractTLocrecord implements java.io.Serializab
 
     
     /** full constructor */
-    public TLocrecord(String deviceId, Float latitude, Float longitude, String jmx, String jmy, Float speed, Float direction, Float height, Float distance, Long statlliteNum, Date gpstime, Date inputdate,String locDesc,String varExt1, String imsi) {
-        super(deviceId, latitude, longitude, jmx, jmy, speed, direction, height, distance, statlliteNum, gpstime, inputdate,locDesc, varExt1, imsi);        
+    public TLocrecord(String deviceId, Float latitude, Float longitude, String jmx, String jmy, Float speed, Float direction, Float height, Float distance, Long statlliteNum, Date gpstime, Date inputdate,String locDesc,String varExt1, String imsi, Float temperature, Float humidity) {
+        super(deviceId, latitude, longitude, jmx, jmy, speed, direction, height, distance, statlliteNum, gpstime, inputdate,locDesc, varExt1, imsi, temperature, humidity);   
     }
    
 }
