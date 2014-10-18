@@ -855,6 +855,7 @@ public abstract class ParseBase implements Cloneable {
 		parse.setIsPost(this.isIsPost());
 		parse.setLocateType(this.locateType);
 		parse.setTemperature(temperature);
+        parse.setHumidity(humidity);
 		parse.setAccStatus(accStatus);
 		parse.setAlarmType(alarmType);
 		parse.setLocateStatus(locateStatus);

@@ -1,12 +1,18 @@
 package com.autonavi.lbsgateway.poolsave;
 
+import java.sql.CallableStatement;
+import java.sql.SQLException;
+import java.sql.Types;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Hashtable;
-import java.util.List;
-import java.sql.*;
+import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.springframework.beans.BeanUtils;
 
 import cn.net.sosgps.memcache.Memcache;
 import cn.net.sosgps.memcache.bean.Ent;
@@ -20,19 +26,13 @@ import com.autonavi.directl.bean.TLocrecord;
 import com.autonavi.directl.bean.TTerminal;
 import com.autonavi.directl.dbutil.DbOperation;
 import com.autonavi.directl.parse.ParseBase;
-import com.autonavi.lbsgateway.jms.GPSForwardToJMS;
 import com.sjw.util.CharacterUtil;
 import com.sjw.util.CheckedResult;
 import com.sjw.util.Constants;
 import com.sjw.util.HttpResponseEntity;
 import com.sjw.util.HttpUtil;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-import java.util.Date;
-import java.text.SimpleDateFormat;
 import com.sos.sosgps.api.CoordAPI;
 import com.sos.sosgps.api.DPoint;
-import org.springframework.beans.BeanUtils;
 
 
 public class BatchSave {
@@ -92,7 +92,7 @@ public class BatchSave {
 
 		conn = DbOperation.getConnection();// com.mapabc.db.DBConnectionManager.getInstance().getConnection();
 
-		String insertPro = "{call PROC_ADD_LOCRECORD_LOCDESC(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+		String insertPro = "{call PROC_ADD_LOCRECORD_LOCDESC(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
 //		String callProc = "{call PROC_ADD_Last_LOC(?,?,?,?,?,?,?,?,?,?,?)}";
 		CallableStatement pstmt = null;
 		CallableStatement cstmt = null;
@@ -184,6 +184,11 @@ public class BatchSave {
                 pstmt.setString(13, locrecord.getJmx());
                 pstmt.setString(14, locrecord.getJmy());
                 pstmt.setString(15, locrecord.getLocDesc());
+                if (tmp.humidity != null) {
+                  pstmt.setFloat(16, tmp.humidity.floatValue());
+                }else {
+                  pstmt.setNull(16, Types.FLOAT);
+                }
 				pstmt.addBatch();
 
 				if (tmp.X > 0) {
@@ -350,7 +355,7 @@ public class BatchSave {
 			gpsdata.F = pb.getStatus();
 			//gpsdata.temperature = pb.getTemperature()==null?0f:Float.parseFloat(pb.getTemperature());
 			gpsdata.temperature = pb.getTemperature()==null?null:Float.parseFloat(pb.getTemperature());
-
+			gpsdata.humidity = pb.getHumidity()==null?null:Float.parseFloat(pb.getHumidity());
 			gpsdata.accStatus = pb.getAccStatus();
 			
 			// gpsdata.targetID = this.getTargetObjectIdBySim(pb.getPhnum());

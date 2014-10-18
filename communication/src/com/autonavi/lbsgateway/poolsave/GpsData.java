@@ -25,7 +25,8 @@ public class GpsData {
   String Extend2="";//À©Õ¹×Ö¶Î2
   String Extend3="";//À©Õ¹×Ö¶Î3
   String gpstime = "";
-  Float temperature = null;
+  Float temperature = null;//ÎÂ¶È
+  Float humidity = null;//Êª¶È
   String accStatus;
   String locateType = "";
   java.sql.Timestamp gpsTime=null;

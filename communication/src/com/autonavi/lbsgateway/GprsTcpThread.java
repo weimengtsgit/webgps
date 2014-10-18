@@ -1,19 +1,20 @@
 package com.autonavi.lbsgateway;
 
-import com.autonavi.directl.*;
-import com.autonavi.directl.idirectl.Terminal;
-import com.autonavi.directl.parse.*;
-import com.autonavi.lbsgateway.gprsserver.udp.GprsSocketChannel;
-import com.autonavi.lbsgateway.gprsserver.tcp.GprsSocketTcpChannel;
-
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 import java.util.ArrayList;
 import java.util.Date;
 
+import com.autonavi.directl.Log;
+import com.autonavi.directl.Tools;
+import com.autonavi.directl.parse.ParseBase;
+import com.autonavi.directl.parse.ParseFactory;
+import com.autonavi.directl.parse.ParseUtility;
+import com.autonavi.lbsgateway.gprsserver.tcp.GprsSocketTcpChannel;
 import com.autonavi.lbsgateway.poolsave.DataPool;
-import java.io.*;
 
 /*
  *终端解析类,解析GPRS终端上报的GPS数据,解析短信网关上报的GPS数据
@@ -60,6 +61,7 @@ public class GprsTcpThread implements Runnable {
 		try {
 			line = new String(socketBytes, "ISO8859-1");
 			hexGpsData = this.bytesToHexString(socketBytes);
+//			hexGpsData = "7e0200003001470156902800040000000000000003021f5d5906f9de84005c0000b30014101416384701040000408202020000030200002b04001e0277347e";
 			Log.getInstance().outLog("接收数据:" + hexGpsData);
 
 			String gpsCode = null;

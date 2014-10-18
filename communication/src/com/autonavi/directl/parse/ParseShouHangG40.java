@@ -1,11 +1,6 @@
 package com.autonavi.directl.parse;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
 import java.math.BigInteger;
-import java.net.InetAddress;
-import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -24,21 +19,21 @@ public class ParseShouHangG40 extends ParseBase {
 		hexString = this.recParseData(hexString);
 		byte[] cont = Tools.fromHexString(hexString);
 
-		String scont = new String(cont);
+//		String scont = new String(cont);
 		//System.out.println("scont：" + scont);
 		//System.out.println("scont：" + scont);
-		byte bIdentifier = cont[0]; //标识位
-		String hIdentifier = Tools.bytesToHexString(new byte[] { bIdentifier });
+//		byte bIdentifier = cont[0]; //标识位
+//		String hIdentifier = Tools.bytesToHexString(new byte[] { bIdentifier });
 		//System.out.println("标识位：" + hIdentifier);
 		
 		byte[] bMsgId = new byte [2]; //消息ID
 		System.arraycopy(cont, 1, bMsgId, 0, bMsgId.length);
-		String hMsgId = Tools.bytesToHexString(bMsgId);
+//		String hMsgId = Tools.bytesToHexString(bMsgId);
 		//System.out.println("消息ID：" + hMsgId);
 		
 		byte[] bMsgAttId = new byte [2]; //消息体属性
 		System.arraycopy(cont, 3, bMsgAttId, 0, bMsgAttId.length);
-		String hMsgAttId = Tools.bytesToHexString(bMsgAttId);
+//		String hMsgAttId = Tools.bytesToHexString(bMsgAttId);
 		//System.out.println("消息体属性：" + hMsgAttId);
 		//System.out.println("消息体属性：" + Tools.bytes2BinaryString(bMsgAttId));
 		
@@ -56,15 +51,15 @@ public class ParseShouHangG40 extends ParseBase {
 		deviceid = hSimCardId;
 		this.setDeviceSN(deviceid);
 		String phnum = null;
-		phnum = "018201248264";//山西
-        phnum = "014701569028";//山东
-/*		phnum = GBLTerminalList.getInstance().getSimcardNum(this.getDeviceSN());
+//		phnum = "018201248264";//山西
+//        phnum = "014701569028";//山东
+		phnum = GBLTerminalList.getInstance().getSimcardNum(this.getDeviceSN());
 		//phnum = "144012171029";
 		if (phnum == null || hexString == null || phnum.trim().length() == 0
 				|| hexString.trim().length() == 0) {
 			Log.getInstance().outLog("系统中没有适配到指定的终端：device_id=" + this.getDeviceSN());
 			return;
-		}*/
+		}
 		this.setPhnum(phnum);
 		
 		byte[] bMsgSd = new byte [2]; //消息流水号
@@ -77,24 +72,24 @@ public class ParseShouHangG40 extends ParseBase {
 			//分包数据
 			byte[] bBaoLength = new byte [2]; //消息总包数
 			System.arraycopy(cont, 13, bBaoLength, 0, bBaoLength.length);
-			String hBaoLength = Tools.bytesToHexString(bBaoLength);
+//			String hBaoLength = Tools.bytesToHexString(bBaoLength);
 			//System.out.println("消息总包数：" + hBaoLength);
 			
 			byte[] bBaoNum = new byte [2]; //序列号
 			System.arraycopy(cont, 15, bBaoNum, 0, bBaoNum.length);
-			String hBaoNum = Tools.bytesToHexString(bBaoNum);
+//			String hBaoNum = Tools.bytesToHexString(bBaoNum);
 			//System.out.println("序列号：" + hBaoNum);
 			fenbaoint = 4;
 		}
 
 		byte[] bMsgBody = new byte [iMsgLength]; //消息体
 		System.arraycopy(cont, 13 + fenbaoint, bMsgBody, 0, bMsgBody.length);
-		String hMsgBody = Tools.bytesToHexString(bMsgBody);
+//		String hMsgBody = Tools.bytesToHexString(bMsgBody);
 		//System.out.println("消息体：" + hMsgBody);
 		
 		byte[] bCheckCode = new byte [1]; //检验码
 		System.arraycopy(cont, 13 + fenbaoint + iMsgLength, bCheckCode, 0, bCheckCode.length);
-		String hCheckCode = Tools.bytesToHexString(bCheckCode);
+//		String hCheckCode = Tools.bytesToHexString(bCheckCode);
 		//System.out.println("检验码：" + hCheckCode);
 		
 		//判断协议指令
@@ -133,12 +128,12 @@ public class ParseShouHangG40 extends ParseBase {
 	private void parsePosition(byte[] gpsdata) {
 		byte[] bAlarmFlag = new byte [4]; //报警标志
 		System.arraycopy(gpsdata, 0, bAlarmFlag, 0, bAlarmFlag.length);
-		String hAlarmFlag = Tools.bytesToHexString(bAlarmFlag);
+//		String hAlarmFlag = Tools.bytesToHexString(bAlarmFlag);
 		//System.out.println("报警标志：" + hAlarmFlag);
 
 		byte[] bState = new byte [4]; //状态
 		System.arraycopy(gpsdata, 4, bState, 0, bState.length);
-		String hState = Tools.bytesToHexString(bState);
+//		String hState = Tools.bytesToHexString(bState);
 		//System.out.println("状态：" + hState);
 		String sState = Tools.bytes2BinaryString(bState);
 		String accState = sState.substring(sState.length() - 1, sState.length());
@@ -171,7 +166,7 @@ public class ParseShouHangG40 extends ParseBase {
 		byte[] bHeight = new byte [2]; //高程
 		System.arraycopy(gpsdata, 16, bHeight, 0, bHeight.length);
 		bi = new BigInteger(bHeight);
-		String hHeight = bi.toString();
+//		String hHeight = bi.toString();
 		//System.out.println("高程：" + hHeight);
 		
 		byte[] bSpeed = new byte [2]; //速度
@@ -196,7 +191,6 @@ public class ParseShouHangG40 extends ParseBase {
 		int idirection = Tools.byte2Int(direction ) * 3;
 		this.setDirection(idirection + "");
 		//System.out.println("方向：" + idirection);
-		
 		
 		byte[] date = new byte[6];//日期
 		System.arraycopy(gpsdata, 22, date, 0, 6);
@@ -240,32 +234,34 @@ public class ParseShouHangG40 extends ParseBase {
 				}
 			}
 			
-
 	        byte[] bExtras = new byte [6]; //附加信息
 	        System.arraycopy(gpsdata, gpsdata.length - 6, bExtras, 0, bExtras.length);
             byte bExtrasCmd = bExtras[0]; //附加信息的指令码 2b
             byte bExtrasLength = bExtras[1]; //长度 04
             if(bExtrasCmd == 0x2b && bExtrasLength == 0x04){
-              byte[] bExtrasWD = new byte [2]; //温度
-              System.arraycopy(bExtras, 2, bExtrasWD, 0, bExtrasWD.length);
-              String hExtrasWD = Tools.bytesToHexString(bExtrasWD);
-              this.setTemperature(hExtrasWD);
-              byte[] bExtrasSD = new byte [2]; //湿度
-              System.arraycopy(bExtras, 4, bExtrasSD, 0, bExtrasSD.length);
-              String hExtrasSD = Tools.bytesToHexString(bExtrasSD);
-              this.setHumidity(hExtrasSD);
+              try {
+                byte[] bExtrasWD = new byte [2]; //温度
+                System.arraycopy(bExtras, 2, bExtrasWD, 0, bExtrasWD.length);
+//                String hExtrasWD = Tools.bytesToHexString(bExtrasWD);
+                this.setTemperature(parseTemperature(bExtrasWD));
+                byte[] bExtrasSD = new byte [2]; //湿度
+                System.arraycopy(bExtras, 4, bExtrasSD, 0, bExtrasSD.length);
+//                String hExtrasSD = Tools.bytesToHexString(bExtrasSD);
+                this.setHumidity(parseHumidity(bExtrasSD));
+                
+              } catch (Exception e) {
+                Log.getInstance().errorLog("Parse Temperature or Humidity Error!", e);
+              }
             }
-	        
 		}
-		
-		
 		
 		String desc = "已定位GPS数据";
 		if (this.getLocateStatus() != null
 				&& this.getLocateStatus().equals("1")) {
-//			this.sentPost(true);aa
+			this.sentPost(true);
 		} else {
 		  desc = "未定位GPS数据";
+          this.sentPost(true);
 		}
         Log.getInstance().outLog(
             this.getDeviceSN() + desc+"：lng=" + this.getCoordX()
@@ -277,6 +273,40 @@ public class ParseShouHangG40 extends ParseBase {
                     + ",gpstime=" + this.getTime());
 	}
 	
+	/**
+	 * 温度
+	 * @param bTemperature
+	 * @return
+	 */
+    private String parseTemperature(byte[] bTemperature){
+      byte pmJudge = (byte) 0x80; //附加信息的指令码 2b
+      byte pm = (byte) (bTemperature[0] & pmJudge);
+      String sTemperature = "";
+      float fTemperature0 = Tools.byte2Int(new byte[]{bTemperature[0]});
+      float fTemperature1 = Tools.byte2Int(new byte[]{bTemperature[1]});
+      if(pm == 0x00){
+        //温度正值
+        sTemperature = ((fTemperature0 * 256 + fTemperature1) /10) +"";
+      }else if(pm == (byte) 0x80){
+        //温度负值
+        sTemperature = (-((fTemperature0 - 128) * 256 + fTemperature1) /10) +"";
+      }
+      return sTemperature;
+    }
+    
+    /**
+     * 湿度
+     * @param bHumidity
+     * @return
+     */
+    private String parseHumidity(byte[] bHumidity){
+      String sHumidity = "";
+      float fHumidity0 = Tools.byte2Int(new byte[]{bHumidity[0]});
+      float fHumidity1 = Tools.byte2Int(new byte[]{bHumidity[1]});
+      sHumidity = ((fHumidity0 * 256 + fHumidity1) /10) +"";
+      return sHumidity;
+    }
+    
 	private String recParseData(String data){
 		//System.out.println("转义前数据:"+data);
 		Log.getInstance().outLog("转义前数据:"+data);
@@ -460,3 +490,33 @@ public class ParseShouHangG40 extends ParseBase {
 		return null;
 	}
 }
+
+/**
+ * 
+山东------
+7e0200003001470156902800040000000000000003021f5d5906f9de84005c0000b30014101416384701040000408202020000030200002b04001e0277347e
+7e   标识位
+0200 消息头-消息ID
+0030 消息头-消息体属性
+014701569028 消息头-终端手机号
+0004 消息头-消息流水号
+00000000 报警标志
+00000003 状态
+021f5d59 纬度
+06f9de84 经度
+005c 高程
+0000 速度
+b300 方向
+141014163847 日期
+01 附加信息ID 01为里程
+04 长度
+00004082 里程值
+0202000003020000
+2b 附加信息的指令码
+04 长度
+001e 温度
+0277 湿度
+34 校验码
+7e 标识位
+ */
+    
