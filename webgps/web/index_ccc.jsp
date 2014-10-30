@@ -19,7 +19,7 @@
 BODY {
 	MARGIN-TOP: 0px; MARGIN-LEFT: 0px
 }
-.input4{ text-align:left;font-family:Arial,ËÎÌå;font-size:12px;padding:0;margin:0;border:0;line-height:22px;}
+.input4{ text-align:left;font-family:Arial,å®‹ä½“;font-size:12px;padding:0;margin:0;border:0;line-height:22px;}
 .btn{margin:20px 40px;}
 .btn input { padding:0px; border:none;margin:0 10px; }
 .btn2 { vertical-align:middle; background:url(images/login/login.png) no-repeat; color: #fff; display: inline-block; font: 700 12px "microsoft yahei"; cursor: pointer; text-align:center; height: 19px; line-height: 19px; width: 56px;padding:0px;}
@@ -44,7 +44,7 @@ input{font-size:18px;width:130px;}
     <TD style="BACKGROUND-IMAGE: url(images/login/login_cc.png); POSITION: relative; HEIGHT: 595px" width=1199>
 	<table width="100%" height="595px" border="0">
   <tr>
-    <td width="40%" height="270">&nbsp;</td>
+    <td width="40%" height="280">&nbsp;</td>
     <td width="27%">&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
@@ -52,28 +52,28 @@ input{font-size:18px;width:130px;}
     <td height="160">&nbsp;</td>
     <td><table width="100%" height="160px" border="0" cellSpacing=0 cellPadding=0>
   <tr>
-    <td width="23%" height="23" class="input4"><strong>ÆóÒµ´úÂë£º</strong></td>
+    <td width="23%" height="23" class="input4"><strong>ä¼ä¸šä»£ç ï¼š</strong></td>
     <td width="77%"><input type="text" value="${LoginForm.empCode!=null?LoginForm.empCode:entCode}" name="empCode" class="input1" id="empCode"/></td>
   </tr>
   <tr>
-    <td height="23" class="input4"><strong>ÓÃ»§Ãû£º</strong></td>
+    <td height="23" class="input4"><strong>ç”¨æˆ·åï¼š</strong></td>
     <td><input type="text" value="${LoginForm.userAccount!=null?LoginForm.userAccount:userName}" name="userAccount" class="input1"  id="userAccount"/></td>
   </tr>
   <tr>
-    <td height="23" class="input4"><strong>ÃÜÂë£º</strong></td>
+    <td height="23" class="input4"><strong>å¯†ç ï¼š</strong></td>
     <td><input type="password" name="password"  class="input1" id="password"/></td>
   </tr>
   <tr>
-    <td height="23" class="input4"><strong>ÑéÖ¤Âë£º</strong></td>
+    <td height="23" class="input4"><strong>éªŒè¯ç ï¼š</strong></td>
     <td><input type="text" name="validateCode"  class="input3" id="validateCode"/><img src="<%=path%>/system/validateCode.do" width="60" height="20" align="middle" id="validateImg" onClick="refreshImg()"></td>
   </tr>
   <tr>
-    <td height="10px">&nbsp;</td>
+    <td height="40px">&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><input type="button" class="btn2" value="µÇ Â¼" name="login" id="login" onclick=submitForm()></td>
-    <td align="center"><input type="reset" class="btn2" value="È¡ Ïû"></td>
+    <td><input type="button" class="btn2" value="ç™» å½•" name="login" id="login" onclick=submitForm()></td>
+    <td align="center"><input type="reset" class="btn2" value="å– æ¶ˆ"></td>
   </tr>
 </table>
 </td>
@@ -88,7 +88,7 @@ input{font-size:18px;width:130px;}
   </tr>
   <tr>
     <td height="65" class="copyright">
-		&nbsp;&nbsp;&nbsp;&nbsp;Copyright 2010 °æÈ¨ËùÓĞ
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright 2010 ç‰ˆæƒæ‰€æœ‰
 	</td>
   </tr>
   <tr>

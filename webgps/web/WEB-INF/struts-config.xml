@@ -47,6 +47,8 @@
 		      	<forward name="login_zh_cnjinji"  path="/jinji.jsp"></forward>
 		      	<forward name="login_zh_cn_np"  path="/index.jsp"></forward>
 		      	<forward name="login_zh_cnindex_gx"  path="/index_gx.jsp"></forward>
+		      	<forward name="login_zh_cnindex_demo"  path="/index_demo.jsp"></forward>
+		      	<forward name="login_zh_cnindex_cc"  path="/index_cc.jsp"></forward>
 		      	<forward name="error"  path="/error.jsp"></forward>      
 	    </action>
 	    <action 
@@ -72,6 +74,8 @@
 		      	<forward name="logout_enbinbao"  path="/binbao_en.jsp"></forward>
 		        <forward name="logout_zh_cnjinji"  path="/jinji.jsp"></forward>
 		      	<forward name="logout_zh_cnindex_gx"  path="/index_gx.jsp"></forward>
+		      	<forward name="logout_zh_cnindex_demo"  path="/index_demo.jsp"></forward>
+		      	<forward name="logout_zh_cnindex_cc"  path="/index_cc.jsp"></forward>
 		      	<forward name="logout_en"  path="/index_en.jsp"></forward>
 	    </action>
         <action name="WelcomeForm" 
