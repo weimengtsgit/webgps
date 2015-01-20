@@ -49,6 +49,7 @@
 		      	<forward name="login_zh_cnindex_gx"  path="/index_gx.jsp"></forward>
 		      	<forward name="login_zh_cnindex_demo"  path="/index_demo.jsp"></forward>
 		      	<forward name="login_zh_cnindex_cc"  path="/index_cc.jsp"></forward>
+		      	<forward name="login_zh_cnindex_zsy"  path="/index_zsy.jsp"></forward>
 		      	<forward name="error"  path="/error.jsp"></forward>      
 	    </action>
 	    <action 
@@ -76,6 +77,7 @@
 		      	<forward name="logout_zh_cnindex_gx"  path="/index_gx.jsp"></forward>
 		      	<forward name="logout_zh_cnindex_demo"  path="/index_demo.jsp"></forward>
 		      	<forward name="logout_zh_cnindex_cc"  path="/index_cc.jsp"></forward>
+		      	<forward name="logout_zh_cnindex_zsy"  path="/index_zsy.jsp"></forward>
 		      	<forward name="logout_en"  path="/index_en.jsp"></forward>
 	    </action>
         <action name="WelcomeForm" 

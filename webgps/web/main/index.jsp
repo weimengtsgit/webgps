@@ -161,6 +161,13 @@ String dateToWeekData = DateToWeekUtil.buildDateToWeekData();
     <link rel="stylesheet" type="text/css" href="<%=path%>/ext-3.1.1/resources/css/ext-all.css" />
 	<link rel="stylesheet" type="text/css" href="<%=path%>/track/track.css" />
 	<link rel="stylesheet" type="text/css" href="<%=path%>/main/index.css" />
+	
+	<% if(entCode.equals("demo1")){%> 
+		<link rel="stylesheet" type="text/css" href="<%=path%>/css/headercss_zsy.css" />
+	<%}	else {%>
+		<link rel="stylesheet" type="text/css" href="<%=path%>/css/headercss.css" />
+	<%}%>
+	
 	<link rel="stylesheet" type="text/css" href="<%=path%>/ext-3.1.1/examples/simple-widgets/progress-bar.css" />
 	<link rel="stylesheet" type="text/css" href="<%=path %>/css/buttons.css"/>
 	<link rel="stylesheet" type="text/css" href="<%=path %>/ext-3.1.1/examples/ux/css/LockingGridView.css"/>
@@ -199,10 +206,10 @@ String dateToWeekData = DateToWeekUtil.buildDateToWeekData();
     var mmsAccount = '<%=mmsAccount%>';
     var mmsPwd = '<%=mmsPwd%>';
     //报表url
-    var excelpath = 'http://220.181.105.84';
+    var excelpath = '';
     //var excelpath = 'http://localhost:9080/mapsearch';
     //彩信平台url
-    var mmspath = 'http://220.181.105.88/ema/login.do';
+    var mmspath = '';
     
 	var endTime='<%=endTime%>';
     var path = '<%=path%>';
@@ -698,6 +705,7 @@ var southPanel = new Ext.Panel({
 	}*/
 	topArray.push(label);
 	//topArray.push("服务热线电话：4006007987 | 010-58103698");
+		
 	</script>
 	<!-- 设置区域 -->
 	<script src="<%=path%>/areaalarm/areaalarm.js" type="text/javascript"></script>
